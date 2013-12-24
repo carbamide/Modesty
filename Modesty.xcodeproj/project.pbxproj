@@ -1,0 +1,543 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		29994400186A08880038D92F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 299943FF186A08880038D92F /* Foundation.framework */; };
+		29994402186A08880038D92F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29994401186A08880038D92F /* CoreGraphics.framework */; };
+		29994404186A08880038D92F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29994403186A08880038D92F /* UIKit.framework */; };
+		2999440A186A08880038D92F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 29994408186A08880038D92F /* InfoPlist.strings */; };
+		2999440C186A08880038D92F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2999440B186A08880038D92F /* main.m */; };
+		29994410186A08880038D92F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2999440F186A08880038D92F /* AppDelegate.m */; };
+		29994413186A08880038D92F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29994411186A08880038D92F /* Main.storyboard */; };
+		29994416186A08880038D92F /* InfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29994415186A08880038D92F /* InfoViewController.m */; };
+		29994419186A08880038D92F /* PlayersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29994418186A08880038D92F /* PlayersViewController.m */; };
+		2999441B186A08890038D92F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2999441A186A08890038D92F /* Images.xcassets */; };
+		29994422186A08890038D92F /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29994421186A08890038D92F /* XCTest.framework */; };
+		29994423186A08890038D92F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 299943FF186A08880038D92F /* Foundation.framework */; };
+		29994424186A08890038D92F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29994403186A08880038D92F /* UIKit.framework */; };
+		2999442C186A08890038D92F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2999442A186A08890038D92F /* InfoPlist.strings */; };
+		2999442E186A08890038D92F /* ModestyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2999442D186A08890038D92F /* ModestyTests.m */; };
+		29994439186A093F0038D92F /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = 29994438186A093F0038D92F /* Player.m */; };
+		2999443C186A098A0038D92F /* Server.m in Sources */ = {isa = PBXBuildFile; fileRef = 2999443B186A098A0038D92F /* Server.m */; };
+		2999443F186A0A490038D92F /* DataMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 2999443E186A0A490038D92F /* DataMapper.m */; };
+		29994442186A0A660038D92F /* ModestyInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 29994441186A0A660038D92F /* ModestyInfo.m */; };
+		29994448186A46D20038D92F /* ModestyTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29994447186A46D20038D92F /* ModestyTableViewController.m */; };
+		2999444B186A48610038D92F /* SocialTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2999444A186A48610038D92F /* SocialTableViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		29994425186A08890038D92F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 299943F4186A08880038D92F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 299943FB186A08880038D92F;
+			remoteInfo = Modesty;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		299943FC186A08880038D92F /* Modesty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Modesty.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		299943FF186A08880038D92F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		29994401186A08880038D92F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		29994403186A08880038D92F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		29994407186A08880038D92F /* Modesty-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Modesty-Info.plist"; sourceTree = "<group>"; };
+		29994409186A08880038D92F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		2999440B186A08880038D92F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		2999440D186A08880038D92F /* Modesty-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Modesty-Prefix.pch"; sourceTree = "<group>"; };
+		2999440E186A08880038D92F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		2999440F186A08880038D92F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		29994412186A08880038D92F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		29994414186A08880038D92F /* InfoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InfoViewController.h; sourceTree = "<group>"; };
+		29994415186A08880038D92F /* InfoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InfoViewController.m; sourceTree = "<group>"; };
+		29994417186A08880038D92F /* PlayersViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlayersViewController.h; sourceTree = "<group>"; };
+		29994418186A08880038D92F /* PlayersViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlayersViewController.m; sourceTree = "<group>"; };
+		2999441A186A08890038D92F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		29994420186A08890038D92F /* ModestyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ModestyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		29994421186A08890038D92F /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		29994429186A08890038D92F /* ModestyTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ModestyTests-Info.plist"; sourceTree = "<group>"; };
+		2999442B186A08890038D92F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		2999442D186A08890038D92F /* ModestyTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ModestyTests.m; sourceTree = "<group>"; };
+		29994437186A093F0038D92F /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
+		29994438186A093F0038D92F /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Player.m; sourceTree = "<group>"; };
+		2999443A186A098A0038D92F /* Server.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Server.h; sourceTree = "<group>"; };
+		2999443B186A098A0038D92F /* Server.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Server.m; sourceTree = "<group>"; };
+		2999443D186A0A490038D92F /* DataMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataMapper.h; sourceTree = "<group>"; };
+		2999443E186A0A490038D92F /* DataMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataMapper.m; sourceTree = "<group>"; };
+		29994440186A0A660038D92F /* ModestyInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModestyInfo.h; sourceTree = "<group>"; };
+		29994441186A0A660038D92F /* ModestyInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModestyInfo.m; sourceTree = "<group>"; };
+		29994446186A46D20038D92F /* ModestyTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModestyTableViewController.h; sourceTree = "<group>"; };
+		29994447186A46D20038D92F /* ModestyTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModestyTableViewController.m; sourceTree = "<group>"; };
+		29994449186A48610038D92F /* SocialTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocialTableViewController.h; sourceTree = "<group>"; };
+		2999444A186A48610038D92F /* SocialTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocialTableViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		299943F9186A08880038D92F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				29994402186A08880038D92F /* CoreGraphics.framework in Frameworks */,
+				29994404186A08880038D92F /* UIKit.framework in Frameworks */,
+				29994400186A08880038D92F /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2999441D186A08890038D92F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				29994422186A08890038D92F /* XCTest.framework in Frameworks */,
+				29994424186A08890038D92F /* UIKit.framework in Frameworks */,
+				29994423186A08890038D92F /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		299943F3186A08880038D92F = {
+			isa = PBXGroup;
+			children = (
+				29994405186A08880038D92F /* Modesty */,
+				29994445186A0F310038D92F /* Resources */,
+				29994406186A08880038D92F /* Supporting Files */,
+				29994427186A08890038D92F /* ModestyTests */,
+				299943FE186A08880038D92F /* Frameworks */,
+				299943FD186A08880038D92F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		299943FD186A08880038D92F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				299943FC186A08880038D92F /* Modesty.app */,
+				29994420186A08890038D92F /* ModestyTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		299943FE186A08880038D92F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				299943FF186A08880038D92F /* Foundation.framework */,
+				29994401186A08880038D92F /* CoreGraphics.framework */,
+				29994403186A08880038D92F /* UIKit.framework */,
+				29994421186A08890038D92F /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		29994405186A08880038D92F /* Modesty */ = {
+			isa = PBXGroup;
+			children = (
+				2999440E186A08880038D92F /* AppDelegate.h */,
+				2999440F186A08880038D92F /* AppDelegate.m */,
+				29994444186A0F200038D92F /* View Controllers */,
+				29994443186A0F150038D92F /* Models */,
+			);
+			path = Modesty;
+			sourceTree = "<group>";
+		};
+		29994406186A08880038D92F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				29994407186A08880038D92F /* Modesty-Info.plist */,
+				29994408186A08880038D92F /* InfoPlist.strings */,
+				2999440B186A08880038D92F /* main.m */,
+				2999440D186A08880038D92F /* Modesty-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			path = Modesty;
+			sourceTree = "<group>";
+		};
+		29994427186A08890038D92F /* ModestyTests */ = {
+			isa = PBXGroup;
+			children = (
+				2999442D186A08890038D92F /* ModestyTests.m */,
+				29994428186A08890038D92F /* Supporting Files */,
+			);
+			path = ModestyTests;
+			sourceTree = "<group>";
+		};
+		29994428186A08890038D92F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				29994429186A08890038D92F /* ModestyTests-Info.plist */,
+				2999442A186A08890038D92F /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		29994443186A0F150038D92F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2999443D186A0A490038D92F /* DataMapper.h */,
+				2999443E186A0A490038D92F /* DataMapper.m */,
+				29994437186A093F0038D92F /* Player.h */,
+				29994438186A093F0038D92F /* Player.m */,
+				2999443A186A098A0038D92F /* Server.h */,
+				2999443B186A098A0038D92F /* Server.m */,
+				29994440186A0A660038D92F /* ModestyInfo.h */,
+				29994441186A0A660038D92F /* ModestyInfo.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		29994444186A0F200038D92F /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				29994414186A08880038D92F /* InfoViewController.h */,
+				29994415186A08880038D92F /* InfoViewController.m */,
+				29994417186A08880038D92F /* PlayersViewController.h */,
+				29994418186A08880038D92F /* PlayersViewController.m */,
+				29994446186A46D20038D92F /* ModestyTableViewController.h */,
+				29994447186A46D20038D92F /* ModestyTableViewController.m */,
+				29994449186A48610038D92F /* SocialTableViewController.h */,
+				2999444A186A48610038D92F /* SocialTableViewController.m */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		29994445186A0F310038D92F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				2999441A186A08890038D92F /* Images.xcassets */,
+				29994411186A08880038D92F /* Main.storyboard */,
+			);
+			name = Resources;
+			path = Modesty;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		299943FB186A08880038D92F /* Modesty */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 29994431186A08890038D92F /* Build configuration list for PBXNativeTarget "Modesty" */;
+			buildPhases = (
+				299943F8186A08880038D92F /* Sources */,
+				299943F9186A08880038D92F /* Frameworks */,
+				299943FA186A08880038D92F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Modesty;
+			productName = Modesty;
+			productReference = 299943FC186A08880038D92F /* Modesty.app */;
+			productType = "com.apple.product-type.application";
+		};
+		2999441F186A08890038D92F /* ModestyTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 29994434186A08890038D92F /* Build configuration list for PBXNativeTarget "ModestyTests" */;
+			buildPhases = (
+				2999441C186A08890038D92F /* Sources */,
+				2999441D186A08890038D92F /* Frameworks */,
+				2999441E186A08890038D92F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				29994426186A08890038D92F /* PBXTargetDependency */,
+			);
+			name = ModestyTests;
+			productName = ModestyTests;
+			productReference = 29994420186A08890038D92F /* ModestyTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		299943F4186A08880038D92F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Jukaela Enterprises";
+				TargetAttributes = {
+					2999441F186A08890038D92F = {
+						TestTargetID = 299943FB186A08880038D92F;
+					};
+				};
+			};
+			buildConfigurationList = 299943F7186A08880038D92F /* Build configuration list for PBXProject "Modesty" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 299943F3186A08880038D92F;
+			productRefGroup = 299943FD186A08880038D92F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				299943FB186A08880038D92F /* Modesty */,
+				2999441F186A08890038D92F /* ModestyTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		299943FA186A08880038D92F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2999441B186A08890038D92F /* Images.xcassets in Resources */,
+				2999440A186A08880038D92F /* InfoPlist.strings in Resources */,
+				29994413186A08880038D92F /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2999441E186A08890038D92F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2999442C186A08890038D92F /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		299943F8186A08880038D92F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				29994419186A08880038D92F /* PlayersViewController.m in Sources */,
+				29994442186A0A660038D92F /* ModestyInfo.m in Sources */,
+				29994410186A08880038D92F /* AppDelegate.m in Sources */,
+				29994416186A08880038D92F /* InfoViewController.m in Sources */,
+				2999443F186A0A490038D92F /* DataMapper.m in Sources */,
+				29994448186A46D20038D92F /* ModestyTableViewController.m in Sources */,
+				2999440C186A08880038D92F /* main.m in Sources */,
+				2999443C186A098A0038D92F /* Server.m in Sources */,
+				2999444B186A48610038D92F /* SocialTableViewController.m in Sources */,
+				29994439186A093F0038D92F /* Player.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2999441C186A08890038D92F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2999442E186A08890038D92F /* ModestyTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		29994426186A08890038D92F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 299943FB186A08880038D92F /* Modesty */;
+			targetProxy = 29994425186A08890038D92F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		29994408186A08880038D92F /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				29994409186A08880038D92F /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		29994411186A08880038D92F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				29994412186A08880038D92F /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		2999442A186A08890038D92F /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2999442B186A08890038D92F /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2999442F186A08890038D92F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		29994430186A08890038D92F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		29994432186A08890038D92F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Modesty/Modesty-Prefix.pch";
+				INFOPLIST_FILE = "Modesty/Modesty-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		29994433186A08890038D92F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Modesty/Modesty-Prefix.pch";
+				INFOPLIST_FILE = "Modesty/Modesty-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		29994435186A08890038D92F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Modesty.app/Modesty";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Modesty/Modesty-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "ModestyTests/ModestyTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		29994436186A08890038D92F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Modesty.app/Modesty";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Modesty/Modesty-Prefix.pch";
+				INFOPLIST_FILE = "ModestyTests/ModestyTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		299943F7186A08880038D92F /* Build configuration list for PBXProject "Modesty" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2999442F186A08890038D92F /* Debug */,
+				29994430186A08890038D92F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		29994431186A08890038D92F /* Build configuration list for PBXNativeTarget "Modesty" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				29994432186A08890038D92F /* Debug */,
+				29994433186A08890038D92F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		29994434186A08890038D92F /* Build configuration list for PBXNativeTarget "ModestyTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				29994435186A08890038D92F /* Debug */,
+				29994436186A08890038D92F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 299943F4186A08880038D92F /* Project object */;
+}
