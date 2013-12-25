@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2910A79D186A9A7200677800 /* iTunesArtwork.png in Resources */ = {isa = PBXBuildFile; fileRef = 2910A79C186A9A7200677800 /* iTunesArtwork.png */; };
 		29994400186A08880038D92F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 299943FF186A08880038D92F /* Foundation.framework */; };
 		29994402186A08880038D92F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29994401186A08880038D92F /* CoreGraphics.framework */; };
 		29994404186A08880038D92F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29994403186A08880038D92F /* UIKit.framework */; };
@@ -42,6 +43,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2910A79C186A9A7200677800 /* iTunesArtwork.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iTunesArtwork.png; sourceTree = "<group>"; };
 		299943FC186A08880038D92F /* Modesty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Modesty.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		299943FF186A08880038D92F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		29994401186A08880038D92F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -213,6 +215,7 @@
 		29994445186A0F310038D92F /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				2910A79C186A9A7200677800 /* iTunesArtwork.png */,
 				2999441A186A08890038D92F /* Images.xcassets */,
 				29994411186A08880038D92F /* Main.storyboard */,
 			);
@@ -298,6 +301,7 @@
 			files = (
 				2999441B186A08890038D92F /* Images.xcassets in Resources */,
 				2999440A186A08880038D92F /* InfoPlist.strings in Resources */,
+				2910A79D186A9A7200677800 /* iTunesArtwork.png in Resources */,
 				29994413186A08880038D92F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -536,6 +540,7 @@
 				29994433186A08890038D92F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		29994434186A08890038D92F /* Build configuration list for PBXNativeTarget "ModestyTests" */ = {
 			isa = XCConfigurationList;
@@ -544,6 +549,7 @@
 				29994436186A08890038D92F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
