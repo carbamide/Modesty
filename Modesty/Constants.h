@@ -43,3 +43,9 @@ static NSString *const kModestyDownImage = @"down";
 static NSString *const kSocialCell = @"SocialCell";
 static NSString *const kInfoCell = @"InfoCell";
 static NSString *const kPlayerCell = @"ModestyCell";
+static NSString *const kPluginCell = @"PluginCell";
+
+#pragma mark -
+#pragma mark - Segues
+
+static NSString *const kShowPlugins = @"ShowPlugins";

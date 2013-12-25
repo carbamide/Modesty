@@ -7,9 +7,10 @@
 //
 
 #import "ModestyTableViewController.h"
+#import "DataMapper.h"
 
 @interface ModestyTableViewController ()
-
+@property (strong, nonatomic) UIRefreshControl *refreshControl;
 @end
 
 @implementation ModestyTableViewController
@@ -27,11 +28,24 @@
 {
     [super viewDidLoad];
     
+    [[[self navigationController] navigationBar] setBackgroundImage:[UIImage imageNamed:@"background"] forBarMetrics:UIBarMetricsDefault];
+
+    [[[self tabBarController] tabBar] setBackgroundImage:[UIImage imageNamed:@"tabbar_background"]];
+    
+    [self setRefreshControl:[[UIRefreshControl alloc] init]];
+
+    [[self refreshControl] addTarget:self action:@selector(refreshData) forControlEvents:UIControlEventValueChanged];
+    
     [self setTitle:@"Modesty"];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(modestyUp) name:kModestyUp object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(modestyDown) name:kModestyDown object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadTable) name:kModestyUpdateFinished object:nil];
+}
+
+-(void)refreshData
+{
+    [[DataMapper sharedInstance] refreshInformation];
 }
 
 -(void)modestyUp
@@ -48,6 +62,8 @@
 {
     dispatch_async(dispatch_get_main_queue(), ^{
         [[self tableView] reloadData];
+        
+        [[self refreshControl] endRefreshing];
     });
 }
 

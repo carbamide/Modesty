@@ -14,6 +14,7 @@
 
 @property (strong, nonatomic) ModestyInfo *modestyInfo;
 @property (nonatomic, getter = isUpdating) BOOL updating;
+@property (strong, nonatomic) NSDictionary *enjinDict;
 
 +(DataMapper *)sharedInstance;
 

@@ -12,7 +12,6 @@
 #import "Server.h"
 
 @interface InfoViewController ()
-
 @end
 
 @implementation InfoViewController
@@ -20,19 +19,25 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+        
     [self setTitle:@"Modesty"];
     
     if ([[DataMapper sharedInstance] isUpdating]) {
         UIActivityIndicatorView *activityView = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(0, 0, 25, 25)];
+        
         [activityView sizeToFit];
-        [activityView setAutoresizingMask:(UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin)];
+        [activityView setAutoresizingMask:(UIViewAutoresizingFlexibleLeftMargin |
+                                           UIViewAutoresizingFlexibleRightMargin |
+                                           UIViewAutoresizingFlexibleTopMargin |
+                                           UIViewAutoresizingFlexibleBottomMargin)];
+        
         [activityView setActivityIndicatorViewStyle:UIActivityIndicatorViewStyleWhite];
         [activityView startAnimating];
         
         UIBarButtonItem *loadingView = [[UIBarButtonItem alloc] initWithCustomView:activityView];
         [[self navigationItem] setRightBarButtonItem:loadingView];
     }
+    
 }
 
 -(void)viewDidAppear:(BOOL)animated
@@ -167,10 +172,11 @@
 {
     if ([indexPath section] == 2) {
         if ([indexPath row] == 1) {
-            [[[UIAlertView alloc] initWithTitle:@"Not Implemented" message:@"This feature is not yet implemented." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil] show];
+            [self performSegueWithIdentifier:kShowPlugins sender:self];
         }
     }
     
     [[[self tableView] cellForRowAtIndexPath:indexPath] setSelected:NO animated:YES];
 }
+
 @end

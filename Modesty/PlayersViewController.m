@@ -11,6 +11,8 @@
 #import "ModestyInfo.h"
 #import "Player.h"
 
+#define kMinotarHelper @"https://minotar.net/helm/%@/150.png"
+
 @interface PlayersViewController ()
 
 @end
@@ -29,6 +31,11 @@
     [super didReceiveMemoryWarning];
 }
 
+-(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    return @"Currently Playing";
+}
+
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return [[[[DataMapper sharedInstance] modestyInfo] players] count];
@@ -39,7 +46,7 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kPlayerCell];
     
     if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"ModestyCell"];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:kPlayerCell];
         
         [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
     }
@@ -60,7 +67,7 @@
 
 -(void)getUserImage:(NSString *)username forCell:(UITableViewCell *)cell
 {
-    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"https://minotar.net/helm/%@/150.png", username]]];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:[NSString stringWithFormat:kMinotarHelper, username]]];
     
     [request setHTTPMethod:@"GET"];
     
@@ -76,4 +83,5 @@
         }
     }] resume];
 }
+
 @end

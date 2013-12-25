@@ -28,6 +28,7 @@
 		29994442186A0A660038D92F /* ModestyInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 29994441186A0A660038D92F /* ModestyInfo.m */; };
 		29994448186A46D20038D92F /* ModestyTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29994447186A46D20038D92F /* ModestyTableViewController.m */; };
 		2999444B186A48610038D92F /* SocialTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2999444A186A48610038D92F /* SocialTableViewController.m */; };
+		2999444F186A71CF0038D92F /* PluginsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2999444E186A71CF0038D92F /* PluginsTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +76,8 @@
 		29994449186A48610038D92F /* SocialTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocialTableViewController.h; sourceTree = "<group>"; };
 		2999444A186A48610038D92F /* SocialTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocialTableViewController.m; sourceTree = "<group>"; };
 		2999444C186A63100038D92F /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		2999444D186A71CF0038D92F /* PluginsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PluginsTableViewController.h; sourceTree = "<group>"; };
+		2999444E186A71CF0038D92F /* PluginsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PluginsTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,6 +203,8 @@
 				29994447186A46D20038D92F /* ModestyTableViewController.m */,
 				29994449186A48610038D92F /* SocialTableViewController.h */,
 				2999444A186A48610038D92F /* SocialTableViewController.m */,
+				2999444D186A71CF0038D92F /* PluginsTableViewController.h */,
+				2999444E186A71CF0038D92F /* PluginsTableViewController.m */,
 				2999444C186A63100038D92F /* Constants.h */,
 			);
 			name = "View Controllers";
@@ -318,6 +323,7 @@
 				29994416186A08880038D92F /* InfoViewController.m in Sources */,
 				2999443F186A0A490038D92F /* DataMapper.m in Sources */,
 				29994448186A46D20038D92F /* ModestyTableViewController.m in Sources */,
+				2999444F186A71CF0038D92F /* PluginsTableViewController.m in Sources */,
 				2999440C186A08880038D92F /* main.m in Sources */,
 				2999443C186A098A0038D92F /* Server.m in Sources */,
 				2999444B186A48610038D92F /* SocialTableViewController.m in Sources */,

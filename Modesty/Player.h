@@ -11,5 +11,6 @@
 @interface Player : NSObject
 
 @property (strong, nonatomic) NSString *username;
+@property (strong, nonatomic) NSNumber *enjinUserID;
 
 @end
