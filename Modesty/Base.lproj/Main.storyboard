@@ -8,7 +8,7 @@
         <scene sceneID="Vex-rW-GRa">
             <objects>
                 <tabBarController id="8YX-ce-x5E" sceneMemberID="viewController">
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics" barStyle="black"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" clipsSubviews="YES" contentMode="scaleToFill" barStyle="black" id="JQR-rB-NYL">
                         <rect key="frame" x="0.0" y="431" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
@@ -99,11 +99,11 @@
             </objects>
             <point key="canvasLocation" x="1444" y="-224"/>
         </scene>
-        <!--Navigation Controller - Server Info-->
+        <!--Navigation Controller - Modesty-->
         <scene sceneID="UhY-E5-r7r">
             <objects>
                 <navigationController definesPresentationContext="YES" id="Azz-5h-fRf" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Server Info" image="info" id="HIe-tM-ONT"/>
+                    <tabBarItem key="tabBarItem" title="Modesty" image="info" id="HIe-tM-ONT"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" prompted="NO"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics" barStyle="black"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="gME-Ul-bN8">
@@ -186,11 +186,11 @@
             </objects>
             <point key="canvasLocation" x="544" y="1158"/>
         </scene>
-        <!--Navigation Controller - Current Players-->
+        <!--Navigation Controller - Players-->
         <scene sceneID="jiX-hD-4kC">
             <objects>
                 <navigationController definesPresentationContext="YES" id="sCQ-Oc-rX0" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Current Players" image="group" id="Hyg-iW-WGr"/>
+                    <tabBarItem key="tabBarItem" title="Players" image="group" id="Hyg-iW-WGr"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" prompted="NO"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics" barStyle="black"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="h96-Kg-wep">
