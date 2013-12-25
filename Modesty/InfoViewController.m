@@ -152,6 +152,8 @@
                     break;
                 case 1: {
                     [[cell textLabel] setText:@"Plugins"];
+                    [[cell detailTextLabel] setText:[NSString string]];
+                    
                     [cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
                 }
                     break;

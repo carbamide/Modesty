@@ -38,6 +38,16 @@
     [super didReceiveMemoryWarning];
 }
 
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+
+-(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    return @"Bukkit Plugins";
+}
+
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return [[[[[DataMapper sharedInstance] modestyInfo] serverInformation] plugins] count];

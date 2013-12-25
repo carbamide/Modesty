@@ -29,11 +29,9 @@
     [super viewDidLoad];
     
     [[[self navigationController] navigationBar] setBackgroundImage:[UIImage imageNamed:@"background"] forBarMetrics:UIBarMetricsDefault];
-
     [[[self tabBarController] tabBar] setBackgroundImage:[UIImage imageNamed:@"tabbar_background"]];
     
     [self setRefreshControl:[[UIRefreshControl alloc] init]];
-
     [[self refreshControl] addTarget:self action:@selector(refreshData) forControlEvents:UIControlEventValueChanged];
     
     [self setTitle:@"Modesty"];
@@ -50,12 +48,23 @@
 
 -(void)modestyUp
 {
-    [[self navigationItem] setRightBarButtonItem:[[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:kModestyUpImage] style:UIBarButtonItemStyleBordered target:nil action:nil]];
+    [[self navigationItem] setRightBarButtonItem:[[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:kModestyUpImage] style:UIBarButtonItemStyleBordered target:self action:@selector(modestyUpAlert)]];
 }
 
 -(void)modestyDown
 {
-    [[self navigationItem] setRightBarButtonItem:[[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:kModestyDownImage] style:UIBarButtonItemStyleBordered target:nil action:nil]];
+    [[self navigationItem] setRightBarButtonItem:[[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:kModestyDownImage] style:UIBarButtonItemStyleBordered target:self action:@selector(modestyDownAlert)]];
+}
+
+-(void)modestyUpAlert
+{
+    [[[UIAlertView alloc] initWithTitle:@"Modesty is Up!" message:@"Modesty appears to be up!  Yay!" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil] show];
+}
+
+-(void)modestyDownAlert
+{
+    [[[UIAlertView alloc] initWithTitle:@"Modesty is Down!" message:@"Modesty appears to be down!  :-(" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil] show];
+
 }
 
 -(void)reloadTable
