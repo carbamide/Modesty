@@ -42,7 +42,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 2;
+    return 3;
 }
 
 
@@ -59,6 +59,10 @@
             [[cell textLabel] setText:@"Instagram"];
             [[cell imageView] setImage:[UIImage imageNamed:@"instagram"]];
             break;
+        case 2:
+            [[cell textLabel] setText:@"Modesty Forums"];
+            [[cell imageView] setImage:[UIImage imageNamed:@"modesty"]];
+            break;
         default:
             break;
     }
@@ -70,25 +74,21 @@
 {
     switch ([indexPath row]) {
         case 0: {
-            UIAlertView *twitterAlert = [[UIAlertView alloc] initWithTitle:@"Leaving Modesty"
-                                                                   message:@"Clicking OK will leave the Modesty app and continue to Safari."
-                                                                  delegate:self
-                                                         cancelButtonTitle:@"OK"
-                                                         otherButtonTitles:@"Cancel", nil];
+            UIAlertView *twitterAlert = [self leavingModestyAlertWithTag:0];
             
-            [twitterAlert setTag:0];
             [twitterAlert show];
         }
             break;
         case 1: {
-            UIAlertView *instagramAlert = [[UIAlertView alloc] initWithTitle:@"Leaving Modesty"
-                                                                   message:@"Clicking OK will leave the Modesty app and continue to Safari."
-                                                                  delegate:self
-                                                         cancelButtonTitle:@"OK"
-                                                         otherButtonTitles:@"Cancel", nil];
+            UIAlertView *instagramAlert = [self leavingModestyAlertWithTag:1];
             
-            [instagramAlert setTag:1];
             [instagramAlert show];
+        }
+            break;
+        case 2: {
+            UIAlertView *forumAlert = [self leavingModestyAlertWithTag:2];
+            
+            [forumAlert show];
         }
             break;
         default:
@@ -113,8 +113,26 @@
                 [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://instagram.com/degumaster"]];
             }
             break;
+        case 2:
+            if ([title isEqualToString:@"OK"]) {
+                [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.minecraftmodesty.enjin.com/forum"]];
+            }
+            break;
         default:
             break;
     }
+}
+
+-(UIAlertView *)leavingModestyAlertWithTag:(int)tag
+{
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Leaving Modesty"
+                                                    message:@"Clicking OK will leave the Modesty app and continue to Safari."
+                                                   delegate:self
+                                          cancelButtonTitle:@"Cancel"
+                                          otherButtonTitles:@"OK", nil];
+    
+    [alert setTag:tag];
+    
+    return alert;
 }
 @end
