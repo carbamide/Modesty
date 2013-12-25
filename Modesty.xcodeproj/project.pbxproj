@@ -74,6 +74,7 @@
 		29994447186A46D20038D92F /* ModestyTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModestyTableViewController.m; sourceTree = "<group>"; };
 		29994449186A48610038D92F /* SocialTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocialTableViewController.h; sourceTree = "<group>"; };
 		2999444A186A48610038D92F /* SocialTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocialTableViewController.m; sourceTree = "<group>"; };
+		2999444C186A63100038D92F /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -199,6 +200,7 @@
 				29994447186A46D20038D92F /* ModestyTableViewController.m */,
 				29994449186A48610038D92F /* SocialTableViewController.h */,
 				2999444A186A48610038D92F /* SocialTableViewController.m */,
+				2999444C186A63100038D92F /* Constants.h */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";

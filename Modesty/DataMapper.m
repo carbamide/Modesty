@@ -62,11 +62,11 @@
         }
         
         dispatch_async(dispatch_get_main_queue(), ^{
-            if ([responseDict[@"status"] isEqualToString:@"up"]) {
-                [[NSNotificationCenter defaultCenter] postNotificationName:@"modesty_up" object:nil];
+            if ([responseDict[@"status"] isEqualToString:kModestyUp]) {
+                [[NSNotificationCenter defaultCenter] postNotificationName:kModestyUp object:nil];
             }
             else {
-                [[NSNotificationCenter defaultCenter] postNotificationName:@"modesty_down" object:nil];
+                [[NSNotificationCenter defaultCenter] postNotificationName:kModestyDown object:nil];
             }
         });
     }] resume];
@@ -74,6 +74,8 @@
 
 -(void)refreshInformation
 {
+    [self setUpdating:YES];
+    
     NSMutableURLRequest *urlRequest = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:kAPIURL]];
     
     [urlRequest setHTTPMethod:@"GET"];
@@ -140,7 +142,14 @@
     
     [self setModestyInfo:modestyInfo];
     
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"finished_updating_information" object:nil];
+    [self setUpdating:NO];
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:kModestyUpdateFinished object:nil];
+}
+
+-(BOOL)isUpdating
+{
+    return _updating;
 }
 
 @end

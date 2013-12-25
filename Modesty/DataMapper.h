@@ -13,9 +13,11 @@
 @interface DataMapper : NSObject
 
 @property (strong, nonatomic) ModestyInfo *modestyInfo;
+@property (nonatomic, getter = isUpdating) BOOL updating;
 
 +(DataMapper *)sharedInstance;
 
 -(void)refreshInformation;
+-(BOOL)isUpdating;
 
 @end

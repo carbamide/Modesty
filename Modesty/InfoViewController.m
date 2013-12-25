@@ -22,13 +22,22 @@
     [super viewDidLoad];
     
     [self setTitle:@"Modesty"];
+    
+    if ([[DataMapper sharedInstance] isUpdating]) {
+        UIActivityIndicatorView *activityView = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(0, 0, 25, 25)];
+        [activityView sizeToFit];
+        [activityView setAutoresizingMask:(UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin)];
+        [activityView setActivityIndicatorViewStyle:UIActivityIndicatorViewStyleWhite];
+        [activityView startAnimating];
+        
+        UIBarButtonItem *loadingView = [[UIBarButtonItem alloc] initWithCustomView:activityView];
+        [[self navigationItem] setRightBarButtonItem:loadingView];
+    }
 }
 
 -(void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    
-    [self reloadTable];
 }
 
 - (void)didReceiveMemoryWarning
@@ -79,10 +88,10 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"InfoCell"];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kInfoCell];
     
     if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"InfoCell"];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:kInfoCell];
         
         [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
     }
@@ -118,7 +127,10 @@
             switch ([indexPath row]) {
                 case 0: {
                     [[cell textLabel] setText:@"Players"];
-                    [[cell detailTextLabel] setText:[NSString stringWithFormat:@"%@ of %@ max players", [serverInformation players], [serverInformation maxPlayers]]];
+                    
+                    if (serverInformation) {
+                        [[cell detailTextLabel] setText:[NSString stringWithFormat:@"%@ of %@ max players", [serverInformation players], [serverInformation maxPlayers]]];
+                    }
                 }
                     break;
                 default:
