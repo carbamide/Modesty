@@ -8,8 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
+/**
+ *  The main application delegate.  Handles application lifecycle.
+ */
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
+/**
+ *  The application's main window.
+ */
 @property (strong, nonatomic) UIWindow *window;
 
 @end

@@ -8,9 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
+/**
+ *  Data storage class that holds information about each user
+ */
 @interface Player : NSObject
 
+/**
+ *  The user's username
+ */
 @property (strong, nonatomic) NSString *username;
-@property (strong, nonatomic) NSNumber *enjinUserID;
 
 @end

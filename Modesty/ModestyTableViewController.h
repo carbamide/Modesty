@@ -8,10 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+/**
+ *  This is a subclass of UITableViewController.  It takes care of some of the across the board setup that
+ *  was required for this application.
+ */
 @interface ModestyTableViewController : UITableViewController
-
--(void)modestyUp;
--(void)modestyDown;
--(void)reloadTable;
 
 @end

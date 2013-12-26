@@ -10,15 +10,39 @@
 
 @class ModestyInfo;
 
+/**
+ *  DataMapper is responsible for the API calls and the mapping of response data to local objects.
+ *  DataMapper is instantiated as a singleton and is referenced via the sharedInstance class method.
+ */
 @interface DataMapper : NSObject
 
+/**
+ *  Reference to ModestyInfo
+ */
 @property (strong, nonatomic) ModestyInfo *modestyInfo;
-@property (nonatomic, getter = isUpdating) BOOL updating;
-@property (strong, nonatomic) NSDictionary *enjinDict;
 
+/**
+ *  BOOL value that indicates whether an update is currently happening.
+ */
+@property (nonatomic, getter = isUpdating) BOOL updating;
+
+/**
+ *  The shared instance that returns the singleton instantiated DataMapper
+ *
+ *  @return The ready to use instantiated DataMapper
+ */
 +(DataMapper *)sharedInstance;
 
+/**
+ *  Refresh Modesty information from the server.
+ */
 -(void)refreshInformation;
+
+/**
+ *  Indicates whether the local information is currently updating from the middle-tier
+ *
+ *  @return BOOL value.
+ */
 -(BOOL)isUpdating;
 
 @end

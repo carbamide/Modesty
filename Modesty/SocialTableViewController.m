@@ -13,6 +13,14 @@
 #define kForumURL @"http://www.minecraftmodesty.enjin.com/forum"
 
 @interface SocialTableViewController ()
+
+/**
+ *  Creates a UIAlertView that informs the user that they're leaving the app.
+ *
+ *  @param tag Tag to pass to the UIAlertView delegate.  This allows opening the correct website.
+ *
+ *  @return Instantiated UIAlertView that will then need to be shown with [alertView show].
+ */
 -(UIAlertView *)leavingModestyAlertWithTag:(int)tag;
 @end
 

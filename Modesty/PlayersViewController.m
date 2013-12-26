@@ -14,6 +14,15 @@
 #define kMinotarHelper @"https://minotar.net/helm/%@/150.png"
 
 @interface PlayersViewController ()
+/**
+ *  This local method gets the user's face as a UIImage and applies that UIIMage to the imageView of cell.
+ *
+ *  This method could be improved by providing local caching.  I've not yet decided whether this should be a database
+ *  or simply saving the images as png files in the user's documents folder.
+ * 
+ *  @param username The username that needs to be retrieved.
+ *  @param cell     The cell that contains the imageView that this UIImage will need to be applied to.
+ */
 -(void)getUserImage:(NSString *)username forCell:(UITableViewCell *)cell;
 @end
 

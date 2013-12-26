@@ -10,10 +10,24 @@
 #import "DataMapper.h"
 
 @interface ModestyTableViewController ()
+/**
+ *  Refresh control that is used across all instances.
+ */
 @property (strong, nonatomic) UIRefreshControl *refreshControl;
 
+/**
+ *  Calls the shared instance of DataMapper to refresh the data from the middle tier.
+ */
 -(void)refreshData;
+
+/**
+ *  Displays an alert telling the user that modesty is up.
+ */
 -(void)modestyUpAlert;
+
+/**
+ *  Displays an alert telling the user that Modesty is down.
+ */
 -(void)modestyDownAlert;
 
 @end
