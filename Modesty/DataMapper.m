@@ -9,10 +9,6 @@
 #import "DataMapper.h"
 #import "ModestyInfo.h"
 
-#define kAPIURL @"http://aqueous-lowlands-3303.herokuapp.com"
-#define kPingURL @"http://aqueous-lowlands-3303.herokuapp.com/ping.php"
-#define kEnjinApi @"http://www.minecraftmodesty.enjin.com/api/get-users"
-
 @interface DataMapper ()
 @property (strong, nonatomic) NSTimer *pingTimer;
 

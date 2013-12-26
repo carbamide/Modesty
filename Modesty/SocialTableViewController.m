@@ -13,10 +13,13 @@
 #define kForumURL @"http://www.minecraftmodesty.enjin.com/forum"
 
 @interface SocialTableViewController ()
-
+-(UIAlertView *)leavingModestyAlertWithTag:(int)tag;
 @end
 
 @implementation SocialTableViewController
+
+#pragma mark - 
+#pragma mark - View Lifecycle
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -39,7 +42,8 @@
     [super didReceiveMemoryWarning];
 }
 
-#pragma mark - Table view data source
+#pragma mark -
+#pragma mark - UITableViewDelegate and Datasource
 
 -(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
@@ -153,6 +157,9 @@
     [[[self tableView] cellForRowAtIndexPath:indexPath] setSelected:NO animated:YES];
 }
 
+#pragma mark -
+#pragma mark - UIAlertViewDelegate
+
 -(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
     NSString *title = [alertView buttonTitleAtIndex:buttonIndex];
@@ -177,6 +184,9 @@
             break;
     }
 }
+
+#pragma mark -
+#pragma mark - Methods
 
 -(UIAlertView *)leavingModestyAlertWithTag:(int)tag
 {

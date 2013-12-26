@@ -14,10 +14,13 @@
 #define kMinotarHelper @"https://minotar.net/helm/%@/150.png"
 
 @interface PlayersViewController ()
-
+-(void)getUserImage:(NSString *)username forCell:(UITableViewCell *)cell;
 @end
 
 @implementation PlayersViewController
+
+#pragma mark -
+#pragma mark - View Lifecycle
 
 - (void)viewDidLoad
 {
@@ -30,6 +33,9 @@
 {
     [super didReceiveMemoryWarning];
 }
+
+#pragma mark - 
+#pragma mark UITableViewDelegate and Datasource
 
 -(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
@@ -64,6 +70,9 @@
 {
     [[[self tableView] cellForRowAtIndexPath:indexPath] setSelected:NO animated:YES];
 }
+
+#pragma mark -
+#pragma mark - Methods
 
 -(void)getUserImage:(NSString *)username forCell:(UITableViewCell *)cell
 {

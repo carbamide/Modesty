@@ -11,9 +11,17 @@
 
 @interface ModestyTableViewController ()
 @property (strong, nonatomic) UIRefreshControl *refreshControl;
+
+-(void)refreshData;
+-(void)modestyUpAlert;
+-(void)modestyDownAlert;
+
 @end
 
 @implementation ModestyTableViewController
+
+#pragma mark - 
+#pragma mark - View Lifecycle
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -41,10 +49,8 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadTable) name:kModestyUpdateFinished object:nil];
 }
 
--(void)refreshData
-{
-    [[DataMapper sharedInstance] refreshInformation];
-}
+#pragma mark - 
+#pragma mark - Notification Handlers
 
 -(void)modestyUp
 {
@@ -54,6 +60,23 @@
 -(void)modestyDown
 {
     [[self navigationItem] setRightBarButtonItem:[[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:kModestyDownImage] style:UIBarButtonItemStyleBordered target:self action:@selector(modestyDownAlert)]];
+}
+
+-(void)reloadTable
+{
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [[self tableView] reloadData];
+        
+        [[self refreshControl] endRefreshing];
+    });
+}
+
+#pragma mark -
+#pragma mark - Methods
+
+-(void)refreshData
+{
+    [[DataMapper sharedInstance] refreshInformation];
 }
 
 -(void)modestyUpAlert
@@ -67,13 +90,6 @@
 
 }
 
--(void)reloadTable
-{
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [[self tableView] reloadData];
-        
-        [[self refreshControl] endRefreshing];
-    });
-}
+
 
 @end

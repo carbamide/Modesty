@@ -16,6 +16,9 @@
 
 @implementation InfoViewController
 
+#pragma mark -
+#pragma mark - View Lifecycle
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -49,6 +52,9 @@
 {
     [super didReceiveMemoryWarning];
 }
+
+#pragma mark -
+#pragma mark - UITableViewDelegate and Datasource
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {

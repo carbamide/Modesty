@@ -49,3 +49,13 @@ static NSString *const kPluginCell = @"PluginCell";
 #pragma mark - Segues
 
 static NSString *const kShowPlugins = @"ShowPlugins";
+
+#pragma mark - 
+#pragma mark - URLS
+
+static NSString *const kAPIURL = @"http://aqueous-lowlands-3303.herokuapp.com";
+static NSString *const kPingURL = @"http://aqueous-lowlands-3303.herokuapp.com/ping.php";
+static NSString *const kEnjinApi = @"http://www.minecraftmodesty.enjin.com/api/get-users";
+static NSString *const kTwitterURL = @"https://twitter.com/modesty_mc";
+static NSString *const kInstagramURL = @"http://instagram.com/degumaster";
+static NSString *const kForumURL = @"http://www.minecraftmodesty.enjin.com/forum";
