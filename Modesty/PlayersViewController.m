@@ -11,7 +11,7 @@
 #import "ModestyInfo.h"
 #import "Player.h"
 
-#define kMinotarHelper @"https://minotar.net/helm/%@/150.png"
+#define kMinotarHelper @"https://minotar.net/helm/%@/30.png"
 
 @interface PlayersViewController ()
 /**
