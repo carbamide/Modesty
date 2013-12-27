@@ -74,16 +74,18 @@
 
 -(void)modestyUp
 {
-    UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 25, 25)];
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    [button setFrame:CGRectMake(0, 0, 30, 30)];
     [button setImage:[UIImage imageNamed:kModestyUpImage] forState:UIControlStateNormal];
     [button addTarget:self action:@selector(modestyUpAlert) forControlEvents:UIControlEventTouchUpInside];
-    
+
     [[self navigationItem] setRightBarButtonItem:[[UIBarButtonItem alloc] initWithCustomView:button]];
 }
 
 -(void)modestyDown
 {
-    UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 25, 25)];
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    [button setFrame:CGRectMake(0, 0, 30, 30)];
     [button setImage:[UIImage imageNamed:kModestyDownImage] forState:UIControlStateNormal];
     [button addTarget:self action:@selector(modestyDownAlert) forControlEvents:UIControlEventTouchUpInside];
     

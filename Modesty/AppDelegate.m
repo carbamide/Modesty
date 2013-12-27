@@ -15,36 +15,42 @@
 {
     if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0) {
         [[self window] setTintColor:UIColorFromRGB(0x299a24)];
+        
+        NSMutableDictionary *titleBarAttributes = [NSMutableDictionary dictionaryWithDictionary:[[UINavigationBar appearance] titleTextAttributes]];
+        [titleBarAttributes addEntriesFromDictionary:@{UITextAttributeFont: [UIFont fontWithName:@"MinecraftEvenings" size:34]}];
+
+        [[UINavigationBar appearance] setTitleTextAttributes:titleBarAttributes];
+        [[UINavigationBar appearance] setTitleVerticalPositionAdjustment:5 forBarMetrics:UIBarMetricsDefault];
     }
     
     [[DataMapper sharedInstance] refreshInformation];
     
     return YES;
 }
-							
+
 - (void)applicationWillResignActive:(UIApplication *)application
 {
-
+    
 }
 
 - (void)applicationDidEnterBackground:(UIApplication *)application
 {
-
+    
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application
 {
-
+    
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
-
+    
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application
 {
-
+    
 }
 
 @end

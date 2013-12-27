@@ -30,6 +30,7 @@
 		29994448186A46D20038D92F /* ModestyTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29994447186A46D20038D92F /* ModestyTableViewController.m */; };
 		2999444B186A48610038D92F /* SocialTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2999444A186A48610038D92F /* SocialTableViewController.m */; };
 		2999444F186A71CF0038D92F /* PluginsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2999444E186A71CF0038D92F /* PluginsTableViewController.m */; };
+		29CB05A7186DF75500711876 /* Minecraft Evenings.otf in Resources */ = {isa = PBXBuildFile; fileRef = 29CB05A6186DF75500711876 /* Minecraft Evenings.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +81,7 @@
 		2999444C186A63100038D92F /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		2999444D186A71CF0038D92F /* PluginsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PluginsTableViewController.h; sourceTree = "<group>"; };
 		2999444E186A71CF0038D92F /* PluginsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PluginsTableViewController.m; sourceTree = "<group>"; };
+		29CB05A6186DF75500711876 /* Minecraft Evenings.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Minecraft Evenings.otf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -215,6 +217,7 @@
 		29994445186A0F310038D92F /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				29CB05A6186DF75500711876 /* Minecraft Evenings.otf */,
 				2910A79C186A9A7200677800 /* iTunesArtwork.png */,
 				2999441A186A08890038D92F /* Images.xcassets */,
 				29994411186A08880038D92F /* Main.storyboard */,
@@ -299,6 +302,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29CB05A7186DF75500711876 /* Minecraft Evenings.otf in Resources */,
 				2999441B186A08890038D92F /* Images.xcassets in Resources */,
 				2999440A186A08880038D92F /* InfoPlist.strings in Resources */,
 				2910A79D186A9A7200677800 /* iTunesArtwork.png in Resources */,
