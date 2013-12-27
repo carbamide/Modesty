@@ -89,7 +89,7 @@
     
     [request setHTTPMethod:@"GET"];
     
-    [[[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+    [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
         UIImage *image = [UIImage imageWithData:data];
         
         if (image) {
@@ -99,7 +99,7 @@
                 [cell setNeedsLayout];
             });
         }
-    }] resume];
+    }];
 }
 
 @end

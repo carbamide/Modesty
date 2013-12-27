@@ -45,7 +45,7 @@
     
     [urlRequest setHTTPMethod:@"GET"];
     
-    [[[NSURLSession sharedSession] dataTaskWithRequest:urlRequest completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+    [NSURLConnection sendAsynchronousRequest:urlRequest queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
         if (error) {
             NSLog(@"There was an error downloading the ping data.");
         }
@@ -66,7 +66,8 @@
                 [[NSNotificationCenter defaultCenter] postNotificationName:kModestyDown object:nil];
             }
         });
-    }] resume];
+
+    }];
 }
 
 -(void)refreshInformation
@@ -77,7 +78,7 @@
     
     [urlRequest setHTTPMethod:@"GET"];
     
-    [[[NSURLSession sharedSession] dataTaskWithRequest:urlRequest completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+    [NSURLConnection sendAsynchronousRequest:urlRequest queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
         if (error) {
             NSLog(@"An error has occurred downloading the json.");
             
@@ -95,7 +96,7 @@
         }
         
         [self mapToModestyInfo:modestyDict];
-    }] resume];
+    }];
 }
 
 -(void)mapToModestyInfo:(NSDictionary *)dict
