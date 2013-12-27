@@ -13,7 +13,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    [[self window] setTintColor:UIColorFromRGB(0x299a24)];
+    if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0) {
+        [[self window] setTintColor:UIColorFromRGB(0x299a24)];
+    }
     
     [[DataMapper sharedInstance] refreshInformation];
     

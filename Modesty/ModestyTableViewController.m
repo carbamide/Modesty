@@ -34,7 +34,7 @@
 
 @implementation ModestyTableViewController
 
-#pragma mark - 
+#pragma mark -
 #pragma mark - View Lifecycle
 
 - (id)initWithStyle:(UITableViewStyle)style
@@ -50,7 +50,13 @@
 {
     [super viewDidLoad];
     
-    [[[self navigationController] navigationBar] setBackgroundImage:[UIImage imageNamed:@"background"] forBarMetrics:UIBarMetricsDefault];
+    if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0) {
+        [[[self navigationController] navigationBar] setBackgroundImage:[UIImage imageNamed:@"background"] forBarMetrics:UIBarMetricsDefault];
+    }
+    else {
+        [[[self navigationController] navigationBar] setBackgroundImage:[UIImage imageNamed:@"background_ios6"] forBarMetrics:UIBarMetricsDefault];
+    }
+    
     [[[self tabBarController] tabBar] setBackgroundImage:[UIImage imageNamed:@"tabbar_background"]];
     
     [self setRefreshControl:[[UIRefreshControl alloc] init]];
@@ -63,17 +69,25 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadTable) name:kModestyUpdateFinished object:nil];
 }
 
-#pragma mark - 
+#pragma mark -
 #pragma mark - Notification Handlers
 
 -(void)modestyUp
 {
-    [[self navigationItem] setRightBarButtonItem:[[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:kModestyUpImage] style:UIBarButtonItemStyleBordered target:self action:@selector(modestyUpAlert)]];
+    UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 25, 25)];
+    [button setImage:[UIImage imageNamed:kModestyUpImage] forState:UIControlStateNormal];
+    [button addTarget:self action:@selector(modestyUpAlert) forControlEvents:UIControlEventTouchUpInside];
+    
+    [[self navigationItem] setRightBarButtonItem:[[UIBarButtonItem alloc] initWithCustomView:button]];
 }
 
 -(void)modestyDown
 {
-    [[self navigationItem] setRightBarButtonItem:[[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:kModestyDownImage] style:UIBarButtonItemStyleBordered target:self action:@selector(modestyDownAlert)]];
+    UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 25, 25)];
+    [button setImage:[UIImage imageNamed:kModestyDownImage] forState:UIControlStateNormal];
+    [button addTarget:self action:@selector(modestyDownAlert) forControlEvents:UIControlEventTouchUpInside];
+    
+    [[self navigationItem] setRightBarButtonItem:[[UIBarButtonItem alloc] initWithCustomView:button]];
 }
 
 -(void)reloadTable
@@ -101,7 +115,7 @@
 -(void)modestyDownAlert
 {
     [[[UIAlertView alloc] initWithTitle:@"Modesty is Down!" message:@"Modesty appears to be down!  :-(" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil] show];
-
+    
 }
 
 

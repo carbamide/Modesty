@@ -11,7 +11,7 @@
 #import "ModestyInfo.h"
 #import "Player.h"
 
-#define kMinotarHelper @"https://minotar.net/helm/%@/150.png"
+#define kMinotarHelper @"https://minotar.net/helm/%@/30.png"
 
 @interface PlayersViewController ()
 /**
@@ -89,7 +89,7 @@
     
     [request setHTTPMethod:@"GET"];
     
-    [[[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+    [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
         UIImage *image = [UIImage imageWithData:data];
         
         if (image) {
@@ -99,7 +99,7 @@
                 [cell setNeedsLayout];
             });
         }
-    }] resume];
+    }];
 }
 
 @end
