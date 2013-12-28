@@ -57,6 +57,13 @@
     for (NSDictionary *dict in [[DataMapper sharedInstance] staff]) {
         [_dataSource addObject:dict[@"username"]];
     }
+    
+    [_dataSource insertObject:kDeguMaster atIndex:0];
+    [_dataSource insertObject:kSimplySte atIndex:1];
+    [_dataSource insertObject:kFuschii atIndex:2];
+    [_dataSource insertObject:kMrsDeguMaster atIndex:3];
+    
+    [_dataSource removeObjectsInRange:NSMakeRange([_dataSource count] - 4, 4)];
 }
 
 -(void)refreshData
@@ -68,6 +75,13 @@
     for (NSDictionary *dict in [[DataMapper sharedInstance] staff]) {
         [_dataSource addObject:dict[@"username"]];
     }
+    
+    [_dataSource insertObject:kDeguMaster atIndex:0];
+    [_dataSource insertObject:kSimplySte atIndex:1];
+    [_dataSource insertObject:kFuschii atIndex:2];
+    [_dataSource insertObject:kMrsDeguMaster atIndex:3];
+    
+    [_dataSource removeObjectsInRange:NSMakeRange([_dataSource count] - 4, 4)];
 }
 
 - (void)didReceiveMemoryWarning
