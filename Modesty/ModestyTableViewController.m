@@ -133,4 +133,17 @@
     return [searchText rangeOfString:searchTerm options:NSCaseInsensitiveSearch].location == NSNotFound ? NO : YES;
 }
 
+-(UIAlertView *)leavingModestyAlertWithTag:(NSInteger)tag
+{
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Leaving Modesty"
+                                                    message:@"Clicking OK will leave the Modesty app and continue to Safari."
+                                                   delegate:self
+                                          cancelButtonTitle:@"Cancel"
+                                          otherButtonTitles:@"OK", nil];
+    
+    [alert setTag:tag];
+    
+    return alert;
+}
+
 @end

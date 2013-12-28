@@ -15,5 +15,4 @@
  */
 @interface SocialTableViewController : ModestyTableViewController <UIAlertViewDelegate>
 
-
 @end

@@ -15,7 +15,7 @@
 
 @interface PlayersViewController ()
 /**
- *  This local method gets the user's face as a UIImage and applies that UIIMage to the imageView of cell.
+ *  This local method gets the user's face as a UIImage and applies that UIImage to the imageView of cell.
  *
  *  This method could be improved by providing local caching.  I've not yet decided whether this should be a database
  *  or simply saving the images as png files in the user's documents folder.
@@ -24,6 +24,16 @@
  *  @param cell     The cell that contains the imageView that this UIImage will need to be applied to.
  */
 -(void)getUserImage:(NSString *)username forCell:(UITableViewCell *)cell;
+
+/**
+ *  Returns the rank string for the given username
+ *
+ *  @param username The username to check against known users and ranks
+ *
+ *  @return The rank string for the given user
+ */
+-(NSString *)rankForUsername:(NSString *)username;
+
 @end
 
 @implementation PlayersViewController
@@ -73,8 +83,7 @@
     if ([[tempPlayer username] isEqualToString:kDeguMaster]) {
         [[cell detailTextLabel] setText:kOwner];
     }
-    else if ([self contains:kSimplySte on:[tempPlayer username]] ||
-             [self contains:kFuschii on:[tempPlayer username]]) {
+    else if ([self contains:kSimplySte on:[tempPlayer username]] || [self contains:kFuschii on:[tempPlayer username]]) {
         [[cell detailTextLabel] setText:kCoOwner];
     }
     else if ([self contains:kMrsDeguMaster on:[tempPlayer username]]) {
@@ -126,31 +135,31 @@
     
     for (NSString *staff in ops) {
         if ([staff isEqualToString:username]) {
-            return @"OP";
+            return kOp;
         }
     }
 
     for (NSString *staff in admins) {
         if ([staff isEqualToString:username]) {
-            return @"Admin";
+            return kAdmin;
         }
     }
     
     for (NSString *staff in modmins) {
         if ([staff isEqualToString:username]) {
-            return @"Modmin";
+            return kModmin;
         }
     }
     
     for (NSString *staff in minimods) {
         if ([staff isEqualToString:username]) {
-            return @"Minimod";
+            return kMinimod;
         }
     }
     
     for (NSString *staff in mods) {
         if ([staff isEqualToString:username]) {
-            return @"Mod";
+            return kMod;
         }
     }
     
