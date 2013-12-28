@@ -13,6 +13,6 @@
  *  This view controller, a subclass of ModestyTableViewController, is responsible for displaying information
  *  about various aspects of the Modesty server.
  */
-@interface InfoViewController : ModestyTableViewController
+@interface InfoTableViewController : ModestyTableViewController
 
 @end

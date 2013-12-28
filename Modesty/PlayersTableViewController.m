@@ -6,7 +6,7 @@
 //  Copyright (c) 2013 Jukaela Enterprises. All rights reserved.
 //
 
-#import "PlayersViewController.h"
+#import "PlayersTableViewController.h"
 #import "DataMapper.h"
 #import "ModestyInfo.h"
 #import "Player.h"
@@ -14,7 +14,7 @@
 
 #define kMinotarHelper @"https://minotar.net/helm/%@/30.png"
 
-@interface PlayersViewController ()
+@interface PlayersTableViewController ()
 /**
  *  This local method gets the user's face as a UIImage and applies that UIImage to the imageView of cell.
  *
@@ -37,7 +37,7 @@
 
 @end
 
-@implementation PlayersViewController
+@implementation PlayersTableViewController
 
 #pragma mark -
 #pragma mark - View Lifecycle

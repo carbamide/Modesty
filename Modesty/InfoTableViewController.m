@@ -6,16 +6,16 @@
 //  Copyright (c) 2013 Jukaela Enterprises. All rights reserved.
 //
 
-#import "InfoViewController.h"
+#import "InfoTableViewController.h"
 #import "DataMapper.h"
 #import "ModestyInfo.h"
 #import "Server.h"
 #import "TestFlight.h"
 
-@interface InfoViewController ()
+@interface InfoTableViewController ()
 @end
 
-@implementation InfoViewController
+@implementation InfoTableViewController
 
 #pragma mark -
 #pragma mark - View Lifecycle

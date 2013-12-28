@@ -13,6 +13,6 @@
  *  This view controller, a subclass of ModestyTableViewController, is responsible for displaying all
  *  currently logged in users.
  */
-@interface PlayersViewController : ModestyTableViewController
+@interface PlayersTableViewController : ModestyTableViewController
 
 @end

@@ -15,8 +15,8 @@
 		2999440C186A08880038D92F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2999440B186A08880038D92F /* main.m */; };
 		29994410186A08880038D92F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2999440F186A08880038D92F /* AppDelegate.m */; };
 		29994413186A08880038D92F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29994411186A08880038D92F /* Main.storyboard */; };
-		29994416186A08880038D92F /* InfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29994415186A08880038D92F /* InfoViewController.m */; };
-		29994419186A08880038D92F /* PlayersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29994418186A08880038D92F /* PlayersViewController.m */; };
+		29994416186A08880038D92F /* InfoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29994415186A08880038D92F /* InfoTableViewController.m */; };
+		29994419186A08880038D92F /* PlayersTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29994418186A08880038D92F /* PlayersTableViewController.m */; };
 		2999441B186A08890038D92F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2999441A186A08890038D92F /* Images.xcassets */; };
 		29994422186A08890038D92F /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29994421186A08890038D92F /* XCTest.framework */; };
 		29994423186A08890038D92F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 299943FF186A08880038D92F /* Foundation.framework */; };
@@ -61,10 +61,10 @@
 		2999440E186A08880038D92F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		2999440F186A08880038D92F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		29994412186A08880038D92F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		29994414186A08880038D92F /* InfoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InfoViewController.h; sourceTree = "<group>"; };
-		29994415186A08880038D92F /* InfoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InfoViewController.m; sourceTree = "<group>"; };
-		29994417186A08880038D92F /* PlayersViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlayersViewController.h; sourceTree = "<group>"; };
-		29994418186A08880038D92F /* PlayersViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlayersViewController.m; sourceTree = "<group>"; };
+		29994414186A08880038D92F /* InfoTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InfoTableViewController.h; sourceTree = "<group>"; };
+		29994415186A08880038D92F /* InfoTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InfoTableViewController.m; sourceTree = "<group>"; };
+		29994417186A08880038D92F /* PlayersTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlayersTableViewController.h; sourceTree = "<group>"; };
+		29994418186A08880038D92F /* PlayersTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlayersTableViewController.m; sourceTree = "<group>"; };
 		2999441A186A08890038D92F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		29994420186A08890038D92F /* ModestyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ModestyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		29994421186A08890038D92F /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -217,10 +217,10 @@
 		29994444186A0F200038D92F /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				29994414186A08880038D92F /* InfoViewController.h */,
-				29994415186A08880038D92F /* InfoViewController.m */,
-				29994417186A08880038D92F /* PlayersViewController.h */,
-				29994418186A08880038D92F /* PlayersViewController.m */,
+				29994414186A08880038D92F /* InfoTableViewController.h */,
+				29994415186A08880038D92F /* InfoTableViewController.m */,
+				29994417186A08880038D92F /* PlayersTableViewController.h */,
+				29994418186A08880038D92F /* PlayersTableViewController.m */,
 				29D9CE82186F7848006BC1B8 /* StaffTableViewController.h */,
 				29D9CE83186F7848006BC1B8 /* StaffTableViewController.m */,
 				29994446186A46D20038D92F /* ModestyTableViewController.h */,
@@ -372,10 +372,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				29D9CE84186F7848006BC1B8 /* StaffTableViewController.m in Sources */,
-				29994419186A08880038D92F /* PlayersViewController.m in Sources */,
+				29994419186A08880038D92F /* PlayersTableViewController.m in Sources */,
 				29994442186A0A660038D92F /* ModestyInfo.m in Sources */,
 				29994410186A08880038D92F /* AppDelegate.m in Sources */,
-				29994416186A08880038D92F /* InfoViewController.m in Sources */,
+				29994416186A08880038D92F /* InfoTableViewController.m in Sources */,
 				2999443F186A0A490038D92F /* DataMapper.m in Sources */,
 				29994448186A46D20038D92F /* ModestyTableViewController.m in Sources */,
 				2999444F186A71CF0038D92F /* PluginsTableViewController.m in Sources */,
