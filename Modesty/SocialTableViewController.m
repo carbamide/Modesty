@@ -7,6 +7,7 @@
 //
 
 #import "SocialTableViewController.h"
+#import "TestFlight.h"
 
 #define kTwitterURL @"https://twitter.com/modesty_mc"
 #define kInstagramURL @"http://instagram.com/degumaster"
@@ -35,6 +36,8 @@
     [super viewDidLoad];
     
     [self setTitle:@"Social"];
+    
+    [TestFlight passCheckpoint:@"Loaded Social Controller"];
 }
 
 - (void)didReceiveMemoryWarning
@@ -167,16 +170,22 @@
     switch ([alertView tag]) {
         case 0:
             if ([title isEqualToString:@"OK"]) {
+                [TestFlight passCheckpoint:@"Opened Twitter"];
+
                 [[UIApplication sharedApplication] openURL:[NSURL URLWithString:kTwitterURL]];
             }
             break;
         case 1:
             if ([title isEqualToString:@"OK"]) {
+                [TestFlight passCheckpoint:@"Opened Facebook"];
+
                 [[UIApplication sharedApplication] openURL:[NSURL URLWithString:kInstagramURL]];
             }
             break;
         case 2:
             if ([title isEqualToString:@"OK"]) {
+                [TestFlight passCheckpoint:@"Opened Forum"];
+
                 [[UIApplication sharedApplication] openURL:[NSURL URLWithString:kForumURL]];
             }
             break;

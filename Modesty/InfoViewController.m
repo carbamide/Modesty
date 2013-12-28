@@ -10,6 +10,7 @@
 #import "DataMapper.h"
 #import "ModestyInfo.h"
 #import "Server.h"
+#import "TestFlight.h"
 
 @interface InfoViewController ()
 @end
@@ -24,6 +25,8 @@
     [super viewDidLoad];
         
     [self setTitle:@"Modesty"];
+    
+    [TestFlight passCheckpoint:@"Loaded Info Controller"];
     
     if ([[DataMapper sharedInstance] isUpdating]) {
         UIActivityIndicatorView *activityView = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(0, 0, 25, 25)];
@@ -180,6 +183,7 @@
 {
     if ([indexPath section] == 2) {
         if ([indexPath row] == 1) {
+            [TestFlight passCheckpoint:@"Clicked Show Plugins"];
             [self performSegueWithIdentifier:kShowPlugins sender:self];
         }
     }

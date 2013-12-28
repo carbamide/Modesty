@@ -66,7 +66,7 @@ static NSString *const kCaptureCraft = @"http://dev.bukkit.org/bukkit-plugins/ca
 static NSString *const kDisguiseCraft = @"http://dev.bukkit.org/bukkit-plugins/disguisecraft/";
 static NSString *const kMcmmo = @"http://dev.bukkit.org/bukkit-plugins/mcmmo/";
 static NSString *const kModestyHomepage = @"http://www.minecraftmodesty.enjin.com";
-static NSString *const kStaffJson = @"http://aqueous-lowlands-3303.herokuapp.com/staff.json";
+static NSString *const kStaffJson = @"http://safe-retreat-6833.herokuapp.com/users.json";
 
 #pragma mark -
 #pragma mark - Special Usernames

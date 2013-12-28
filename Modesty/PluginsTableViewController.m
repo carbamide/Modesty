@@ -10,6 +10,7 @@
 #import "DataMapper.h"
 #import "ModestyInfo.h"
 #import "Server.h"
+#import "TestFlight.h"
 
 @interface PluginsTableViewController ()
 /**
@@ -39,6 +40,8 @@
     
     [self setTitle:@"Plugins"];
     
+    [TestFlight passCheckpoint:@"Loaded Plugins Controller"];
+
     [self setDataSource:[NSMutableArray array]];
     
     for (NSString *plugin in [[[[DataMapper sharedInstance] modestyInfo] serverInformation] plugins]) {
@@ -128,26 +131,36 @@
     switch ([alertView tag]) {
         case 0:
             if ([title isEqualToString:@"OK"]) {
+                [TestFlight passCheckpoint:@"Opened XPBanker"];
+
                 [[UIApplication sharedApplication] openURL:[NSURL URLWithString:kXpBanker]];
             }
             break;
         case 1:
             if ([title isEqualToString:@"OK"]) {
+                [TestFlight passCheckpoint:@"Opened CaptureCraft"];
+
                 [[UIApplication sharedApplication] openURL:[NSURL URLWithString:kCaptureCraft]];
             }
             break;
         case 2:
             if ([title isEqualToString:@"OK"]) {
+                [TestFlight passCheckpoint:@"Opened DisguiseCraft"];
+
                 [[UIApplication sharedApplication] openURL:[NSURL URLWithString:kDisguiseCraft]];
             }
             break;
         case 3:
             if ([title isEqualToString:@"OK"]) {
+                [TestFlight passCheckpoint:@"Opened Mcmmo"];
+
                 [[UIApplication sharedApplication] openURL:[NSURL URLWithString:kMcmmo]];
             }
             break;
         case 4:
             if ([title isEqualToString:@"OK"]) {
+                [TestFlight passCheckpoint:@"Opened Modesty"];
+
                 [[UIApplication sharedApplication] openURL:[NSURL URLWithString:kModestyHomepage]];
             }
             break;

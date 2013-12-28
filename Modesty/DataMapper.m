@@ -84,13 +84,13 @@
         
         NSError *parsingError = nil;
         
-        NSDictionary *responseDict = [NSJSONSerialization JSONObjectWithData:data options:0 error:&parsingError];
+        NSArray *responseArray = [NSJSONSerialization JSONObjectWithData:data options:0 error:&parsingError];
         
         if (parsingError) {
             NSLog(@"An error has occurred parsing the staff json response.");
         }
         
-        [self setStaff:responseDict];
+        [self setStaff:responseArray];
     }];
 }
 -(void)refreshInformation

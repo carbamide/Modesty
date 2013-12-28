@@ -10,6 +10,7 @@
 #import "DataMapper.h"
 #import "ModestyInfo.h"
 #import "Player.h"
+#import "TestFlight.h"
 
 #define kMinotarHelper @"https://minotar.net/helm/%@/30.png"
 
@@ -19,7 +20,7 @@
  *
  *  This method could be improved by providing local caching.  I've not yet decided whether this should be a database
  *  or simply saving the images as png files in the user's documents folder.
- * 
+ *
  *  @param username The username that needs to be retrieved.
  *  @param cell     The cell that contains the imageView that this UIImage will need to be applied to.
  */
@@ -46,6 +47,8 @@
     [super viewDidLoad];
     
     [self setTitle:@"Players"];
+    
+    [TestFlight passCheckpoint:@"Loaded Players Controller"];
 }
 
 - (void)didReceiveMemoryWarning
@@ -53,7 +56,7 @@
     [super didReceiveMemoryWarning];
 }
 
-#pragma mark - 
+#pragma mark -
 #pragma mark UITableViewDelegate and Datasource
 
 -(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
@@ -92,7 +95,7 @@
     else {
         [[cell detailTextLabel] setText:[self rankForUsername:[tempPlayer username]]];
     }
-
+    
     [self getUserImage:[tempPlayer username] forCell:cell];
     
     return cell;
@@ -100,6 +103,8 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    [TestFlight passCheckpoint:@"Clicked a username in Players Controller"];
+
     [[[self tableView] cellForRowAtIndexPath:indexPath] setSelected:NO animated:YES];
 }
 
@@ -127,39 +132,24 @@
 
 -(NSString *)rankForUsername:(NSString *)username
 {
-    NSArray *ops = [[DataMapper sharedInstance] staff][@"op"];
-    NSArray *admins = [[DataMapper sharedInstance] staff][@"admin"];
-    NSArray *modmins = [[DataMapper sharedInstance] staff][@"modmin"];
-    NSArray *minimods = [[DataMapper sharedInstance] staff][@"minimod"];
-    NSArray *mods = [[DataMapper sharedInstance] staff][@"mod"];
     
-    for (NSString *staff in ops) {
-        if ([staff isEqualToString:username]) {
-            return kOp;
-        }
-    }
-
-    for (NSString *staff in admins) {
-        if ([staff isEqualToString:username]) {
-            return kAdmin;
-        }
-    }
-    
-    for (NSString *staff in modmins) {
-        if ([staff isEqualToString:username]) {
-            return kModmin;
-        }
-    }
-    
-    for (NSString *staff in minimods) {
-        if ([staff isEqualToString:username]) {
-            return kMinimod;
-        }
-    }
-    
-    for (NSString *staff in mods) {
-        if ([staff isEqualToString:username]) {
-            return kMod;
+    for (NSDictionary *staffInfoDict in [[DataMapper sharedInstance] staff]) {
+        if ([username isEqualToString:staffInfoDict[@"username"]]) {
+            if ([staffInfoDict[@"rank"] isEqualToString:kOp]) {
+                return kOp;
+            }
+            else if ([staffInfoDict[@"rank"] isEqualToString:kAdmin]) {
+                return kAdmin;
+            }
+            else if ([staffInfoDict[@"rank"] isEqualToString:kModmin]) {
+                return kModmin;
+            }
+            else if ([staffInfoDict[@"rank"] isEqualToString:kMinimod]) {
+                return kMinimod;
+            }
+            else if ([staffInfoDict[@"rank"] isEqualToString:kMod]) {
+                return kMod;
+            }
         }
     }
     

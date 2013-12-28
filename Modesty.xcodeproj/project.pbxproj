@@ -31,6 +31,10 @@
 		2999444B186A48610038D92F /* SocialTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2999444A186A48610038D92F /* SocialTableViewController.m */; };
 		2999444F186A71CF0038D92F /* PluginsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2999444E186A71CF0038D92F /* PluginsTableViewController.m */; };
 		29CB05A7186DF75500711876 /* Minecraft Evenings.otf in Resources */ = {isa = PBXBuildFile; fileRef = 29CB05A6186DF75500711876 /* Minecraft Evenings.otf */; };
+		29CB05AF186F668000711876 /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 29CB05A9186F668000711876 /* libTestFlight.a */; };
+		29CB05B0186F668100711876 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 29CB05AA186F668000711876 /* README.md */; };
+		29CB05B1186F668100711876 /* release_notes.md in Resources */ = {isa = PBXBuildFile; fileRef = 29CB05AB186F668000711876 /* release_notes.md */; };
+		29CB05B3186F67D400711876 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 29CB05B2186F67D400711876 /* libz.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +86,13 @@
 		2999444D186A71CF0038D92F /* PluginsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PluginsTableViewController.h; sourceTree = "<group>"; };
 		2999444E186A71CF0038D92F /* PluginsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PluginsTableViewController.m; sourceTree = "<group>"; };
 		29CB05A6186DF75500711876 /* Minecraft Evenings.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Minecraft Evenings.otf"; sourceTree = "<group>"; };
+		29CB05A9186F668000711876 /* libTestFlight.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libTestFlight.a; sourceTree = "<group>"; };
+		29CB05AA186F668000711876 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		29CB05AB186F668000711876 /* release_notes.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = release_notes.md; sourceTree = "<group>"; };
+		29CB05AC186F668000711876 /* TestFlight+AsyncLogging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TestFlight+AsyncLogging.h"; sourceTree = "<group>"; };
+		29CB05AD186F668000711876 /* TestFlight+ManualSessions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TestFlight+ManualSessions.h"; sourceTree = "<group>"; };
+		29CB05AE186F668000711876 /* TestFlight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestFlight.h; sourceTree = "<group>"; };
+		29CB05B2186F67D400711876 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,9 +100,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29CB05B3186F67D400711876 /* libz.dylib in Frameworks */,
 				29994402186A08880038D92F /* CoreGraphics.framework in Frameworks */,
 				29994404186A08880038D92F /* UIKit.framework in Frameworks */,
 				29994400186A08880038D92F /* Foundation.framework in Frameworks */,
+				29CB05AF186F668000711876 /* libTestFlight.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -111,6 +124,7 @@
 		299943F3186A08880038D92F = {
 			isa = PBXGroup;
 			children = (
+				29CB05A8186F668000711876 /* TestFlightSDK2 */,
 				29994405186A08880038D92F /* Modesty */,
 				29994445186A0F310038D92F /* Resources */,
 				29994406186A08880038D92F /* Supporting Files */,
@@ -132,6 +146,7 @@
 		299943FE186A08880038D92F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				29CB05B2186F67D400711876 /* libz.dylib */,
 				299943FF186A08880038D92F /* Foundation.framework */,
 				29994401186A08880038D92F /* CoreGraphics.framework */,
 				29994403186A08880038D92F /* UIKit.framework */,
@@ -226,6 +241,19 @@
 			path = Modesty;
 			sourceTree = "<group>";
 		};
+		29CB05A8186F668000711876 /* TestFlightSDK2 */ = {
+			isa = PBXGroup;
+			children = (
+				29CB05A9186F668000711876 /* libTestFlight.a */,
+				29CB05AA186F668000711876 /* README.md */,
+				29CB05AB186F668000711876 /* release_notes.md */,
+				29CB05AC186F668000711876 /* TestFlight+AsyncLogging.h */,
+				29CB05AD186F668000711876 /* TestFlight+ManualSessions.h */,
+				29CB05AE186F668000711876 /* TestFlight.h */,
+			);
+			path = TestFlightSDK2;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -302,9 +330,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29CB05B0186F668100711876 /* README.md in Resources */,
 				29CB05A7186DF75500711876 /* Minecraft Evenings.otf in Resources */,
 				2999441B186A08890038D92F /* Images.xcassets in Resources */,
 				2999440A186A08880038D92F /* InfoPlist.strings in Resources */,
+				29CB05B1186F668100711876 /* release_notes.md in Resources */,
 				2910A79D186A9A7200677800 /* iTunesArtwork.png in Resources */,
 				29994413186A08880038D92F /* Main.storyboard in Resources */,
 			);
@@ -466,6 +496,10 @@
 				GCC_PREFIX_HEADER = "Modesty/Modesty-Prefix.pch";
 				INFOPLIST_FILE = "Modesty/Modesty-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/TestFlightSDK2",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -480,6 +514,10 @@
 				GCC_PREFIX_HEADER = "Modesty/Modesty-Prefix.pch";
 				INFOPLIST_FILE = "Modesty/Modesty-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/TestFlightSDK2",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
