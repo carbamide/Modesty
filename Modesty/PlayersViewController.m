@@ -61,7 +61,7 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kPlayerCell];
     
     if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:kPlayerCell];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:kPlayerCell];
         
         [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
     }
@@ -70,6 +70,20 @@
     
     [[cell textLabel] setText:[tempPlayer username]];
     
+    if ([[tempPlayer username] isEqualToString:kDeguMaster]) {
+        [[cell detailTextLabel] setText:kOwner];
+    }
+    else if ([self contains:kSimplySte on:[tempPlayer username]] ||
+             [self contains:kFuschii on:[tempPlayer username]]) {
+        [[cell detailTextLabel] setText:kCoOwner];
+    }
+    else if ([self contains:kMrsDeguMaster on:[tempPlayer username]]) {
+        [[cell detailTextLabel] setText:kQueen];
+    }
+    else {
+        [[cell detailTextLabel] setText:[self rankForUsername:[tempPlayer username]]];
+    }
+
     [self getUserImage:[tempPlayer username] forCell:cell];
     
     return cell;
@@ -100,6 +114,47 @@
             });
         }
     }];
+}
+
+-(NSString *)rankForUsername:(NSString *)username
+{
+    NSArray *ops = [[DataMapper sharedInstance] staff][@"op"];
+    NSArray *admins = [[DataMapper sharedInstance] staff][@"admin"];
+    NSArray *modmins = [[DataMapper sharedInstance] staff][@"modmin"];
+    NSArray *minimods = [[DataMapper sharedInstance] staff][@"minimod"];
+    NSArray *mods = [[DataMapper sharedInstance] staff][@"mod"];
+    
+    for (NSString *staff in ops) {
+        if ([staff isEqualToString:username]) {
+            return @"OP";
+        }
+    }
+
+    for (NSString *staff in admins) {
+        if ([staff isEqualToString:username]) {
+            return @"Admin";
+        }
+    }
+    
+    for (NSString *staff in modmins) {
+        if ([staff isEqualToString:username]) {
+            return @"Modmin";
+        }
+    }
+    
+    for (NSString *staff in minimods) {
+        if ([staff isEqualToString:username]) {
+            return @"Minimod";
+        }
+    }
+    
+    for (NSString *staff in mods) {
+        if ([staff isEqualToString:username]) {
+            return @"Mod";
+        }
+    }
+    
+    return nil;
 }
 
 @end

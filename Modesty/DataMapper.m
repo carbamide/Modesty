@@ -34,6 +34,7 @@
     if (self = [super init]) {
         _pingTimer = [NSTimer scheduledTimerWithTimeInterval:10 target:self selector:@selector(pingModesty) userInfo:nil repeats:YES];
         [self pingModesty];
+        [self staffListing];
     }
     
     return self;
@@ -70,6 +71,28 @@
     }];
 }
 
+-(void)staffListing
+{
+    NSMutableURLRequest *urlRequest = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:kStaffJson]];
+    
+    [urlRequest setHTTPMethod:@"GET"];
+    
+    [NSURLConnection sendAsynchronousRequest:urlRequest queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
+        if (error) {
+            NSLog(@"There was an error downloading the staff data.");
+        }
+        
+        NSError *parsingError = nil;
+        
+        NSDictionary *responseDict = [NSJSONSerialization JSONObjectWithData:data options:0 error:&parsingError];
+        
+        if (parsingError) {
+            NSLog(@"An error has occurred parsing the staff json response.");
+        }
+        
+        [self setStaff:responseDict];
+    }];
+}
 -(void)refreshInformation
 {
     [self setUpdating:YES];

@@ -66,3 +66,35 @@ static NSString *const kCaptureCraft = @"http://dev.bukkit.org/bukkit-plugins/ca
 static NSString *const kDisguiseCraft = @"http://dev.bukkit.org/bukkit-plugins/disguisecraft/";
 static NSString *const kMcmmo = @"http://dev.bukkit.org/bukkit-plugins/mcmmo/";
 static NSString *const kModestyHomepage = @"http://www.minecraftmodesty.enjin.com";
+static NSString *const kStaffJson = @"http://aqueous-lowlands-3303.herokuapp.com/staff.json";
+
+#pragma mark -
+#pragma mark - Special Usernames
+
+static NSString *const kDeguMaster = @"DeguMaster";
+static NSString *const kSimplySte = @"SimplySte";
+static NSString *const kFuschii = @"fuschii";
+static NSString *const kMrsDeguMaster = @"Mrs_DeguMaster";
+
+#pragma mark -
+#pragma mark - Ranks
+
+static NSString *const kOwner = @"Owner";
+static NSString *const kCoOwner = @"Co-Owner";
+static NSString *const kQueen = @"Queen";
+static NSString *const kOp = @"Op";
+static NSString *const kAdmin = @"Admin";
+static NSString *const kModmin = @"Modmin";
+static NSString *const kMod = @"Mod";
+static NSString *const kMinimod = @"Minimod";
+static NSString *const kExecutive = @"Executive";
+static NSString *const kEngineer = @"Engineer";
+static NSString *const kContractor = @"Contractor";
+static NSString *const kCrafter = @"Crafter";
+static NSString *const kBuilder = @"Builder";
+static NSString *const kNewPlayer = @"New Player";
+static NSString *const kVipPlus = @"VIP+";
+static NSString *const kVip = @"VIP";
+static NSString *const kTimeyWimey = @"Timey Wimey";
+
+

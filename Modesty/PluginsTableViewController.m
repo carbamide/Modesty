@@ -18,16 +18,6 @@
 @property (strong, nonatomic) NSMutableArray *dataSource;
 
 /**
- *  Search text for search term
- *
- *  @param searchTerm The term to search the searchText for
- *  @param searchText The text to search
- *
- *  @return BOOL value if the searchText contains the searchTerm or not
- */
--(BOOL)contains:(NSString *)searchTerm on:(NSString *)searchText;
-
-/**
  *  Creates a UIAlertView that informs the user that they're leaving the app.
  *
  *  @param tag Tag to pass to the UIAlertView delegate.  This allows opening the correct website.
@@ -175,11 +165,6 @@
 }
 #pragma mark - 
 #pragma mark - Helper Methods
-
--(BOOL)contains:(NSString *)searchTerm on:(NSString *)searchText
-{
-    return [searchText rangeOfString:searchTerm options:NSCaseInsensitiveSearch].location == NSNotFound ? NO : YES;
-}
 
 -(UIAlertView *)leavingModestyAlertWithTag:(int)tag
 {

@@ -27,6 +27,11 @@
 @property (nonatomic, getter = isUpdating) BOOL updating;
 
 /**
+ *  NSDictionary listing of all staff
+ */
+@property (strong, nonatomic) NSDictionary *staff;
+
+/**
  *  The shared instance that returns the singleton instantiated DataMapper
  *
  *  @return The ready to use instantiated DataMapper

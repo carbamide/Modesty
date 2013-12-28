@@ -128,6 +128,9 @@
     
 }
 
-
+-(BOOL)contains:(NSString *)searchTerm on:(NSString *)searchText
+{
+    return [searchText rangeOfString:searchTerm options:NSCaseInsensitiveSearch].location == NSNotFound ? NO : YES;
+}
 
 @end
