@@ -23,7 +23,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-        
+    
     [self setTitle:@"Modesty"];
     
     [TestFlight passCheckpoint:@"Loaded Info Controller"];
@@ -61,7 +61,7 @@
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 3;
+    return 4;
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -74,6 +74,9 @@
             return 1;
             break;
         case 2:
+            return 1;
+            break;
+        case 3:
             return 2;
             break;
         default:
@@ -89,9 +92,12 @@
             return @"Server Information";
             break;
         case 1:
-            return @"Player Count";
+            return @"Staff";
             break;
         case 2:
+            return @"Player Count";
+            break;
+        case 3:
             return @"Advanced";
             break;
         default:
@@ -111,7 +117,7 @@
     }
     
     [cell setAccessoryType:UITableViewCellAccessoryNone];
-
+    
     Server *serverInformation = [[[DataMapper sharedInstance] modestyInfo] serverInformation];
     
     switch ([indexPath section]) {
@@ -138,6 +144,13 @@
         }
             break;
         case 1: {
+            [[cell textLabel] setText:@"Staff"];
+            [[cell detailTextLabel] setText:[NSString string]];
+            
+            [cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
+        }
+            break;
+        case 2: {
             switch ([indexPath row]) {
                 case 0: {
                     [[cell textLabel] setText:@"Players"];
@@ -152,7 +165,7 @@
             }
             break;
             
-        case 2: {
+        case 3: {
             switch ([indexPath row]) {
                 case 0: {
                     [[cell textLabel] setText:@"Server Version"];
@@ -181,7 +194,17 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if ([indexPath section] == 2) {
+    if ([indexPath section] == 1) {
+        if ([indexPath row] == 0) {
+            [self performSegueWithIdentifier:kShowStaff sender:self];
+        }
+    }
+    else if ([indexPath section] == 2) {
+        if ([indexPath row] == 0) {
+            [[self tabBarController] setSelectedIndex:1];
+        }
+    }
+    else if ([indexPath section] == 3) {
         if ([indexPath row] == 1) {
             [TestFlight passCheckpoint:@"Clicked Show Plugins"];
             [self performSegueWithIdentifier:kShowPlugins sender:self];

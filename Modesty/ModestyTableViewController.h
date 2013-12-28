@@ -33,4 +33,9 @@
  */
 -(UIAlertView *)leavingModestyAlertWithTag:(NSInteger)tag;
 
+/**
+ *  Calls the shared instance of DataMapper to refresh the data from the middle tier.
+ */
+-(void)refreshData;
+
 @end

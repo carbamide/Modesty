@@ -35,6 +35,7 @@
 		29CB05B0186F668100711876 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 29CB05AA186F668000711876 /* README.md */; };
 		29CB05B1186F668100711876 /* release_notes.md in Resources */ = {isa = PBXBuildFile; fileRef = 29CB05AB186F668000711876 /* release_notes.md */; };
 		29CB05B3186F67D400711876 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 29CB05B2186F67D400711876 /* libz.dylib */; };
+		29D9CE84186F7848006BC1B8 /* StaffTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29D9CE83186F7848006BC1B8 /* StaffTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +94,8 @@
 		29CB05AD186F668000711876 /* TestFlight+ManualSessions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TestFlight+ManualSessions.h"; sourceTree = "<group>"; };
 		29CB05AE186F668000711876 /* TestFlight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestFlight.h; sourceTree = "<group>"; };
 		29CB05B2186F67D400711876 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		29D9CE82186F7848006BC1B8 /* StaffTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StaffTableViewController.h; sourceTree = "<group>"; };
+		29D9CE83186F7848006BC1B8 /* StaffTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StaffTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,8 +127,8 @@
 		299943F3186A08880038D92F = {
 			isa = PBXGroup;
 			children = (
-				29CB05A8186F668000711876 /* TestFlightSDK2 */,
 				29994405186A08880038D92F /* Modesty */,
+				29CB05B4186F6C2900711876 /* Vendor */,
 				29994445186A0F310038D92F /* Resources */,
 				29994406186A08880038D92F /* Supporting Files */,
 				29994427186A08890038D92F /* ModestyTests */,
@@ -218,6 +221,8 @@
 				29994415186A08880038D92F /* InfoViewController.m */,
 				29994417186A08880038D92F /* PlayersViewController.h */,
 				29994418186A08880038D92F /* PlayersViewController.m */,
+				29D9CE82186F7848006BC1B8 /* StaffTableViewController.h */,
+				29D9CE83186F7848006BC1B8 /* StaffTableViewController.m */,
 				29994446186A46D20038D92F /* ModestyTableViewController.h */,
 				29994447186A46D20038D92F /* ModestyTableViewController.m */,
 				29994449186A48610038D92F /* SocialTableViewController.h */,
@@ -252,6 +257,14 @@
 				29CB05AE186F668000711876 /* TestFlight.h */,
 			);
 			path = TestFlightSDK2;
+			sourceTree = "<group>";
+		};
+		29CB05B4186F6C2900711876 /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+				29CB05A8186F668000711876 /* TestFlightSDK2 */,
+			);
+			name = Vendor;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -301,6 +314,9 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Jukaela Enterprises";
 				TargetAttributes = {
+					299943FB186A08880038D92F = {
+						DevelopmentTeam = RG2JJ52ENN;
+					};
 					2999441F186A08890038D92F = {
 						TestTargetID = 299943FB186A08880038D92F;
 					};
@@ -355,6 +371,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29D9CE84186F7848006BC1B8 /* StaffTableViewController.m in Sources */,
 				29994419186A08880038D92F /* PlayersViewController.m in Sources */,
 				29994442186A0A660038D92F /* ModestyInfo.m in Sources */,
 				29994410186A08880038D92F /* AppDelegate.m in Sources */,
@@ -492,6 +509,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Modesty/Modesty-Prefix.pch";
 				INFOPLIST_FILE = "Modesty/Modesty-Info.plist";
@@ -510,6 +528,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Modesty/Modesty-Prefix.pch";
 				INFOPLIST_FILE = "Modesty/Modesty-Info.plist";

@@ -16,11 +16,6 @@
 @property (strong, nonatomic) UIRefreshControl *refreshControl;
 
 /**
- *  Calls the shared instance of DataMapper to refresh the data from the middle tier.
- */
--(void)refreshData;
-
-/**
  *  Displays an alert telling the user that modesty is up.
  */
 -(void)modestyUpAlert;

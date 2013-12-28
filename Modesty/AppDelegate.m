@@ -14,13 +14,13 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    [TestFlight takeOff:@"2f1ee9be-d0ff-489b-9764-8bca95a2f364"];
+    [TestFlight takeOff:kTestFlightApiURLKey];
 
     if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0) {
         [[self window] setTintColor:UIColorFromRGB(0x299a24)];
         
         NSMutableDictionary *titleBarAttributes = [NSMutableDictionary dictionaryWithDictionary:[[UINavigationBar appearance] titleTextAttributes]];
-        [titleBarAttributes addEntriesFromDictionary:@{UITextAttributeFont: [UIFont fontWithName:@"MinecraftEvenings" size:34]}];
+        [titleBarAttributes addEntriesFromDictionary:@{UITextAttributeFont: [UIFont fontWithName:kFont size:34]}];
 
         [[UINavigationBar appearance] setTitleTextAttributes:titleBarAttributes];
         [[UINavigationBar appearance] setTitleVerticalPositionAdjustment:5 forBarMetrics:UIBarMetricsDefault];
