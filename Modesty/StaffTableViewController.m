@@ -62,8 +62,9 @@
     [_dataSource insertObject:kSimplySte atIndex:1];
     [_dataSource insertObject:kFuschii atIndex:2];
     [_dataSource insertObject:kMrsDeguMaster atIndex:3];
-    
-    [_dataSource removeObjectsInRange:NSMakeRange([_dataSource count] - 4, 4)];
+    [_dataSource insertObject:@"Crowaca" atIndex:4];
+
+    [_dataSource removeObjectsInRange:NSMakeRange([_dataSource count] - 5, 5)];
 }
 
 -(void)refreshData
@@ -80,8 +81,9 @@
     [_dataSource insertObject:kSimplySte atIndex:1];
     [_dataSource insertObject:kFuschii atIndex:2];
     [_dataSource insertObject:kMrsDeguMaster atIndex:3];
+    [_dataSource insertObject:@"Crowaca" atIndex:4];
     
-    [_dataSource removeObjectsInRange:NSMakeRange([_dataSource count] - 4, 4)];
+    [_dataSource removeObjectsInRange:NSMakeRange([_dataSource count] - 5, 5)];
 }
 
 - (void)didReceiveMemoryWarning
