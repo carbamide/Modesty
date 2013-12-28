@@ -12,7 +12,29 @@
 #import "Server.h"
 
 @interface PluginsTableViewController ()
+/**
+ *  Subset datasource
+ */
+@property (strong, nonatomic) NSMutableArray *dataSource;
 
+/**
+ *  Search text for search term
+ *
+ *  @param searchTerm The term to search the searchText for
+ *  @param searchText The text to search
+ *
+ *  @return BOOL value if the searchText contains the searchTerm or not
+ */
+-(BOOL)contains:(NSString *)searchTerm on:(NSString *)searchText;
+
+/**
+ *  Creates a UIAlertView that informs the user that they're leaving the app.
+ *
+ *  @param tag Tag to pass to the UIAlertView delegate.  This allows opening the correct website.
+ *
+ *  @return Instantiated UIAlertView that will then need to be shown with [alertView show].
+ */
+-(UIAlertView *)leavingModestyAlertWithTag:(int)tag;
 @end
 
 @implementation PluginsTableViewController
@@ -24,7 +46,7 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+        
     }
     return self;
 }
@@ -34,6 +56,19 @@
     [super viewDidLoad];
     
     [self setTitle:@"Plugins"];
+    
+    [self setDataSource:[NSMutableArray array]];
+    
+    for (NSString *plugin in [[[[DataMapper sharedInstance] modestyInfo] serverInformation] plugins]) {
+        if ([self contains:@"CaptureCraft" on:plugin] ||
+            [self contains:@"DisguiseCraft" on:plugin] ||
+            [self contains:@"mcMMO" on:plugin] ||
+            [self contains:@"XPBanker" on:plugin]) {
+            [_dataSource addObject:plugin];
+        }
+    }
+    
+    [_dataSource addObject:@"And Many More!"];
 }
 
 - (void)didReceiveMemoryWarning
@@ -56,18 +91,106 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [[[[[DataMapper sharedInstance] modestyInfo] serverInformation] plugins] count];
+    return [[self dataSource] count];
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kPluginCell forIndexPath:indexPath];
     
-    NSString *plugin = [[[[DataMapper sharedInstance] modestyInfo] serverInformation] plugins][[indexPath row]];
+    NSString *plugin = [self dataSource][[indexPath row]];
     
     [[cell textLabel] setText:plugin];
     
     return cell;
 }
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{    
+    [[tableView cellForRowAtIndexPath:indexPath] setSelected:NO animated:YES];
     
+    UIAlertView *leavingModestyAlert = nil;
+    
+    switch ([indexPath row]) {
+        case 0:
+        case 1:
+        case 2:
+        case 3:
+            leavingModestyAlert = [self leavingModestyAlertWithTag:[indexPath row]];
+            [leavingModestyAlert show];
+            
+            break;
+        case 4: {
+            UIAlertView *secretSauce = [[UIAlertView alloc] initWithTitle:@"Secret Sauce!"
+                                                                  message:@"Part of what makes Modesty so great is the secret sauce of plugins that have created such a great environment for us to enjoy!  Come check it out!"
+                                                                 delegate:self
+                                                        cancelButtonTitle:@"Cancel"
+                                                        otherButtonTitles:@"OK", nil];
+            
+            [secretSauce setTag:4];
+            [secretSauce show];
+        }
+            break;
+        default:
+            break;
+    }
+}
+
+#pragma mark -
+#pragma mark - UIAlertViewDelegate
+
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    NSString *title = [alertView buttonTitleAtIndex:buttonIndex];
+
+    switch ([alertView tag]) {
+        case 0:
+            if ([title isEqualToString:@"OK"]) {
+                [[UIApplication sharedApplication] openURL:[NSURL URLWithString:kXpBanker]];
+            }
+            break;
+        case 1:
+            if ([title isEqualToString:@"OK"]) {
+                [[UIApplication sharedApplication] openURL:[NSURL URLWithString:kCaptureCraft]];
+            }
+            break;
+        case 2:
+            if ([title isEqualToString:@"OK"]) {
+                [[UIApplication sharedApplication] openURL:[NSURL URLWithString:kDisguiseCraft]];
+            }
+            break;
+        case 3:
+            if ([title isEqualToString:@"OK"]) {
+                [[UIApplication sharedApplication] openURL:[NSURL URLWithString:kMcmmo]];
+            }
+            break;
+        case 4:
+            if ([title isEqualToString:@"OK"]) {
+                [[UIApplication sharedApplication] openURL:[NSURL URLWithString:kModestyHomepage]];
+            }
+            break;
+        default:
+            break;
+    }
+}
+#pragma mark - 
+#pragma mark - Helper Methods
+
+-(BOOL)contains:(NSString *)searchTerm on:(NSString *)searchText
+{
+    return [searchText rangeOfString:searchTerm options:NSCaseInsensitiveSearch].location == NSNotFound ? NO : YES;
+}
+
+-(UIAlertView *)leavingModestyAlertWithTag:(int)tag
+{
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Leaving Modesty"
+                                                    message:@"Clicking OK will leave the Modesty app and continue to Safari."
+                                                   delegate:self
+                                          cancelButtonTitle:@"Cancel"
+                                          otherButtonTitles:@"OK", nil];
+    
+    [alert setTag:tag];
+    
+    return alert;
+}
 @end

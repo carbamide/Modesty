@@ -41,7 +41,7 @@
 {
     self = [super initWithStyle:style];
     if (self) {
-        // Custom initialization
+        
     }
     return self;
 }
@@ -75,7 +75,7 @@
 -(void)modestyUp
 {
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-    [button setFrame:CGRectMake(0, 0, 30, 30)];
+    [button setFrame:CGRectMake(0, 0, 20, 20)];
     [button setImage:[UIImage imageNamed:kModestyUpImage] forState:UIControlStateNormal];
     [button addTarget:self action:@selector(modestyUpAlert) forControlEvents:UIControlEventTouchUpInside];
 
@@ -85,7 +85,7 @@
 -(void)modestyDown
 {
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-    [button setFrame:CGRectMake(0, 0, 30, 30)];
+    [button setFrame:CGRectMake(0, 0, 20, 20)];
     [button setImage:[UIImage imageNamed:kModestyDownImage] forState:UIControlStateNormal];
     [button addTarget:self action:@selector(modestyDownAlert) forControlEvents:UIControlEventTouchUpInside];
     
@@ -111,12 +111,20 @@
 
 -(void)modestyUpAlert
 {
-    [[[UIAlertView alloc] initWithTitle:@"Modesty is Up!" message:@"Modesty appears to be up!  Yay!" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil] show];
+    [[[UIAlertView alloc] initWithTitle:@"Modesty is Up!"
+                                message:@"Modesty appears to be up!  Yay!"
+                               delegate:nil
+                      cancelButtonTitle:@"OK"
+                      otherButtonTitles:nil, nil] show];
 }
 
 -(void)modestyDownAlert
 {
-    [[[UIAlertView alloc] initWithTitle:@"Modesty is Down!" message:@"Modesty appears to be down!  :-(" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil] show];
+    [[[UIAlertView alloc] initWithTitle:@"Modesty is Down!"
+                                message:@"Modesty appears to be down!  :-("
+                               delegate:nil
+                      cancelButtonTitle:@"OK"
+                      otherButtonTitles:nil, nil] show];
     
 }
 
