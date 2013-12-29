@@ -94,15 +94,29 @@
 {    
     [[tableView cellForRowAtIndexPath:indexPath] setSelected:NO animated:YES];
     
-    UIAlertView *leavingModestyAlert = nil;
-    
     switch ([indexPath row]) {
         case 0:
+            [TestFlight passCheckpoint:@"Opened XPBanker"];
+            
+            [self initializeBrowserWithURL:[NSURL URLWithString:kXpBanker]];
+            
+            break;
         case 1:
+            [TestFlight passCheckpoint:@"Opened CaptureCraft"];
+            
+            [self initializeBrowserWithURL:[NSURL URLWithString:kCaptureCraft]];
+            
+            break;
         case 2:
+            [TestFlight passCheckpoint:@"Opened DisguiseCraft"];
+            
+            [self initializeBrowserWithURL:[NSURL URLWithString:kDisguiseCraft]];
+            
+            break;
         case 3:
-            leavingModestyAlert = [self leavingModestyAlertWithTag:[indexPath row]];
-            [leavingModestyAlert show];
+            [TestFlight passCheckpoint:@"Opened Mcmmo"];
+            
+            [self initializeBrowserWithURL:[NSURL URLWithString:kMcmmo]];
             
             break;
         case 4: {
@@ -112,7 +126,7 @@
                                                         cancelButtonTitle:@"Cancel"
                                                         otherButtonTitles:@"OK", nil];
             
-            [secretSauce setTag:4];
+            [secretSauce setTag:0];
             [secretSauce show];
         }
             break;
@@ -131,37 +145,10 @@
     switch ([alertView tag]) {
         case 0:
             if ([title isEqualToString:@"OK"]) {
-                [TestFlight passCheckpoint:@"Opened XPBanker"];
-
-                [[UIApplication sharedApplication] openURL:[NSURL URLWithString:kXpBanker]];
-            }
-            break;
-        case 1:
-            if ([title isEqualToString:@"OK"]) {
-                [TestFlight passCheckpoint:@"Opened CaptureCraft"];
-
-                [[UIApplication sharedApplication] openURL:[NSURL URLWithString:kCaptureCraft]];
-            }
-            break;
-        case 2:
-            if ([title isEqualToString:@"OK"]) {
-                [TestFlight passCheckpoint:@"Opened DisguiseCraft"];
-
-                [[UIApplication sharedApplication] openURL:[NSURL URLWithString:kDisguiseCraft]];
-            }
-            break;
-        case 3:
-            if ([title isEqualToString:@"OK"]) {
-                [TestFlight passCheckpoint:@"Opened Mcmmo"];
-
-                [[UIApplication sharedApplication] openURL:[NSURL URLWithString:kMcmmo]];
-            }
-            break;
-        case 4:
-            if ([title isEqualToString:@"OK"]) {
                 [TestFlight passCheckpoint:@"Opened Modesty"];
 
-                [[UIApplication sharedApplication] openURL:[NSURL URLWithString:kModestyHomepage]];
+                [self initializeBrowserWithURL:[NSURL URLWithString:kModestyHomepage]];
+
             }
             break;
         default:

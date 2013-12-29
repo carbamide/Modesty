@@ -38,4 +38,11 @@
  */
 -(void)refreshData;
 
+/**
+ *  Open UIWebView that shows the specified URL
+ *
+ *  @param url The URl to show in the webview
+ */
+-(void)initializeBrowserWithURL:(NSURL *)url;
+
 @end

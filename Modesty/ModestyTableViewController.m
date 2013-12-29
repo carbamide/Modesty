@@ -8,6 +8,7 @@
 
 #import "ModestyTableViewController.h"
 #import "DataMapper.h"
+#import "SVWebViewController/SVModalWebViewController.h"
 
 @interface ModestyTableViewController ()
 /**
@@ -139,6 +140,13 @@
     [alert setTag:tag];
     
     return alert;
+}
+
+-(void)initializeBrowserWithURL:(NSURL *)url
+{
+    SVModalWebViewController *webViewController = [[SVModalWebViewController alloc] initWithAddress:[url absoluteString]];
+    
+    [self presentViewController:webViewController animated:YES completion:nil];
 }
 
 @end

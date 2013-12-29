@@ -13,6 +13,6 @@
  *  This view controller, a subclass of ModestyTableViewController, is responsible for providing links
  *  to the various Modesty social outlets.
  */
-@interface SocialTableViewController : ModestyTableViewController <UIAlertViewDelegate>
+@interface SocialTableViewController : ModestyTableViewController
 
 @end

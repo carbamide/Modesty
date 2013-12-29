@@ -15,7 +15,6 @@
 #define kFacebookURL @"https://www.facebook.com/minecraftmodesty"
 
 @interface SocialTableViewController ()
-
 @end
 
 @implementation SocialTableViewController
@@ -130,21 +129,21 @@
         case 0:
             switch ([indexPath row]) {
                 case 0: {
-                    UIAlertView *twitterAlert = [self leavingModestyAlertWithTag:0];
+                    [TestFlight passCheckpoint:@"Opened Twitter"];
                     
-                    [twitterAlert show];
+                    [self initializeBrowserWithURL:[NSURL URLWithString:kTwitterURL]];
                 }
                     break;
                 case 1: {
-                    UIAlertView *instagramAlert = [self leavingModestyAlertWithTag:1];
+                    [TestFlight passCheckpoint:@"Opened Instagram"];
                     
-                    [instagramAlert show];
+                    [self initializeBrowserWithURL:[NSURL URLWithString:kInstagramURL]];
                 }
                     break;
                 case 2: {
-                    UIAlertView *facebookAlert = [self leavingModestyAlertWithTag:2];
+                    [TestFlight passCheckpoint:@"Opened Facebook"];
                     
-                    [facebookAlert show];
+                    [self initializeBrowserWithURL:[NSURL URLWithString:kFacebookURL]];
                 }
                     break;
                 default:
@@ -154,9 +153,9 @@
         case 1:
             switch ([indexPath row]) {
                 case 0: {
-                    UIAlertView *forumAlert = [self leavingModestyAlertWithTag:3];
+                    [TestFlight passCheckpoint:@"Opened Forum"];
                     
-                    [forumAlert show];
+                    [self initializeBrowserWithURL:[NSURL URLWithString:kForumURL]];
                 }
                     break;
                 default:
@@ -169,46 +168,4 @@
     }
     [[[self tableView] cellForRowAtIndexPath:indexPath] setSelected:NO animated:YES];
 }
-
-#pragma mark -
-#pragma mark - UIAlertViewDelegate
-
--(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
-{
-    NSString *title = [alertView buttonTitleAtIndex:buttonIndex];
-    
-    switch ([alertView tag]) {
-        case 0:
-            if ([title isEqualToString:@"OK"]) {
-                [TestFlight passCheckpoint:@"Opened Twitter"];
-
-                [[UIApplication sharedApplication] openURL:[NSURL URLWithString:kTwitterURL]];
-            }
-            break;
-        case 1:
-            if ([title isEqualToString:@"OK"]) {
-                [TestFlight passCheckpoint:@"Opened Instagram"];
-
-                [[UIApplication sharedApplication] openURL:[NSURL URLWithString:kInstagramURL]];
-            }
-            break;
-        case 2:
-            if ([title isEqualToString:@"OK"]) {
-                [TestFlight passCheckpoint:@"Opened Facebook"];
-                
-                [[UIApplication sharedApplication] openURL:[NSURL URLWithString:kFacebookURL]];
-            }
-            break;
-        case 3:
-            if ([title isEqualToString:@"OK"]) {
-                [TestFlight passCheckpoint:@"Opened Forum"];
-
-                [[UIApplication sharedApplication] openURL:[NSURL URLWithString:kForumURL]];
-            }
-            break;
-        default:
-            break;
-    }
-}
-
 @end
