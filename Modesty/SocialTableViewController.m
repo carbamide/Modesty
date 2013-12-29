@@ -12,6 +12,7 @@
 #define kTwitterURL @"https://twitter.com/modesty_mc"
 #define kInstagramURL @"http://instagram.com/degumaster"
 #define kForumURL @"http://www.minecraftmodesty.enjin.com/forum"
+#define kFacebookURL @"https://www.facebook.com/minecraftmodesty"
 
 @interface SocialTableViewController ()
 
@@ -72,7 +73,7 @@
 {
     switch (section) {
         case 0:
-            return 2;
+            return 3;
             break;
         case 1:
             return 1;
@@ -98,6 +99,9 @@
                     [[cell textLabel] setText:@"Instagram"];
                     [[cell imageView] setImage:[UIImage imageNamed:@"instagram"]];
                     break;
+                case 2:
+                    [[cell textLabel] setText:@"Facebook"];
+                    [[cell imageView] setImage:[UIImage imageNamed:@"facebook"]];
                 default:
                     break;
             }
@@ -137,6 +141,12 @@
                     [instagramAlert show];
                 }
                     break;
+                case 2: {
+                    UIAlertView *facebookAlert = [self leavingModestyAlertWithTag:2];
+                    
+                    [facebookAlert show];
+                }
+                    break;
                 default:
                     break;
             }
@@ -144,7 +154,7 @@
         case 1:
             switch ([indexPath row]) {
                 case 0: {
-                    UIAlertView *forumAlert = [self leavingModestyAlertWithTag:2];
+                    UIAlertView *forumAlert = [self leavingModestyAlertWithTag:3];
                     
                     [forumAlert show];
                 }
@@ -177,12 +187,19 @@
             break;
         case 1:
             if ([title isEqualToString:@"OK"]) {
-                [TestFlight passCheckpoint:@"Opened Facebook"];
+                [TestFlight passCheckpoint:@"Opened Instagram"];
 
                 [[UIApplication sharedApplication] openURL:[NSURL URLWithString:kInstagramURL]];
             }
             break;
         case 2:
+            if ([title isEqualToString:@"OK"]) {
+                [TestFlight passCheckpoint:@"Opened Facebook"];
+                
+                [[UIApplication sharedApplication] openURL:[NSURL URLWithString:kFacebookURL]];
+            }
+            break;
+        case 3:
             if ([title isEqualToString:@"OK"]) {
                 [TestFlight passCheckpoint:@"Opened Forum"];
 

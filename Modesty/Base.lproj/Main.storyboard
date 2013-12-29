@@ -190,7 +190,7 @@
         <scene sceneID="EAd-LY-H0E">
             <objects>
                 <navigationController definesPresentationContext="YES" id="TeJ-95-U0F" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Social" image="twitter" id="lVO-9U-2r5"/>
+                    <tabBarItem key="tabBarItem" title="Social" image="social_tabbar" id="lVO-9U-2r5"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" prompted="NO"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="hIU-vM-I08">
                         <rect key="frame" x="0.0" y="0.0" width="0.0" height="44"/>
@@ -268,7 +268,7 @@
     <resources>
         <image name="group" width="25" height="25"/>
         <image name="info" width="25" height="25"/>
-        <image name="twitter" width="25" height="25"/>
+        <image name="social_tabbar" width="25" height="25"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

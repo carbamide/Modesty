@@ -64,6 +64,13 @@
     return @"Currently Playing";
 }
 
+-(NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section
+{
+    Server *serverInformation = [[[DataMapper sharedInstance] modestyInfo] serverInformation];
+
+    return [NSString stringWithFormat:@"%@ of %@ max players", [serverInformation players], [serverInformation maxPlayers]];
+
+}
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return [[[[DataMapper sharedInstance] modestyInfo] players] count];
