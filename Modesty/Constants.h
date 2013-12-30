@@ -32,6 +32,7 @@ static NSString *const kApiHostPort = @"HostPort";
 static NSString *const kModestyUpdateFinished = @"finished_updating_information";
 static NSString *const kModestyUp = @"up";
 static NSString *const kModestyDown = @"down";
+static NSString *const kUpdating = @"modesty_updating";
 
 #pragma mark -
 #pragma mark - Images

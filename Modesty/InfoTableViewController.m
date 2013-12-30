@@ -43,7 +43,6 @@
         UIBarButtonItem *loadingView = [[UIBarButtonItem alloc] initWithCustomView:activityView];
         [[self navigationItem] setRightBarButtonItem:loadingView];
     }
-    
 }
 
 -(void)viewDidAppear:(BOOL)animated

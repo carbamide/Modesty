@@ -63,6 +63,12 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(modestyUp) name:kModestyUp object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(modestyDown) name:kModestyDown object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadTable) name:kModestyUpdateFinished object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updatingHandler) name:kUpdating object:nil];
+}
+
+-(void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 #pragma mark -
@@ -70,22 +76,26 @@
 
 -(void)modestyUp
 {
-    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-    [button setFrame:CGRectMake(0, 0, 20, 20)];
-    [button setImage:[UIImage imageNamed:kModestyUpImage] forState:UIControlStateNormal];
-    [button addTarget:self action:@selector(modestyUpAlert) forControlEvents:UIControlEventTouchUpInside];
-
-    [[self navigationItem] setRightBarButtonItem:[[UIBarButtonItem alloc] initWithCustomView:button]];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+        [button setFrame:CGRectMake(0, 0, 20, 20)];
+        [button setImage:[UIImage imageNamed:kModestyUpImage] forState:UIControlStateNormal];
+        [button addTarget:self action:@selector(modestyUpAlert) forControlEvents:UIControlEventTouchUpInside];
+        
+        [[self navigationItem] setRightBarButtonItem:[[UIBarButtonItem alloc] initWithCustomView:button]];
+    });
 }
 
 -(void)modestyDown
 {
-    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-    [button setFrame:CGRectMake(0, 0, 20, 20)];
-    [button setImage:[UIImage imageNamed:kModestyDownImage] forState:UIControlStateNormal];
-    [button addTarget:self action:@selector(modestyDownAlert) forControlEvents:UIControlEventTouchUpInside];
-    
-    [[self navigationItem] setRightBarButtonItem:[[UIBarButtonItem alloc] initWithCustomView:button]];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+        [button setFrame:CGRectMake(0, 0, 20, 20)];
+        [button setImage:[UIImage imageNamed:kModestyDownImage] forState:UIControlStateNormal];
+        [button addTarget:self action:@selector(modestyDownAlert) forControlEvents:UIControlEventTouchUpInside];
+        
+        [[self navigationItem] setRightBarButtonItem:[[UIBarButtonItem alloc] initWithCustomView:button]];
+    });
 }
 
 -(void)reloadTable
@@ -122,6 +132,25 @@
                       cancelButtonTitle:@"OK"
                       otherButtonTitles:nil, nil] show];
     
+}
+
+-(void)updatingHandler
+{
+    dispatch_async(dispatch_get_main_queue(), ^{
+        UIActivityIndicatorView *activityView = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(0, 0, 25, 25)];
+        
+        [activityView sizeToFit];
+        [activityView setAutoresizingMask:(UIViewAutoresizingFlexibleLeftMargin |
+                                           UIViewAutoresizingFlexibleRightMargin |
+                                           UIViewAutoresizingFlexibleTopMargin |
+                                           UIViewAutoresizingFlexibleBottomMargin)];
+        
+        [activityView setActivityIndicatorViewStyle:UIActivityIndicatorViewStyleWhite];
+        [activityView startAnimating];
+        
+        UIBarButtonItem *loadingView = [[UIBarButtonItem alloc] initWithCustomView:activityView];
+        [[self navigationItem] setRightBarButtonItem:loadingView];
+    });
 }
 
 -(BOOL)contains:(NSString *)searchTerm on:(NSString *)searchText

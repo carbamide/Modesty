@@ -34,7 +34,6 @@
     if (self = [super init]) {
         _pingTimer = [NSTimer scheduledTimerWithTimeInterval:10 target:self selector:@selector(pingModesty) userInfo:nil repeats:YES];
         [self pingModesty];
-        [self staffListing];
     }
     
     return self;
@@ -95,7 +94,11 @@
 }
 -(void)refreshInformation
 {
+    [[NSNotificationCenter defaultCenter] postNotificationName:kUpdating object:nil];
+    
     [self setUpdating:YES];
+    
+    [self staffListing];
     
     NSMutableURLRequest *urlRequest = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:kAPIURL]];
     

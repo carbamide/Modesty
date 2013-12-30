@@ -43,7 +43,7 @@
 
 - (void)applicationWillEnterForeground:(UIApplication *)application
 {
-    
+    [[DataMapper sharedInstance] refreshInformation];
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application
