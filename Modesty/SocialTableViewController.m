@@ -9,12 +9,8 @@
 #import "SocialTableViewController.h"
 #import "TestFlight.h"
 
-#define kTwitterURL @"https://twitter.com/modesty_mc"
-#define kInstagramURL @"http://instagram.com/degumaster"
-#define kForumURL @"http://www.minecraftmodesty.enjin.com/forum"
-#define kFacebookURL @"https://www.facebook.com/minecraftmodesty"
-
 @interface SocialTableViewController ()
+
 @end
 
 @implementation SocialTableViewController
@@ -190,19 +186,19 @@
                 case 0: {
                     [TestFlight passCheckpoint:@"Opened Planetminecraft"];
                     
-                    [self initializeBrowserWithURL:[NSURL URLWithString:@"http://www.planetminecraft.com/server/modesty/"]];
+                    [self initializeBrowserWithURL:[NSURL URLWithString:kPlanetMinecraft]];
                 }
                     break;
                 case 1: {
                     [TestFlight passCheckpoint:@"Opened Minecraftservers.org"];
                     
-                    [self initializeBrowserWithURL:[NSURL URLWithString:@"http://minecraftservers.org/server/6465"]];
+                    [self initializeBrowserWithURL:[NSURL URLWithString:kMinecraftServersOrg]];
                 }
                     break;
                 case 2: {
                     [TestFlight passCheckpoint:@"Opened Minecraft Servers List"];
                     
-                    [self initializeBrowserWithURL:[NSURL URLWithString:@"http://minecraft-server-list.com/server/128633/vote/"]];
+                    [self initializeBrowserWithURL:[NSURL URLWithString:kMinecraftServerList]];
                 }
                     break;
                 default:

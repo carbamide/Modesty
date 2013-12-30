@@ -13,6 +13,7 @@
 #import "TestFlight.h"
 
 @interface InfoTableViewController ()
+
 @end
 
 @implementation InfoTableViewController

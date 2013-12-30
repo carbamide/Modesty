@@ -69,6 +69,12 @@ static NSString *const kDisguiseCraft = @"http://dev.bukkit.org/bukkit-plugins/d
 static NSString *const kMcmmo = @"http://dev.bukkit.org/bukkit-plugins/mcmmo/";
 static NSString *const kModestyHomepage = @"http://www.minecraftmodesty.enjin.com";
 static NSString *const kStaffJson = @"http://safe-retreat-6833.herokuapp.com/users.json";
+static NSString *const kPlanetMinecraft = @"http://www.planetminecraft.com/server/modesty/";
+static NSString *const kMinecraftServersOrg = @"http://minecraftservers.org/server/6465";
+static NSString *const kMinecraftServerList = @"http://minecraft-server-list.com/server/128633/vote/";
+static NSString *const kFacebookURL = @"https://www.facebook.com/minecraftmodesty";
+
+#define kMinotarHelper @"https://minotar.net/helm/%@/30.png"
 
 #pragma mark -
 #pragma mark - Special Usernames

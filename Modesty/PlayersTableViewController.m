@@ -13,8 +13,6 @@
 #import "TestFlight.h"
 #import "Staff.h"
 
-#define kMinotarHelper @"https://minotar.net/helm/%@/30.png"
-
 @interface PlayersTableViewController ()
 /**
  *  This local method gets the user's face as a UIImage and applies that UIImage to the imageView of cell.

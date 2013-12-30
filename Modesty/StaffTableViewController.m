@@ -13,8 +13,6 @@
 #import "TestFlight.h"
 #import "Staff.h"
 
-#define kMinotarHelper @"https://minotar.net/helm/%@/30.png"
-
 @interface StaffTableViewController ()
 
 /**
