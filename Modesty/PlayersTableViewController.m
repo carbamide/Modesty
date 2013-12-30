@@ -139,27 +139,73 @@
 
 -(NSString *)rankForUsername:(NSString *)username
 {
-    
-    for (NSDictionary *staffInfoDict in [[DataMapper sharedInstance] staff]) {
-        if ([username isEqualToString:staffInfoDict[@"username"]]) {
-            if ([staffInfoDict[@"rank"] isEqualToString:kOp]) {
-                return kOp;
-            }
-            else if ([staffInfoDict[@"rank"] isEqualToString:kAdmin]) {
-                return kAdmin;
-            }
-            else if ([staffInfoDict[@"rank"] isEqualToString:kModmin]) {
-                return kModmin;
-            }
-            else if ([staffInfoDict[@"rank"] isEqualToString:kMinimod]) {
-                return kMinimod;
-            }
-            else if ([staffInfoDict[@"rank"] isEqualToString:kMod]) {
-                return kMod;
-            }
+    /*
+     @owners = User.where('rank' => 'Owner')
+     @coowners = User.where('rank' => 'Co-Owner')
+     @queens = User.where('rank' => 'Queen')
+     @ops = User.where('rank' => 'OP')
+     @admins = User.where('rank' => 'Admin')
+     @modmins = User.where('rank' => 'Modmin')
+     @mods = User.where('rank' => 'Mod')
+     @minimods = User.where('rank' => 'Minimod')
+     */
+    NSArray *owners = [[DataMapper sharedInstance] staff][0];
+    NSArray *coowners = [[DataMapper sharedInstance] staff][1];
+    NSArray *queens = [[DataMapper sharedInstance] staff][2];
+    NSArray *ops = [[DataMapper sharedInstance] staff][3];
+    NSArray *admins = [[DataMapper sharedInstance] staff][4];
+    NSArray *modmins = [[DataMapper sharedInstance] staff][5];
+    NSArray *mods = [[DataMapper sharedInstance] staff][6];
+    NSArray *minimods = [[DataMapper sharedInstance] staff][7];
+
+    for (NSDictionary *staffMember in owners) {
+        if ([username isEqualToString:staffMember[@"username"]]) {
+            return kOwner;
         }
     }
     
+    for (NSDictionary *staffMember in coowners) {
+        if ([username isEqualToString:staffMember[@"username"]]) {
+            return kCoOwner;
+        }
+    }
+    
+    for (NSDictionary *staffMember in queens) {
+        if ([username isEqualToString:staffMember[@"username"]]) {
+            return kQueen;
+        }
+    }
+    
+    for (NSDictionary *staffMember in ops) {
+        if ([username isEqualToString:staffMember[@"username"]]) {
+            return kOp;
+        }
+    }
+    
+    for (NSDictionary *staffMember in admins) {
+        if ([username isEqualToString:staffMember[@"username"]]) {
+            return kAdmin;
+        }
+    }
+    
+    for (NSDictionary *staffMember in modmins) {
+        if ([username isEqualToString:staffMember[@"username"]]) {
+            return kModmin;
+        }
+    }
+    
+    for (NSDictionary *staffMember in mods) {
+        if ([username isEqualToString:staffMember[@"username"]]) {
+            return kMod;
+        }
+    }
+    
+    for (NSDictionary *staffMember in minimods) {
+        if ([username isEqualToString:staffMember[@"username"]]) {
+            return kMinimod;
+        }
+    }
+
     return nil;
 }
 
