@@ -57,6 +57,8 @@
         case 1:
             return @"Websites";
             break;
+        case 2:
+            return @"Voting";
         default:
             return nil;
             break;
@@ -65,7 +67,7 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 2;
+    return 3;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -76,6 +78,9 @@
             break;
         case 1:
             return 1;
+            break;
+        case 2:
+            return 3;
             break;
         default:
             return 0;
@@ -109,6 +114,24 @@
             switch ([indexPath row]) {
                 case 0:
                     [[cell textLabel] setText:@"Modesty Forums"];
+                    [[cell imageView] setImage:[UIImage imageNamed:@"modesty"]];
+                    break;
+                default:
+                    break;
+            }
+            break;
+        case 2:
+            switch ([indexPath row]) {
+                case 0:
+                    [[cell textLabel] setText:@"PlanetMinecraft"];
+                    [[cell imageView] setImage:[UIImage imageNamed:@"modesty"]];
+                    break;
+                case 1:
+                    [[cell textLabel] setText:@"Minecraftservers.org"];
+                    [[cell imageView] setImage:[UIImage imageNamed:@"modesty"]];
+                    break;
+                case 2:
+                    [[cell textLabel] setText:@"Minecraft Servers List"];
                     [[cell imageView] setImage:[UIImage imageNamed:@"modesty"]];
                     break;
                 default:
@@ -156,6 +179,30 @@
                     [TestFlight passCheckpoint:@"Opened Forum"];
                     
                     [self initializeBrowserWithURL:[NSURL URLWithString:kForumURL]];
+                }
+                    break;
+                default:
+                    break;
+            }
+            break;
+        case 2:
+            switch ([indexPath row]) {
+                case 0: {
+                    [TestFlight passCheckpoint:@"Opened Planetminecraft"];
+                    
+                    [self initializeBrowserWithURL:[NSURL URLWithString:@"http://www.planetminecraft.com/server/modesty/"]];
+                }
+                    break;
+                case 1: {
+                    [TestFlight passCheckpoint:@"Opened Minecraftservers.org"];
+                    
+                    [self initializeBrowserWithURL:[NSURL URLWithString:@"http://minecraftservers.org/server/6465"]];
+                }
+                    break;
+                case 2: {
+                    [TestFlight passCheckpoint:@"Opened Minecraft Servers List"];
+                    
+                    [self initializeBrowserWithURL:[NSURL URLWithString:@"http://minecraft-server-list.com/server/128633/vote/"]];
                 }
                     break;
                 default:

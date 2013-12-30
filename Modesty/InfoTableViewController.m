@@ -76,7 +76,7 @@
             return 1;
             break;
         case 3:
-            return 2;
+            return 1;
             break;
         default:
             return 0;
@@ -167,11 +167,6 @@
         case 3: {
             switch ([indexPath row]) {
                 case 0: {
-                    [[cell textLabel] setText:@"Server Version"];
-                    [[cell detailTextLabel] setText:[serverInformation version]];
-                }
-                    break;
-                case 1: {
                     [[cell textLabel] setText:@"Plugins"];
                     [[cell detailTextLabel] setText:[NSString string]];
                     
@@ -204,7 +199,7 @@
         }
     }
     else if ([indexPath section] == 3) {
-        if ([indexPath row] == 1) {
+        if ([indexPath row] == 0) {
             [TestFlight passCheckpoint:@"Clicked Show Plugins"];
             [self performSegueWithIdentifier:kShowPlugins sender:self];
         }
