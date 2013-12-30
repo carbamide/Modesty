@@ -8,6 +8,7 @@
 
 #import "DataMapper.h"
 #import "ModestyInfo.h"
+#import "Staff.h"
 
 @interface DataMapper ()
 @property (strong, nonatomic) NSTimer *pingTimer;
@@ -54,21 +55,27 @@
         
         NSError *parsingError = nil;
         
-        NSDictionary *responseDict = [NSJSONSerialization JSONObjectWithData:data options:0 error:&parsingError];
-        
-        if (parsingError) {
-            NSLog(@"An error has occurred parsing the json response.");
+        if (data) {
+            NSDictionary *responseDict = [NSJSONSerialization JSONObjectWithData:data options:0 error:&parsingError];
+            
+            if (parsingError) {
+                NSLog(@"An error has occurred parsing the json response.");
+            }
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                if ([responseDict[@"status"] isEqualToString:kModestyUp]) {
+                    [[NSNotificationCenter defaultCenter] postNotificationName:kModestyUp object:nil];
+                }
+                else {
+                    [[NSNotificationCenter defaultCenter] postNotificationName:kModestyDown object:nil];
+                }
+            });
+            
         }
-        
-        dispatch_async(dispatch_get_main_queue(), ^{
-            if ([responseDict[@"status"] isEqualToString:kModestyUp]) {
-                [[NSNotificationCenter defaultCenter] postNotificationName:kModestyUp object:nil];
-            }
-            else {
-                [[NSNotificationCenter defaultCenter] postNotificationName:kModestyDown object:nil];
-            }
-        });
-
+        else {
+            [[NSNotificationCenter defaultCenter] postNotificationName:kModestyDown object:nil];
+            [[NSNotificationCenter defaultCenter] postNotificationName:kModestyUpdateFinished object:nil];
+        }
     }];
 }
 
@@ -85,13 +92,19 @@
         
         NSError *parsingError = nil;
         
-        NSArray *responseArray = [NSJSONSerialization JSONObjectWithData:data options:0 error:&parsingError];
-        
-        if (parsingError) {
-            NSLog(@"An error has occurred parsing the staff json response.");
+        if (data) {
+            NSArray *responseArray = [NSJSONSerialization JSONObjectWithData:data options:0 error:&parsingError];
+            
+            if (parsingError) {
+                NSLog(@"An error has occurred parsing the staff json response.");
+            }
+            
+            [self mapToStaff:responseArray];
         }
-        
-        [self setStaff:responseArray];
+        else {
+            [[NSNotificationCenter defaultCenter] postNotificationName:kModestyDown object:nil];
+            [[NSNotificationCenter defaultCenter] postNotificationName:kModestyUpdateFinished object:nil];
+        }
     }];
 }
 
@@ -116,15 +129,21 @@
         
         NSError *jsonError = nil;
         
-        NSDictionary *modestyDict = [NSJSONSerialization JSONObjectWithData:data options:0 error:&jsonError];
-        
-        if (jsonError) {
-            NSLog(@"An error has occurred parsing the json.");
+        if (data) {
+            NSDictionary *modestyDict = [NSJSONSerialization JSONObjectWithData:data options:0 error:&jsonError];
             
-            return;
+            if (jsonError) {
+                NSLog(@"An error has occurred parsing the json.");
+                
+                return;
+            }
+            
+            [self mapToModestyInfo:modestyDict];
         }
-        
-        [self mapToModestyInfo:modestyDict];
+        else {
+            [[NSNotificationCenter defaultCenter] postNotificationName:kModestyDown object:nil];
+            [[NSNotificationCenter defaultCenter] postNotificationName:kModestyUpdateFinished object:nil];
+        }
     }];
 }
 
@@ -172,6 +191,26 @@
     [self setUpdating:NO];
     
     [[NSNotificationCenter defaultCenter] postNotificationName:kModestyUpdateFinished object:nil];
+}
+
+-(void)mapToStaff:(NSArray *)staffArray
+{
+    NSMutableArray *tempStaffArray = [NSMutableArray array];
+    
+    for (NSArray *array in staffArray) {
+        for (NSDictionary *dict in array) {
+            Staff *staffMember = [[Staff alloc] init];
+            
+            [staffMember setStaffId:dict[@"id"]];
+            [staffMember setUsername:dict[@"username"]];
+            [staffMember setRank:dict[@"rank"]];
+            [staffMember setUrl:dict[@"url"]];
+            
+            [tempStaffArray addObject:staffMember];
+        }
+    }
+    
+    [self setStaff:tempStaffArray];
 }
 
 -(BOOL)isUpdating

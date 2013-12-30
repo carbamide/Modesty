@@ -157,6 +157,9 @@
                     if (serverInformation) {
                         [[cell detailTextLabel] setText:[NSString stringWithFormat:@"%@ of %@ max players", [serverInformation players], [serverInformation maxPlayers]]];
                     }
+                    else {
+                        [[cell detailTextLabel] setText:[NSString string]];
+                    }
                 }
                     break;
                 default:
@@ -201,7 +204,19 @@
     else if ([indexPath section] == 3) {
         if ([indexPath row] == 0) {
             [TestFlight passCheckpoint:@"Clicked Show Plugins"];
-            [self performSegueWithIdentifier:kShowPlugins sender:self];
+            
+            if ([[[[DataMapper sharedInstance] modestyInfo] serverInformation] plugins]) {
+                [self performSegueWithIdentifier:kShowPlugins sender:self];
+            }
+            else {
+                UIAlertView *noInfoAlert = [[UIAlertView alloc] initWithTitle:@"Oh No!"
+                                                                      message:@"Something must have gone wrong; there's no plugin information.  Please try again later."
+                                                                     delegate:nil
+                                                            cancelButtonTitle:@"OK"
+                                                            otherButtonTitles:nil, nil];
+                
+                [noInfoAlert show];
+            }
         }
     }
     

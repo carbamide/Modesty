@@ -26,6 +26,21 @@
  */
 -(void)modestyDownAlert;
 
+/**
+ *  Show modesty up image in the navigation bar
+ */
+-(void)modestyUp;
+
+/**
+ *  Show Modesty down image in the navigation bar
+ */
+-(void)modestyDown;
+
+/**
+ *  Reload the table on the main thread and tell the UIRefreshControl to stop animating
+ */
+-(void)reloadTable;
+
 @end
 
 @implementation ModestyTableViewController
@@ -127,7 +142,7 @@
 -(void)modestyDownAlert
 {
     [[[UIAlertView alloc] initWithTitle:@"Modesty is Down!"
-                                message:@"Modesty appears to be down!  :-("
+                                message:@"Modesty appears to be down!  :-(\nThe information displayed may not be current or correct."
                                delegate:nil
                       cancelButtonTitle:@"OK"
                       otherButtonTitles:nil, nil] show];

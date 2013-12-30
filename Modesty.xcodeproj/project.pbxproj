@@ -43,6 +43,7 @@
 		29994448186A46D20038D92F /* ModestyTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29994447186A46D20038D92F /* ModestyTableViewController.m */; };
 		2999444B186A48610038D92F /* SocialTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2999444A186A48610038D92F /* SocialTableViewController.m */; };
 		2999444F186A71CF0038D92F /* PluginsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2999444E186A71CF0038D92F /* PluginsTableViewController.m */; };
+		29BCC4841871E23F009D91A3 /* Staff.m in Sources */ = {isa = PBXBuildFile; fileRef = 29BCC4831871E23F009D91A3 /* Staff.m */; };
 		29CB05A7186DF75500711876 /* Minecraft Evenings.otf in Resources */ = {isa = PBXBuildFile; fileRef = 29CB05A6186DF75500711876 /* Minecraft Evenings.otf */; };
 		29CB05AF186F668000711876 /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 29CB05A9186F668000711876 /* libTestFlight.a */; };
 		29CB05B0186F668100711876 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 29CB05AA186F668000711876 /* README.md */; };
@@ -124,6 +125,8 @@
 		2999444C186A63100038D92F /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		2999444D186A71CF0038D92F /* PluginsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PluginsTableViewController.h; sourceTree = "<group>"; };
 		2999444E186A71CF0038D92F /* PluginsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PluginsTableViewController.m; sourceTree = "<group>"; };
+		29BCC4821871E23F009D91A3 /* Staff.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Staff.h; sourceTree = "<group>"; };
+		29BCC4831871E23F009D91A3 /* Staff.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Staff.m; sourceTree = "<group>"; };
 		29CB05A6186DF75500711876 /* Minecraft Evenings.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Minecraft Evenings.otf"; sourceTree = "<group>"; };
 		29CB05A9186F668000711876 /* libTestFlight.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libTestFlight.a; sourceTree = "<group>"; };
 		29CB05AA186F668000711876 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
@@ -298,6 +301,8 @@
 				2999443B186A098A0038D92F /* Server.m */,
 				29994440186A0A660038D92F /* ModestyInfo.h */,
 				29994441186A0A660038D92F /* ModestyInfo.m */,
+				29BCC4821871E23F009D91A3 /* Staff.h */,
+				29BCC4831871E23F009D91A3 /* Staff.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -487,6 +492,7 @@
 				29994448186A46D20038D92F /* ModestyTableViewController.m in Sources */,
 				2999444F186A71CF0038D92F /* PluginsTableViewController.m in Sources */,
 				2999440C186A08880038D92F /* main.m in Sources */,
+				29BCC4841871E23F009D91A3 /* Staff.m in Sources */,
 				2999443C186A098A0038D92F /* Server.m in Sources */,
 				29979F09186FDB16004ECB95 /* SVWebViewControllerActivity.m in Sources */,
 				2999444B186A48610038D92F /* SocialTableViewController.m in Sources */,
