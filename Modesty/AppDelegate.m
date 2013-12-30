@@ -15,7 +15,9 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     [TestFlight takeOff:kTestFlightApiURLKey];
-
+    
+    [[UIApplication sharedApplication] registerForRemoteNotificationTypes:(UIRemoteNotificationTypeAlert|UIRemoteNotificationTypeSound)];
+    
     if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0) {
         [[self window] setTintColor:UIColorFromRGB(0x299a24)];
         
@@ -29,6 +31,55 @@
     [[DataMapper sharedInstance] refreshInformation];
     
     return YES;
+}
+
+-(void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
+{
+    NSString *token = [[deviceToken description] stringByTrimmingCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"<>"]];
+    token = [token stringByReplacingOccurrencesOfString:@" " withString:@""];
+    
+    NSDictionary *jsonDict = @{@"token": token};
+
+    NSLog(@"%@", token);
+    
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:@"http://safe-retreat-6833.herokuapp.com/device_tokens"]];
+    
+    NSError *error = nil;
+    
+    [request setHTTPMethod:@"POST"];
+    [request setHTTPBody:[NSJSONSerialization dataWithJSONObject:jsonDict options:0 error:&error]];
+    [request setValue:@"application/json" forHTTPHeaderField:@"accept"];
+    [request setValue:@"application/json" forHTTPHeaderField:@"content-type"];
+    
+    if (error) {
+        NSLog(@"An error has occurred during the creation of the json data object for sending tokens");
+    }
+                                                                             
+    [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
+        if (data) {
+            NSLog(@"The token has been created serverside");
+        }
+        else {
+            NSLog(@"An error has occurred while creating the token serverside.");
+        }
+    }];
+}
+
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo
+{
+    NSString *alertMsg = nil;
+    
+    if ([[userInfo objectForKey:@"aps"] objectForKey:@"alert"] != NULL) {
+        alertMsg = [[userInfo objectForKey:@"aps"] objectForKey:@"alert"];
+    }
+    
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Modesty"
+                                                    message:alertMsg
+                                                   delegate:nil
+                                          cancelButtonTitle:@"OK"
+                                          otherButtonTitles:nil];
+    
+    [alert show];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application

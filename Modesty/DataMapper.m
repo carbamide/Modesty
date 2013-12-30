@@ -149,46 +149,48 @@
 
 -(void)mapToModestyInfo:(NSDictionary *)dict
 {
-    ModestyInfo *modestyInfo = [[ModestyInfo alloc] init];
-    
-    NSMutableArray *playersArray = [NSMutableArray array];
-    
-    for (NSString *playerName in dict[@"players"]) {
-        Player *tempPlayer = [[Player alloc] init];
+    if (dict) {
+        ModestyInfo *modestyInfo = [[ModestyInfo alloc] init];
         
-        [tempPlayer setUsername:playerName];
+        NSMutableArray *playersArray = [NSMutableArray array];
         
-        [playersArray addObject:tempPlayer];
+        for (NSString *playerName in dict[@"players"]) {
+            Player *tempPlayer = [[Player alloc] init];
+            
+            [tempPlayer setUsername:playerName];
+            
+            [playersArray addObject:tempPlayer];
+        }
+        
+        [modestyInfo setPlayers:playersArray];
+        
+        NSDictionary *tempInfoDict = dict[@"info"];
+        
+        Server *tempServer = [[Server alloc] init];
+        
+        NSMutableArray *tempPluginArray = [NSMutableArray array];
+        
+        for (NSString *plugin in tempInfoDict[@"Plugins"]) {
+            [tempPluginArray addObject:plugin];
+        }
+        
+        [tempServer setPlugins:tempPluginArray];
+        [tempServer setHostIp:tempInfoDict[@"HostIp"]];
+        [tempServer setVersion:tempInfoDict[@"Version"]];
+        [tempServer setGameType:tempInfoDict[@"GameType"]];
+        [tempServer setSoftware:tempInfoDict[@"Software"]];
+        [tempServer setHostName:tempInfoDict[@"HostName"]];
+        [tempServer setMaxPlayers:tempInfoDict[@"MaxPlayers"]];
+        [tempServer setMap:tempInfoDict[@"Map"]];
+        [tempServer setPlayers:tempInfoDict[@"Players"]];
+        [tempServer setHostPort:tempInfoDict[@"HostPort"]];
+        
+        [modestyInfo setServerInformation:tempServer];
+        
+        [self setModestyInfo:modestyInfo];
+        
+        [self setUpdating:NO];
     }
-    
-    [modestyInfo setPlayers:playersArray];
-    
-    NSDictionary *tempInfoDict = dict[@"info"];
-    
-    Server *tempServer = [[Server alloc] init];
-    
-    NSMutableArray *tempPluginArray = [NSMutableArray array];
-    
-    for (NSString *plugin in tempInfoDict[@"Plugins"]) {
-        [tempPluginArray addObject:plugin];
-    }
-    
-    [tempServer setPlugins:tempPluginArray];
-    [tempServer setHostIp:tempInfoDict[@"HostIp"]];
-    [tempServer setVersion:tempInfoDict[@"Version"]];
-    [tempServer setGameType:tempInfoDict[@"GameType"]];
-    [tempServer setSoftware:tempInfoDict[@"Software"]];
-    [tempServer setHostName:tempInfoDict[@"HostName"]];
-    [tempServer setMaxPlayers:tempInfoDict[@"MaxPlayers"]];
-    [tempServer setMap:tempInfoDict[@"Map"]];
-    [tempServer setPlayers:tempInfoDict[@"Players"]];
-    [tempServer setHostPort:tempInfoDict[@"HostPort"]];
-    
-    [modestyInfo setServerInformation:tempServer];
-    
-    [self setModestyInfo:modestyInfo];
-    
-    [self setUpdating:NO];
     
     [[NSNotificationCenter defaultCenter] postNotificationName:kModestyUpdateFinished object:nil];
 }

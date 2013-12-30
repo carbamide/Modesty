@@ -47,6 +47,8 @@ static NSString *const kSocialCell = @"SocialCell";
 static NSString *const kInfoCell = @"InfoCell";
 static NSString *const kPlayerCell = @"ModestyCell";
 static NSString *const kPluginCell = @"PluginCell";
+static NSString *const kNewsCell = @"NewsCell";
+static NSString *const kNewsDetailCell = @"NewsDetailCell";
 
 #pragma mark -
 #pragma mark - Segues
@@ -73,6 +75,7 @@ static NSString *const kPlanetMinecraft = @"http://www.planetminecraft.com/serve
 static NSString *const kMinecraftServersOrg = @"http://minecraftservers.org/server/6465";
 static NSString *const kMinecraftServerList = @"http://minecraft-server-list.com/server/128633/vote/";
 static NSString *const kFacebookURL = @"https://www.facebook.com/minecraftmodesty";
+static NSString *const kRssFeed = @"http://www.minecraftmodesty.enjin.com/home/m/7353456/rss/true";
 
 #define kMinotarHelper @"https://minotar.net/helm/%@/30.png"
 
