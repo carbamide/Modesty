@@ -89,6 +89,9 @@
         
         [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
     }
+    else {
+        [[cell imageView] setImage:nil];
+    }
     
     Player *tempPlayer = [[[DataMapper sharedInstance] modestyInfo] players][[indexPath row]];
     

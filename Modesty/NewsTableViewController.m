@@ -42,13 +42,6 @@
     
     [self setParsedItems:[NSMutableArray array]];
     [self setItemsToDisplay:[NSArray array]];
-	
-	// Refresh button
-    
-    [[self navigationItem] setRightBarButtonItem:[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh
-                                                                                               target:self
-                                                                                               action:@selector(refresh)]];
-    
 
 	NSURL *feedURL = [NSURL URLWithString:kRssFeed];
     

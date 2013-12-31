@@ -74,6 +74,9 @@
         
         [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
     }
+    else {
+        [[cell imageView] setImage:nil];
+    }
     
     Staff *staffMember = [[DataMapper sharedInstance] staff][[indexPath row]];
     
