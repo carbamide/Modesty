@@ -170,8 +170,10 @@
         
         NSMutableArray *tempPluginArray = [NSMutableArray array];
         
-        for (NSString *plugin in tempInfoDict[@"Plugins"]) {
-            [tempPluginArray addObject:plugin];
+        if (tempInfoDict[@"Plugins"] && tempInfoDict[@"Plugins"] != [NSNull null]) {
+            for (NSString *plugin in tempInfoDict[@"Plugins"]) {
+                [tempPluginArray addObject:plugin];
+            }
         }
         
         [tempServer setPlugins:tempPluginArray];
