@@ -26,6 +26,11 @@
  */
 -(void)getUserImage:(NSString *)username forCell:(UITableViewCell *)cell;
 
+/**
+ *  Cache to store player avatars
+ */
+@property (strong, nonatomic) NSCache *imageCache;
+
 @end
 
 @implementation StaffTableViewController
@@ -84,8 +89,13 @@
     
     [[cell detailTextLabel] setText:[staffMember rank]];
     
-    [self getUserImage:[staffMember username] forCell:cell];
-    
+    if ([[self imageCache] objectForKey:[staffMember username]]) {
+        [[cell imageView] setImage:[[self imageCache] objectForKey:[staffMember username]]];
+    }
+    else {
+        [self getUserImage:[staffMember username] forCell:cell];
+    }
+        
     return cell;
 }
 
@@ -110,8 +120,11 @@
         
         if (image) {
             dispatch_async(dispatch_get_main_queue(), ^{
-                [[cell imageView] setImage:image];
+                [[self imageCache] setObject:image forKey:username];
+                
                 [[cell imageView] setNeedsLayout];
+                [[cell imageView] setImage:image];
+                
                 [cell setNeedsLayout];
             });
         }

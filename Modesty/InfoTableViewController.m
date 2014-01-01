@@ -192,7 +192,20 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if ([indexPath section] == 1) {
+    if ([indexPath section] == 0) {
+        UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
+        
+        [pasteboard setString:@"108.174.48.200:25665"];
+        
+        UIAlertView *copiedAlert = [[UIAlertView alloc] initWithTitle:@"Copied"
+                                                              message:@"The server address and port have been copied to your clipboard.  You can now paste the address anywhere you like."
+                                                             delegate:nil
+                                                    cancelButtonTitle:@"OK"
+                                                    otherButtonTitles:nil, nil];
+        
+        [copiedAlert show];
+    }
+    else if ([indexPath section] == 1) {
         if ([indexPath row] == 0) {
             [self performSegueWithIdentifier:kShowStaff sender:self];
         }

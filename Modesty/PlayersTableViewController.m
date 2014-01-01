@@ -34,6 +34,11 @@
  */
 -(NSString *)rankForUsername:(NSString *)username;
 
+/**
+ *  Cache to store player avatars
+ */
+@property (strong, nonatomic) NSCache *imageCache;
+
 @end
 
 @implementation PlayersTableViewController
@@ -44,6 +49,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    [self setImageCache:[[NSCache alloc] init]];
     
     [self setTitle:@"Players"];
     
@@ -66,7 +73,7 @@
 -(NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section
 {
     Server *serverInformation = [[[DataMapper sharedInstance] modestyInfo] serverInformation];
-
+    
     if (serverInformation) {
         return [NSString stringWithFormat:@"%@ of %@ max players", [serverInformation players], [serverInformation maxPlayers]];
     }
@@ -110,7 +117,12 @@
         [[cell detailTextLabel] setText:[self rankForUsername:[tempPlayer username]]];
     }
     
-    [self getUserImage:[tempPlayer username] forCell:cell];
+    if ([[self imageCache] objectForKey:[tempPlayer username]]) {
+        [[cell imageView] setImage:[[self imageCache] objectForKey:[tempPlayer username]]];
+    }
+    else {
+        [self getUserImage:[tempPlayer username] forCell:cell];
+    }
     
     return cell;
 }
@@ -118,7 +130,7 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [TestFlight passCheckpoint:@"Clicked a username in Players Controller"];
-
+    
     [[[self tableView] cellForRowAtIndexPath:indexPath] setSelected:NO animated:YES];
 }
 
@@ -136,8 +148,11 @@
         
         if (image) {
             dispatch_async(dispatch_get_main_queue(), ^{
-                [[cell imageView] setImage:image];
+                [[self imageCache] setObject:image forKey:username];
+                
                 [[cell imageView] setNeedsLayout];
+                [[cell imageView] setImage:image];
+                
                 [cell setNeedsLayout];
             });
         }
