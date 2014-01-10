@@ -91,47 +91,40 @@
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{    
+{
     [[tableView cellForRowAtIndexPath:indexPath] setSelected:NO animated:YES];
     
-    switch ([indexPath row]) {
-        case 0:
-            [TestFlight passCheckpoint:@"Opened XPBanker"];
-            
-            [self initializeBrowserWithURL:[NSURL URLWithString:kXpBanker]];
-            
-            break;
-        case 1:
-            [TestFlight passCheckpoint:@"Opened CaptureCraft"];
-            
-            [self initializeBrowserWithURL:[NSURL URLWithString:kCaptureCraft]];
-            
-            break;
-        case 2:
-            [TestFlight passCheckpoint:@"Opened DisguiseCraft"];
-            
-            [self initializeBrowserWithURL:[NSURL URLWithString:kDisguiseCraft]];
-            
-            break;
-        case 3:
-            [TestFlight passCheckpoint:@"Opened Mcmmo"];
-            
-            [self initializeBrowserWithURL:[NSURL URLWithString:kMcmmo]];
-            
-            break;
-        case 4: {
-            UIAlertView *secretSauce = [[UIAlertView alloc] initWithTitle:@"Secret Sauce!"
-                                                                  message:@"Part of what makes Modesty so great is the secret sauce of plugins that have created such a great environment for us to enjoy!  Come check it out!"
-                                                                 delegate:self
-                                                        cancelButtonTitle:@"Cancel"
-                                                        otherButtonTitles:@"OK", nil];
-            
-            [secretSauce setTag:0];
-            [secretSauce show];
-        }
-            break;
-        default:
-            break;
+    NSString *cellTitle = [[[tableView cellForRowAtIndexPath:indexPath] textLabel] text];
+    
+    if ([self contains:@"XPBanker" on:cellTitle]) {
+        [TestFlight passCheckpoint:@"Opened XPBanker"];
+        
+        [self initializeBrowserWithURL:[NSURL URLWithString:kXpBanker]];
+    }
+    else if ([self contains:@"CaptureCraft" on:cellTitle]) {
+        [TestFlight passCheckpoint:@"Opened CaptureCraft"];
+        
+        [self initializeBrowserWithURL:[NSURL URLWithString:kCaptureCraft]];
+    }
+    else if ([self contains:@"DisguiseCraft" on:cellTitle]) {
+        [TestFlight passCheckpoint:@"Opened DisguiseCraft"];
+        
+        [self initializeBrowserWithURL:[NSURL URLWithString:kDisguiseCraft]];
+    }
+    else if ([self contains:@"mcMMO" on:cellTitle]) {
+        [TestFlight passCheckpoint:@"Opened Mcmmo"];
+        
+        [self initializeBrowserWithURL:[NSURL URLWithString:kMcmmo]];
+    }
+    else {
+        UIAlertView *secretSauce = [[UIAlertView alloc] initWithTitle:@"Secret Sauce!"
+                                                              message:@"Part of what makes Modesty so great is the secret sauce of plugins that have created such a great environment for us to enjoy!  Come check it out!"
+                                                             delegate:self
+                                                    cancelButtonTitle:@"Cancel"
+                                                    otherButtonTitles:@"OK", nil];
+        
+        [secretSauce setTag:0];
+        [secretSauce show];
     }
 }
 
