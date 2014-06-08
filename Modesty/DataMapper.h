@@ -44,6 +44,11 @@
 -(void)refreshInformation;
 
 /**
+ * Check modesty status.
+ */
+-(void)pingModesty;
+
+/**
  *  Indicates whether the local information is currently updating from the middle-tier
  *
  *  @return BOOL value.

@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5037" systemVersion="13B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="8YX-ce-x5E">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6154.17" systemVersion="14A238x" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="8YX-ce-x5E">
     <dependencies>
-        <deployment defaultVersion="1552" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6153.11"/>
     </dependencies>
     <scenes>
         <!--Tab Bar Controller-->
@@ -26,18 +25,19 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FNP-y4-bzi" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="132" y="180"/>
+            <point key="canvasLocation" x="198" y="152.11267605633802"/>
         </scene>
         <!--Info Table View Controller - Root View Controller-->
         <scene sceneID="12t-Vc-g26">
             <objects>
                 <tableViewController id="dnk-bR-oxx" customClass="InfoTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="Dsb-le-LXy">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="InfoCell" textLabel="keb-fw-Y2q" detailTextLabel="59T-RN-dL5" style="IBUITableViewCellStyleValue1" id="7AQ-Wd-ZFP">
+                            <tableViewCell contentMode="scaleToFill" ambiguous="YES" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="InfoCell" textLabel="keb-fw-Y2q" detailTextLabel="59T-RN-dL5" style="IBUITableViewCellStyleValue1" id="7AQ-Wd-ZFP">
                                 <rect key="frame" x="0.0" y="119" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7AQ-Wd-ZFP" id="8xY-Il-Yue">
@@ -65,24 +65,25 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Root View Controller" id="3n3-pD-Y1D"/>
                     <connections>
-                        <segue destination="jjh-Xk-A6Y" kind="push" identifier="ShowPlugins" id="Cj5-Q1-1q2"/>
-                        <segue destination="VNn-FJ-6yY" kind="push" identifier="ShowStaff" id="ymX-43-LJG"/>
+                        <segue destination="jjh-Xk-A6Y" kind="show" identifier="ShowPlugins" id="Cj5-Q1-1q2"/>
+                        <segue destination="VNn-FJ-6yY" kind="show" identifier="ShowStaff" id="ymX-43-LJG"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6uf-Rb-bdX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="932" y="-215"/>
+            <point key="canvasLocation" x="1398" y="-181.69014084507043"/>
         </scene>
         <!--Plugins Table View Controller-->
         <scene sceneID="IEd-v7-EXo">
             <objects>
                 <tableViewController id="jjh-Xk-A6Y" customClass="PluginsTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="ip6-Ht-6Tl">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PluginCell" id="kYw-yK-NJb">
+                            <tableViewCell contentMode="scaleToFill" ambiguous="YES" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PluginCell" id="kYw-yK-NJb">
                                 <rect key="frame" x="0.0" y="119" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kYw-yK-NJb" id="GyN-sx-Q5M">
@@ -100,7 +101,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aLN-7K-w10" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1444" y="-224"/>
+            <point key="canvasLocation" x="2166" y="-189.29577464788733"/>
         </scene>
         <!--Navigation Controller - Modesty-->
         <scene sceneID="UhY-E5-r7r">
@@ -110,7 +111,6 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" prompted="NO"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics" barStyle="black"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="gME-Ul-bN8">
-                        <rect key="frame" x="0.0" y="0.0" width="0.0" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -119,18 +119,19 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hhy-Rb-6X9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="539" y="-215"/>
+            <point key="canvasLocation" x="808.5" y="-181.69014084507043"/>
         </scene>
         <!--Players Table View Controller - Players-->
         <scene sceneID="Q77-cW-g3O">
             <objects>
                 <tableViewController title="Players" id="3fs-KQ-7Vq" customClass="PlayersTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="toF-G4-RO0">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ModestyCell" textLabel="6ud-vr-8U9" detailTextLabel="4tP-mu-jMx" style="IBUITableViewCellStyleValue1" id="ogg-XD-rkZ">
+                            <tableViewCell contentMode="scaleToFill" ambiguous="YES" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ModestyCell" textLabel="6ud-vr-8U9" detailTextLabel="4tP-mu-jMx" style="IBUITableViewCellStyleValue1" id="ogg-XD-rkZ">
                                 <rect key="frame" x="0.0" y="119" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ogg-XD-rkZ" id="F1S-Z2-nDR">
@@ -160,18 +161,19 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1mV-RA-EUe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="935" y="480"/>
+            <point key="canvasLocation" x="1402.5" y="405.63380281690138"/>
         </scene>
         <!--Social Table View Controller - Social-->
         <scene sceneID="gha-uA-Xnf">
             <objects>
                 <tableViewController id="rmV-71-53n" customClass="SocialTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="mhr-WC-bXx">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SocialCell" id="3kG-4j-NSE">
+                            <tableViewCell contentMode="scaleToFill" ambiguous="YES" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SocialCell" id="3kG-4j-NSE">
                                 <rect key="frame" x="0.0" y="119" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3kG-4j-NSE" id="kzK-UP-puR">
@@ -185,18 +187,19 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zfo-Cj-Trr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1078" y="1158"/>
+            <point key="canvasLocation" x="1617" y="978.5915492957746"/>
         </scene>
         <!--News Table View Controller - News-->
         <scene sceneID="u31-da-CjB">
             <objects>
                 <tableViewController id="pxH-2m-Geq" customClass="NewsTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="wKl-pk-6yI">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="NewsCell" textLabel="d5y-WX-UwO" detailTextLabel="TW3-JV-Dbb" style="IBUITableViewCellStyleSubtitle" id="xZw-AL-dXL">
+                            <tableViewCell contentMode="scaleToFill" ambiguous="YES" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="NewsCell" textLabel="d5y-WX-UwO" detailTextLabel="TW3-JV-Dbb" style="IBUITableViewCellStyleSubtitle" id="xZw-AL-dXL">
                                 <rect key="frame" x="0.0" y="119" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xZw-AL-dXL" id="FBh-Pr-uL3">
@@ -226,7 +229,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pX7-6X-W8D" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1064" y="1824"/>
+            <point key="canvasLocation" x="1596" y="1541.4084507042253"/>
         </scene>
         <!--Navigation Controller - News-->
         <scene sceneID="Uqn-rr-7XT">
@@ -235,7 +238,6 @@
                     <tabBarItem key="tabBarItem" title="News" image="news" id="vwJ-Ho-ZHB"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" prompted="NO"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="wSp-st-ccp">
-                        <rect key="frame" x="0.0" y="0.0" width="0.0" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -244,7 +246,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K39-cY-aI1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="530" y="1824"/>
+            <point key="canvasLocation" x="795" y="1541.4084507042253"/>
         </scene>
         <!--Navigation Controller - Social-->
         <scene sceneID="EAd-LY-H0E">
@@ -253,7 +255,6 @@
                     <tabBarItem key="tabBarItem" title="Social" image="social_tabbar" id="lVO-9U-2r5"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" prompted="NO"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="hIU-vM-I08">
-                        <rect key="frame" x="0.0" y="0.0" width="0.0" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -262,7 +263,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R5z-df-JCI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="544" y="1158"/>
+            <point key="canvasLocation" x="816" y="978.5915492957746"/>
         </scene>
         <!--Navigation Controller - Players-->
         <scene sceneID="jiX-hD-4kC">
@@ -272,7 +273,6 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" prompted="NO"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics" barStyle="black"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="h96-Kg-wep">
-                        <rect key="frame" x="0.0" y="0.0" width="0.0" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -281,18 +281,19 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c16-GT-NqR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="539" y="480"/>
+            <point key="canvasLocation" x="808.5" y="405.63380281690138"/>
         </scene>
         <!--Staff Table View Controller - Players-->
         <scene sceneID="HGT-dr-NoC">
             <objects>
                 <tableViewController title="Players" id="VNn-FJ-6yY" customClass="StaffTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="OcY-1Q-6am">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ModestyCell" textLabel="eDY-Au-Fxs" detailTextLabel="2MD-u7-105" style="IBUITableViewCellStyleValue1" id="UAs-KY-ZhM">
+                            <tableViewCell contentMode="scaleToFill" ambiguous="YES" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ModestyCell" textLabel="eDY-Au-Fxs" detailTextLabel="2MD-u7-105" style="IBUITableViewCellStyleValue1" id="UAs-KY-ZhM">
                                 <rect key="frame" x="0.0" y="119" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="UAs-KY-ZhM" id="PNZ-xf-zEA">
@@ -322,7 +323,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4bq-5C-EtO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1869" y="426"/>
+            <point key="canvasLocation" x="2803.5" y="360"/>
         </scene>
     </scenes>
     <resources>
@@ -331,9 +332,4 @@
         <image name="news" width="25" height="25"/>
         <image name="social_tabbar" width="25" height="25"/>
     </resources>
-    <simulatedMetricsContainer key="defaultSimulatedMetrics">
-        <simulatedStatusBarMetrics key="statusBar"/>
-        <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4"/>
-    </simulatedMetricsContainer>
 </document>

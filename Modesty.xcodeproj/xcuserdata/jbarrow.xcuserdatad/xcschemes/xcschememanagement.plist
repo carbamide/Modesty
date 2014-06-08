@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Modesty Status.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 		<key>Modesty.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -12,6 +17,11 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>2991D27A1944EF6400C856D4</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>299943FB186A08880038D92F</key>
 		<dict>
 			<key>primary</key>

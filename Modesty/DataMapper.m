@@ -12,7 +12,6 @@
 
 @interface DataMapper ()
 @property (strong, nonatomic) NSTimer *pingTimer;
--(void)pingModesty;
 -(void)staffListing;
 -(void)refreshInformation;
 -(void)mapToModestyInfo:(NSDictionary *)dict;
