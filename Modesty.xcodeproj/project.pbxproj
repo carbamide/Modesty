@@ -972,6 +972,7 @@
 				2991D28C1944EF6400C856D4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		299943F7186A08880038D92F /* Build configuration list for PBXProject "Modesty" */ = {
 			isa = XCConfigurationList;
