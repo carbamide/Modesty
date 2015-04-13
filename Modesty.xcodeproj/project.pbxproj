@@ -56,7 +56,6 @@
 		29ABB97C187222C200463485 /* NewsDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29ABB97B187222C200463485 /* NewsDetailTableViewController.m */; };
 		29BCC4841871E23F009D91A3 /* Staff.m in Sources */ = {isa = PBXBuildFile; fileRef = 29BCC4831871E23F009D91A3 /* Staff.m */; };
 		29BDEF8F1ADBFAFE0025A835 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BDEF8E1ADBFAFE0025A835 /* InterfaceController.swift */; };
-		29BDEF911ADBFAFE0025A835 /* GlanceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BDEF901ADBFAFE0025A835 /* GlanceController.swift */; };
 		29BDEF931ADBFAFE0025A835 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29BDEF921ADBFAFE0025A835 /* Images.xcassets */; };
 		29BDEF971ADBFAFE0025A835 /* Modesty WatchKit App.app in Resources */ = {isa = PBXBuildFile; fileRef = 29BDEF961ADBFAFE0025A835 /* Modesty WatchKit App.app */; };
 		29BDEF9F1ADBFAFE0025A835 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29BDEF9D1ADBFAFE0025A835 /* Interface.storyboard */; };
@@ -68,6 +67,8 @@
 		29CB05B1186F668100711876 /* release_notes.md in Resources */ = {isa = PBXBuildFile; fileRef = 29CB05AB186F668000711876 /* release_notes.md */; };
 		29CB05B3186F67D400711876 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 29CB05B2186F67D400711876 /* libz.dylib */; };
 		29D0662C1ADC1E2000DB0674 /* PlayerRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29D0662B1ADC1E2000DB0674 /* PlayerRowController.swift */; };
+		29D0662D1ADC3CF600DB0674 /* Minecraft Evenings.otf in Resources */ = {isa = PBXBuildFile; fileRef = 29CB05A6186DF75500711876 /* Minecraft Evenings.otf */; };
+		29D0662F1ADC3DF200DB0674 /* ViewPlayerInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29D0662E1ADC3DF200DB0674 /* ViewPlayerInterfaceController.swift */; };
 		29D9CE84186F7848006BC1B8 /* StaffTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29D9CE83186F7848006BC1B8 /* StaffTableViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -203,7 +204,6 @@
 		29BDEF8A1ADBFAFE0025A835 /* Modesty WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Modesty WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		29BDEF8D1ADBFAFE0025A835 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		29BDEF8E1ADBFAFE0025A835 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
-		29BDEF901ADBFAFE0025A835 /* GlanceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlanceController.swift; sourceTree = "<group>"; };
 		29BDEF921ADBFAFE0025A835 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		29BDEF961ADBFAFE0025A835 /* Modesty WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Modesty WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		29BDEF9C1ADBFAFE0025A835 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -218,6 +218,7 @@
 		29CB05AE186F668000711876 /* TestFlight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestFlight.h; sourceTree = "<group>"; };
 		29CB05B2186F67D400711876 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		29D0662B1ADC1E2000DB0674 /* PlayerRowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerRowController.swift; sourceTree = "<group>"; };
+		29D0662E1ADC3DF200DB0674 /* ViewPlayerInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewPlayerInterfaceController.swift; sourceTree = "<group>"; };
 		29D9CE82186F7848006BC1B8 /* StaffTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StaffTableViewController.h; sourceTree = "<group>"; };
 		29D9CE83186F7848006BC1B8 /* StaffTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StaffTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -488,7 +489,7 @@
 			isa = PBXGroup;
 			children = (
 				29BDEF8E1ADBFAFE0025A835 /* InterfaceController.swift */,
-				29BDEF901ADBFAFE0025A835 /* GlanceController.swift */,
+				29D0662E1ADC3DF200DB0674 /* ViewPlayerInterfaceController.swift */,
 				29BDEF921ADBFAFE0025A835 /* Images.xcassets */,
 				29BDEF8C1ADBFAFE0025A835 /* Supporting Files */,
 				29D0662B1ADC1E2000DB0674 /* PlayerRowController.swift */,
@@ -647,6 +648,7 @@
 					};
 					29BDEF951ADBFAFE0025A835 = {
 						CreatedOnToolsVersion = 6.3;
+						DevelopmentTeam = RG2JJ52ENN;
 					};
 				};
 			};
@@ -713,6 +715,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29D0662D1ADC3CF600DB0674 /* Minecraft Evenings.otf in Resources */,
 				29BDEF971ADBFAFE0025A835 /* Modesty WatchKit App.app in Resources */,
 				29BDEF931ADBFAFE0025A835 /* Images.xcassets in Resources */,
 			);
@@ -778,7 +781,7 @@
 			files = (
 				29D0662C1ADC1E2000DB0674 /* PlayerRowController.swift in Sources */,
 				29BDEF8F1ADBFAFE0025A835 /* InterfaceController.swift in Sources */,
-				29BDEF911ADBFAFE0025A835 /* GlanceController.swift in Sources */,
+				29D0662F1ADC3DF200DB0674 /* ViewPlayerInterfaceController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1032,6 +1035,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_NAME = "${TARGET_NAME}";
+				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -1053,6 +1057,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = "${TARGET_NAME}";
+				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
@@ -1062,6 +1067,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -1075,6 +1082,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 4;
@@ -1087,6 +1095,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
@@ -1097,6 +1107,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 4;
 				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";

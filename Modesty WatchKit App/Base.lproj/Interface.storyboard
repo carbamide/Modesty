@@ -10,9 +10,15 @@
             <objects>
                 <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="Modesty_WatchKit_App" customModuleProvider="target">
                     <items>
+                        <group width="1" alignment="left" id="dRr-yX-E4q">
+                            <items>
+                                <label alignment="left" text="Modesty" id="p4B-QM-NBg"/>
+                                <label width="67" alignment="right" text="Refreshing" textAlignment="right" minimumScaleFactor="0.20000000000000015" id="DBZ-MQ-DiG"/>
+                            </items>
+                        </group>
                         <table alignment="left" id="ihR-4P-XqR">
                             <items>
-                                <tableRow identifier="PlayerRow" selectable="NO" id="UMK-7S-jDG" customClass="PlayerRowController" customModule="Modesty_WatchKit_Extension">
+                                <tableRow identifier="PlayerRow" id="UMK-7S-jDG" customClass="PlayerRowController" customModule="Modesty_WatchKit_Extension">
                                     <group key="rootItem" width="1" height="40" alignment="left" id="GU3-9P-yl0">
                                         <items>
                                             <imageView width="40" alignment="left" verticalAlignment="center" contentMode="scaleAspectFit" id="5bP-N9-86A"/>
@@ -22,6 +28,7 @@
                                     <connections>
                                         <outlet property="playerImageView" destination="5bP-N9-86A" id="oYO-bv-2G9"/>
                                         <outlet property="playerNameLabel" destination="fwD-3X-rCJ" id="oF1-BR-v0o"/>
+                                        <segue destination="Bwj-qn-rhR" kind="push" identifier="ShowPlayer" id="Yyc-Qt-A4N"/>
                                     </connections>
                                 </tableRow>
                             </items>
@@ -37,24 +44,30 @@
                         </items>
                     </menu>
                     <connections>
+                        <outlet property="playerCountLabel" destination="DBZ-MQ-DiG" id="qBx-f3-Hrl"/>
                         <outlet property="playerTableView" destination="ihR-4P-XqR" id="N30-Ot-cL7"/>
                     </connections>
                 </controller>
             </objects>
             <point key="canvasLocation" x="164" y="217"/>
         </scene>
-        <!--Glance Interface Controller-->
-        <scene sceneID="rjY-Ar-IMT">
+        <!--View Player Interface Controller-->
+        <scene sceneID="6Kw-eu-F55">
             <objects>
-                <glanceController spacing="0.0" id="Sv0-Ai-Zie" customClass="GlanceController" customModule="Modesty_WatchKit_App" customModuleProvider="target">
+                <controller id="Bwj-qn-rhR" customClass="ViewPlayerInterfaceController" customModule="Modesty_WatchKit_Extension">
                     <items>
-                        <group alignment="left" id="gv7-I2-MZq"/>
-                        <group alignment="left" id="eew-Gs-W6Y"/>
+                        <imageView width="120" height="120" alignment="center" id="tFk-0g-eOz"/>
+                        <label width="110" alignment="center" verticalAlignment="center" textAlignment="center" id="1Eq-l4-OiA"/>
+                        <label width="110" alignment="center" text="Name" textAlignment="center" minimumScaleFactor="0.20000000000000015" id="xwc-VQ-EAV"/>
                     </items>
-                    <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="14"/>
-                </glanceController>
+                    <connections>
+                        <outlet property="playerImage" destination="tFk-0g-eOz" id="Ozi-Sj-1Hj"/>
+                        <outlet property="playerNameLabel" destination="xwc-VQ-EAV" id="YxF-Ic-KFo"/>
+                        <outlet property="rankLabel" destination="1Eq-l4-OiA" id="yBk-uL-gBv"/>
+                    </connections>
+                </controller>
             </objects>
-            <point key="canvasLocation" x="164" y="514"/>
+            <point key="canvasLocation" x="376" y="214.5"/>
         </scene>
     </scenes>
 </document>

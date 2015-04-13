@@ -45,6 +45,8 @@
 
 @implementation ModestyTableViewController
 
+@synthesize refreshControl;
+
 #pragma mark -
 #pragma mark - View Lifecycle
 

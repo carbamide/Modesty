@@ -12,6 +12,7 @@ import Foundation
 class InterfaceController: WKInterfaceController {
 
     @IBOutlet weak var playerTableView: WKInterfaceTable!
+    @IBOutlet weak var playerCountLabel: WKInterfaceLabel!
     
     var dataSource: NSArray!
 
@@ -33,7 +34,15 @@ class InterfaceController: WKInterfaceController {
         super.didDeactivate()
     }
 
+    override func contextForSegueWithIdentifier(segueIdentifier: String, inTable table: WKInterfaceTable, rowIndex: Int) -> AnyObject? {
+        let player: AnyObject = dataSource[rowIndex]
+        
+        return player
+    }
+    
     @IBAction func refreshMenu() {
+        playerCountLabel.setText("Refreshing")
+
         loadPlayerData()
     }
     
@@ -49,15 +58,19 @@ class InterfaceController: WKInterfaceController {
                     dispatch_async(dispatch_get_global_queue(priority, 0)) {
                         let url = NSURL(string: String(format: "https://minotar.net/helm/%@/30.png", player))
                         let data = NSData(contentsOfURL: url!)
-                        let image = UIImage(data: data!)
-                        
-                        dispatch_async(dispatch_get_main_queue()) {
-                            row.playerImageView.setImage(image)
+                        if let d = data {
+                            dispatch_async(dispatch_get_main_queue()) {
+                                let image = UIImage(data: d)
+
+                                row.playerImageView.setImage(image)
+                            }
                         }
                     }
                 }
             }
         }
+        
+        playerCountLabel.setText(String(format: "%d %@", dataSource.count, dataSource.count == 1 ? "player" : "players"))
     }
     
     func loadPlayerData() {

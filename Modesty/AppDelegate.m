@@ -16,13 +16,13 @@
 {
     [TestFlight takeOff:kTestFlightApiURLKey];
     
-    [[UIApplication sharedApplication] registerForRemoteNotificationTypes:(UIRemoteNotificationTypeAlert|UIRemoteNotificationTypeSound)];
+    [[UIApplication sharedApplication] registerForRemoteNotifications];
     
     if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0) {
         [[self window] setTintColor:UIColorFromRGB(0x299a24)];
         
         NSMutableDictionary *titleBarAttributes = [NSMutableDictionary dictionaryWithDictionary:[[UINavigationBar appearance] titleTextAttributes]];
-        [titleBarAttributes addEntriesFromDictionary:@{UITextAttributeFont: [UIFont fontWithName:kFont size:34]}];
+        [titleBarAttributes addEntriesFromDictionary:@{NSFontAttributeName: [UIFont fontWithName:kFont size:34]}];
 
         [[UINavigationBar appearance] setTitleTextAttributes:titleBarAttributes];
         [[UINavigationBar appearance] setTitleVerticalPositionAdjustment:5 forBarMetrics:UIBarMetricsDefault];

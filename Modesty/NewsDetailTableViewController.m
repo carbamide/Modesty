@@ -145,7 +145,7 @@ typedef enum { SectionDetailSummary } DetailRows;
             summary = [self summaryString];
         }
         
-		CGSize s = [summary sizeWithFont:[UIFont systemFontOfSize:15] constrainedToSize:CGSizeMake(self.view.bounds.size.width - 40, MAXFLOAT) lineBreakMode:NSLineBreakByWordWrapping];
+        CGSize s = [summary boundingRectWithSize:CGSizeMake(300, 1000) options:NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingUsesFontLeading attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:15]} context:nil].size;
         
 		return s.height + 16;
 	}
