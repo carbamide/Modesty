@@ -4,7 +4,17 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Glance - Modesty WatchKit App.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
 		<key>Modesty Status.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
+		<key>Modesty WatchKit App.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>1</integer>
@@ -28,6 +38,11 @@
 			<true/>
 		</dict>
 		<key>2999441F186A08890038D92F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>29BDEF951ADBFAFE0025A835</key>
 		<dict>
 			<key>primary</key>
 			<true/>

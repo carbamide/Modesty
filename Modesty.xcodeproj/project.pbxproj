@@ -8,11 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		2910A79D186A9A7200677800 /* iTunesArtwork.png in Resources */ = {isa = PBXBuildFile; fileRef = 2910A79C186A9A7200677800 /* iTunesArtwork.png */; };
-		2991D27D1944EF6400C856D4 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2991D27C1944EF6400C856D4 /* NotificationCenter.framework */; };
-		2991D2831944EF6400C856D4 /* TodayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2991D2821944EF6400C856D4 /* TodayViewController.m */; };
-		2991D2851944EF6400C856D4 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2991D2841944EF6400C856D4 /* MainInterface.storyboard */; };
-		2991D2881944EF6400C856D4 /* com.jukaela.Modesty.Modesty-Status.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 2991D27B1944EF6400C856D4 /* com.jukaela.Modesty.Modesty-Status.appex */; };
-		2991D28F1944F27C00C856D4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2999441A186A08890038D92F /* Images.xcassets */; };
 		29979EFD186FDB16004ECB95 /* SVWebViewController.strings in Resources */ = {isa = PBXBuildFile; fileRef = 29979EE0186FDB16004ECB95 /* SVWebViewController.strings */; };
 		29979EFE186FDB16004ECB95 /* SVModalWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29979EE8186FDB16004ECB95 /* SVModalWebViewController.m */; };
 		29979EFF186FDB16004ECB95 /* SVWebViewController.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 29979EE9186FDB16004ECB95 /* SVWebViewController.bundle */; };
@@ -60,35 +55,43 @@
 		29ABB97918721EBF00463485 /* NewsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29ABB97818721EBF00463485 /* NewsTableViewController.m */; };
 		29ABB97C187222C200463485 /* NewsDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29ABB97B187222C200463485 /* NewsDetailTableViewController.m */; };
 		29BCC4841871E23F009D91A3 /* Staff.m in Sources */ = {isa = PBXBuildFile; fileRef = 29BCC4831871E23F009D91A3 /* Staff.m */; };
+		29BDEF8F1ADBFAFE0025A835 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BDEF8E1ADBFAFE0025A835 /* InterfaceController.swift */; };
+		29BDEF911ADBFAFE0025A835 /* GlanceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BDEF901ADBFAFE0025A835 /* GlanceController.swift */; };
+		29BDEF931ADBFAFE0025A835 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29BDEF921ADBFAFE0025A835 /* Images.xcassets */; };
+		29BDEF971ADBFAFE0025A835 /* Modesty WatchKit App.app in Resources */ = {isa = PBXBuildFile; fileRef = 29BDEF961ADBFAFE0025A835 /* Modesty WatchKit App.app */; };
+		29BDEF9F1ADBFAFE0025A835 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29BDEF9D1ADBFAFE0025A835 /* Interface.storyboard */; };
+		29BDEFA11ADBFAFE0025A835 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29BDEFA01ADBFAFE0025A835 /* Images.xcassets */; };
+		29BDEFA41ADBFAFE0025A835 /* Modesty WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 29BDEF8A1ADBFAFE0025A835 /* Modesty WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		29CB05A7186DF75500711876 /* Minecraft Evenings.otf in Resources */ = {isa = PBXBuildFile; fileRef = 29CB05A6186DF75500711876 /* Minecraft Evenings.otf */; };
 		29CB05AF186F668000711876 /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 29CB05A9186F668000711876 /* libTestFlight.a */; };
 		29CB05B0186F668100711876 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 29CB05AA186F668000711876 /* README.md */; };
 		29CB05B1186F668100711876 /* release_notes.md in Resources */ = {isa = PBXBuildFile; fileRef = 29CB05AB186F668000711876 /* release_notes.md */; };
 		29CB05B3186F67D400711876 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 29CB05B2186F67D400711876 /* libz.dylib */; };
+		29D0662C1ADC1E2000DB0674 /* PlayerRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29D0662B1ADC1E2000DB0674 /* PlayerRowController.swift */; };
 		29D9CE84186F7848006BC1B8 /* StaffTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29D9CE83186F7848006BC1B8 /* StaffTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		2991D2861944EF6400C856D4 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 299943F4186A08880038D92F /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 2991D27A1944EF6400C856D4;
-			remoteInfo = "Modesty Status";
-		};
-		2991D2891944EF6400C856D4 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 299943F4186A08880038D92F /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 2991D27A1944EF6400C856D4;
-			remoteInfo = "Modesty Status";
-		};
 		29994425186A08890038D92F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 299943F4186A08880038D92F /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 299943FB186A08880038D92F;
 			remoteInfo = Modesty;
+		};
+		29BDEF981ADBFAFE0025A835 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 299943F4186A08880038D92F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 29BDEF951ADBFAFE0025A835;
+			remoteInfo = "Modesty WatchKit App";
+		};
+		29BDEFA21ADBFAFE0025A835 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 299943F4186A08880038D92F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 29BDEF891ADBFAFE0025A835;
+			remoteInfo = "Modesty WatchKit Extension";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -99,7 +102,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				2991D2881944EF6400C856D4 /* com.jukaela.Modesty.Modesty-Status.appex in Embed App Extensions */,
+				29BDEFA41ADBFAFE0025A835 /* Modesty WatchKit Extension.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -108,7 +111,6 @@
 
 /* Begin PBXFileReference section */
 		2910A79C186A9A7200677800 /* iTunesArtwork.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iTunesArtwork.png; sourceTree = "<group>"; };
-		2991D27B1944EF6400C856D4 /* com.jukaela.Modesty.Modesty-Status.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "com.jukaela.Modesty.Modesty-Status.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2991D27C1944EF6400C856D4 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 		2991D2801944EF6400C856D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2991D2811944EF6400C856D4 /* TodayViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TodayViewController.h; sourceTree = "<group>"; };
@@ -198,6 +200,15 @@
 		29ABB97B187222C200463485 /* NewsDetailTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsDetailTableViewController.m; sourceTree = "<group>"; };
 		29BCC4821871E23F009D91A3 /* Staff.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Staff.h; sourceTree = "<group>"; };
 		29BCC4831871E23F009D91A3 /* Staff.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Staff.m; sourceTree = "<group>"; };
+		29BDEF8A1ADBFAFE0025A835 /* Modesty WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Modesty WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		29BDEF8D1ADBFAFE0025A835 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		29BDEF8E1ADBFAFE0025A835 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		29BDEF901ADBFAFE0025A835 /* GlanceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlanceController.swift; sourceTree = "<group>"; };
+		29BDEF921ADBFAFE0025A835 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		29BDEF961ADBFAFE0025A835 /* Modesty WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Modesty WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		29BDEF9C1ADBFAFE0025A835 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		29BDEF9E1ADBFAFE0025A835 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		29BDEFA01ADBFAFE0025A835 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		29CB05A6186DF75500711876 /* Minecraft Evenings.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Minecraft Evenings.otf"; sourceTree = "<group>"; };
 		29CB05A9186F668000711876 /* libTestFlight.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libTestFlight.a; sourceTree = "<group>"; };
 		29CB05AA186F668000711876 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
@@ -206,19 +217,12 @@
 		29CB05AD186F668000711876 /* TestFlight+ManualSessions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TestFlight+ManualSessions.h"; sourceTree = "<group>"; };
 		29CB05AE186F668000711876 /* TestFlight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestFlight.h; sourceTree = "<group>"; };
 		29CB05B2186F67D400711876 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		29D0662B1ADC1E2000DB0674 /* PlayerRowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerRowController.swift; sourceTree = "<group>"; };
 		29D9CE82186F7848006BC1B8 /* StaffTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StaffTableViewController.h; sourceTree = "<group>"; };
 		29D9CE83186F7848006BC1B8 /* StaffTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StaffTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		2991D2781944EF6400C856D4 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				2991D27D1944EF6400C856D4 /* NotificationCenter.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		299943F9186A08880038D92F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -240,6 +244,13 @@
 				29994422186A08890038D92F /* XCTest.framework in Frameworks */,
 				29994424186A08890038D92F /* UIKit.framework in Frameworks */,
 				29994423186A08890038D92F /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		29BDEF871ADBFAFE0025A835 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -324,6 +335,8 @@
 				29994406186A08880038D92F /* Supporting Files */,
 				29994427186A08890038D92F /* ModestyTests */,
 				2991D27E1944EF6400C856D4 /* Modesty Status */,
+				29BDEF8B1ADBFAFE0025A835 /* Modesty WatchKit Extension */,
+				29BDEF9A1ADBFAFE0025A835 /* Modesty WatchKit App */,
 				299943FE186A08880038D92F /* Frameworks */,
 				299943FD186A08880038D92F /* Products */,
 			);
@@ -334,7 +347,8 @@
 			children = (
 				299943FC186A08880038D92F /* Modesty.app */,
 				29994420186A08890038D92F /* ModestyTests.xctest */,
-				2991D27B1944EF6400C856D4 /* com.jukaela.Modesty.Modesty-Status.appex */,
+				29BDEF8A1ADBFAFE0025A835 /* Modesty WatchKit Extension.appex */,
+				29BDEF961ADBFAFE0025A835 /* Modesty WatchKit App.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -470,6 +484,44 @@
 			name = MWFeedParser;
 			sourceTree = "<group>";
 		};
+		29BDEF8B1ADBFAFE0025A835 /* Modesty WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				29BDEF8E1ADBFAFE0025A835 /* InterfaceController.swift */,
+				29BDEF901ADBFAFE0025A835 /* GlanceController.swift */,
+				29BDEF921ADBFAFE0025A835 /* Images.xcassets */,
+				29BDEF8C1ADBFAFE0025A835 /* Supporting Files */,
+				29D0662B1ADC1E2000DB0674 /* PlayerRowController.swift */,
+			);
+			path = "Modesty WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		29BDEF8C1ADBFAFE0025A835 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				29BDEF8D1ADBFAFE0025A835 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		29BDEF9A1ADBFAFE0025A835 /* Modesty WatchKit App */ = {
+			isa = PBXGroup;
+			children = (
+				29BDEF9D1ADBFAFE0025A835 /* Interface.storyboard */,
+				29BDEFA01ADBFAFE0025A835 /* Images.xcassets */,
+				29BDEF9B1ADBFAFE0025A835 /* Supporting Files */,
+			);
+			path = "Modesty WatchKit App";
+			sourceTree = "<group>";
+		};
+		29BDEF9B1ADBFAFE0025A835 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				29BDEF9C1ADBFAFE0025A835 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		29CB05A8186F668000711876 /* TestFlightSDK2 */ = {
 			isa = PBXGroup;
 			children = (
@@ -496,23 +548,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		2991D27A1944EF6400C856D4 /* Modesty Status */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 2991D28D1944EF6400C856D4 /* Build configuration list for PBXNativeTarget "Modesty Status" */;
-			buildPhases = (
-				2991D2771944EF6400C856D4 /* Sources */,
-				2991D2781944EF6400C856D4 /* Frameworks */,
-				2991D2791944EF6400C856D4 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "Modesty Status";
-			productName = "Modesty Status";
-			productReference = 2991D27B1944EF6400C856D4 /* com.jukaela.Modesty.Modesty-Status.appex */;
-			productType = "com.apple.product-type.app-extension";
-		};
 		299943FB186A08880038D92F /* Modesty */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 29994431186A08890038D92F /* Build configuration list for PBXNativeTarget "Modesty" */;
@@ -525,8 +560,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				2991D2871944EF6400C856D4 /* PBXTargetDependency */,
-				2991D28A1944EF6400C856D4 /* PBXTargetDependency */,
+				29BDEFA31ADBFAFE0025A835 /* PBXTargetDependency */,
 			);
 			name = Modesty;
 			productName = Modesty;
@@ -551,18 +585,48 @@
 			productReference = 29994420186A08890038D92F /* ModestyTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		29BDEF891ADBFAFE0025A835 /* Modesty WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 29BDEFAA1ADBFAFE0025A835 /* Build configuration list for PBXNativeTarget "Modesty WatchKit Extension" */;
+			buildPhases = (
+				29BDEF861ADBFAFE0025A835 /* Sources */,
+				29BDEF871ADBFAFE0025A835 /* Frameworks */,
+				29BDEF881ADBFAFE0025A835 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				29BDEF991ADBFAFE0025A835 /* PBXTargetDependency */,
+			);
+			name = "Modesty WatchKit Extension";
+			productName = "Modesty WatchKit Extension";
+			productReference = 29BDEF8A1ADBFAFE0025A835 /* Modesty WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit-extension";
+		};
+		29BDEF951ADBFAFE0025A835 /* Modesty WatchKit App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 29BDEFA91ADBFAFE0025A835 /* Build configuration list for PBXNativeTarget "Modesty WatchKit App" */;
+			buildPhases = (
+				29BDEF941ADBFAFE0025A835 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Modesty WatchKit App";
+			productName = "Modesty WatchKit App";
+			productReference = 29BDEF961ADBFAFE0025A835 /* Modesty WatchKit App.app */;
+			productType = "com.apple.product-type.application.watchapp";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		299943F4186A08880038D92F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0510;
+				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = "Jukaela Enterprises";
 				TargetAttributes = {
-					2991D27A1944EF6400C856D4 = {
-						CreatedOnToolsVersion = 6.0;
-					};
 					299943FB186A08880038D92F = {
 						DevelopmentTeam = RG2JJ52ENN;
 						SystemCapabilities = {
@@ -576,6 +640,13 @@
 					};
 					2999441F186A08890038D92F = {
 						TestTargetID = 299943FB186A08880038D92F;
+					};
+					29BDEF891ADBFAFE0025A835 = {
+						CreatedOnToolsVersion = 6.3;
+						DevelopmentTeam = RG2JJ52ENN;
+					};
+					29BDEF951ADBFAFE0025A835 = {
+						CreatedOnToolsVersion = 6.3;
 					};
 				};
 			};
@@ -601,21 +672,13 @@
 			targets = (
 				299943FB186A08880038D92F /* Modesty */,
 				2999441F186A08890038D92F /* ModestyTests */,
-				2991D27A1944EF6400C856D4 /* Modesty Status */,
+				29BDEF891ADBFAFE0025A835 /* Modesty WatchKit Extension */,
+				29BDEF951ADBFAFE0025A835 /* Modesty WatchKit App */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		2991D2791944EF6400C856D4 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				2991D28F1944F27C00C856D4 /* Images.xcassets in Resources */,
-				2991D2851944EF6400C856D4 /* MainInterface.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		299943FA186A08880038D92F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -646,17 +709,27 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-/* End PBXResourcesBuildPhase section */
-
-/* Begin PBXSourcesBuildPhase section */
-		2991D2771944EF6400C856D4 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
+		29BDEF881ADBFAFE0025A835 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2991D2831944EF6400C856D4 /* TodayViewController.m in Sources */,
+				29BDEF971ADBFAFE0025A835 /* Modesty WatchKit App.app in Resources */,
+				29BDEF931ADBFAFE0025A835 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		29BDEF941ADBFAFE0025A835 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				29BDEF9F1ADBFAFE0025A835 /* Interface.storyboard in Resources */,
+				29BDEFA11ADBFAFE0025A835 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
 		299943F8186A08880038D92F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -699,23 +772,33 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		29BDEF861ADBFAFE0025A835 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				29D0662C1ADC1E2000DB0674 /* PlayerRowController.swift in Sources */,
+				29BDEF8F1ADBFAFE0025A835 /* InterfaceController.swift in Sources */,
+				29BDEF911ADBFAFE0025A835 /* GlanceController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		2991D2871944EF6400C856D4 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 2991D27A1944EF6400C856D4 /* Modesty Status */;
-			targetProxy = 2991D2861944EF6400C856D4 /* PBXContainerItemProxy */;
-		};
-		2991D28A1944EF6400C856D4 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 2991D27A1944EF6400C856D4 /* Modesty Status */;
-			targetProxy = 2991D2891944EF6400C856D4 /* PBXContainerItemProxy */;
-		};
 		29994426186A08890038D92F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 299943FB186A08880038D92F /* Modesty */;
 			targetProxy = 29994425186A08890038D92F /* PBXContainerItemProxy */;
+		};
+		29BDEF991ADBFAFE0025A835 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 29BDEF951ADBFAFE0025A835 /* Modesty WatchKit App */;
+			targetProxy = 29BDEF981ADBFAFE0025A835 /* PBXContainerItemProxy */;
+		};
+		29BDEFA31ADBFAFE0025A835 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 29BDEF891ADBFAFE0025A835 /* Modesty WatchKit Extension */;
+			targetProxy = 29BDEFA21ADBFAFE0025A835 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -759,52 +842,21 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
+		29BDEF9D1ADBFAFE0025A835 /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				29BDEF9E1ADBFAFE0025A835 /* Base */,
+			);
+			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		2991D28B1944EF6400C856D4 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "Modesty Status/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				METAL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = "com.jukaela.Modesty.$(TARGET_NAME:rfc1034identifier)";
-				PROVISIONING_PROFILE = "A94BF6E7-A520-4431-8B6D-53760F67F6FC";
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		2991D28C1944EF6400C856D4 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				INFOPLIST_FILE = "Modesty Status/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				METAL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = "com.jukaela.Modesty.$(TARGET_NAME:rfc1034identifier)";
-				PROVISIONING_PROFILE = "A94BF6E7-A520-4431-8B6D-53760F67F6FC";
-				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
 		2999442F186A08890038D92F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -834,7 +886,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				ONLY_ACTIVE_ARCH = YES;
 				PROVISIONING_PROFILE = "5CA3D50A-984D-4C95-A4C0-06E8E3394406";
 				SDKROOT = iphoneos;
@@ -845,7 +897,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -869,7 +920,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				PROVISIONING_PROFILE = "5CA3D50A-984D-4C95-A4C0-06E8E3394406";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -881,18 +932,19 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Joshua Barrow (VV74J74MG8)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Joshua Barrow (VV74J74MG8)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Modesty/Modesty-Prefix.pch";
 				INFOPLIST_FILE = "Modesty/Modesty-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/TestFlightSDK2",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "A94BF6E7-A520-4431-8B6D-53760F67F6FC";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -902,18 +954,19 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Joshua Barrow (VV74J74MG8)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Joshua Barrow (VV74J74MG8)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Modesty/Modesty-Prefix.pch";
 				INFOPLIST_FILE = "Modesty/Modesty-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/TestFlightSDK2",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "A94BF6E7-A520-4431-8B6D-53760F67F6FC";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -921,7 +974,6 @@
 		29994435186A08890038D92F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Modesty.app/Modesty";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -945,7 +997,6 @@
 		29994436186A08890038D92F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Modesty.app/Modesty";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -962,18 +1013,99 @@
 			};
 			name = Release;
 		};
+		29BDEFA51ADBFAFE0025A835 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Modesty WatchKit Extension/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		29BDEFA61ADBFAFE0025A835 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Modesty WatchKit Extension/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		29BDEFA71ADBFAFE0025A835 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				IBSC_MODULE = Modesty_WatchKit_Extension;
+				INFOPLIST_FILE = "Modesty WatchKit App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";
+			};
+			name = Debug;
+		};
+		29BDEFA81ADBFAFE0025A835 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IBSC_MODULE = Modesty_WatchKit_Extension;
+				INFOPLIST_FILE = "Modesty WatchKit App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2991D28D1944EF6400C856D4 /* Build configuration list for PBXNativeTarget "Modesty Status" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				2991D28B1944EF6400C856D4 /* Debug */,
-				2991D28C1944EF6400C856D4 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		299943F7186A08880038D92F /* Build configuration list for PBXProject "Modesty" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -997,6 +1129,24 @@
 			buildConfigurations = (
 				29994435186A08890038D92F /* Debug */,
 				29994436186A08890038D92F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		29BDEFA91ADBFAFE0025A835 /* Build configuration list for PBXNativeTarget "Modesty WatchKit App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				29BDEFA71ADBFAFE0025A835 /* Debug */,
+				29BDEFA81ADBFAFE0025A835 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		29BDEFAA1ADBFAFE0025A835 /* Build configuration list for PBXNativeTarget "Modesty WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				29BDEFA51ADBFAFE0025A835 /* Debug */,
+				29BDEFA61ADBFAFE0025A835 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
