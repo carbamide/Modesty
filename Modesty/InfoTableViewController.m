@@ -125,17 +125,20 @@
             switch ([indexPath row]) {
                 case 0: {
                     [[cell textLabel] setText:@"Host"];
-                    [[cell detailTextLabel] setText:[serverInformation hostIp]];
+                    [[cell detailTextLabel] setText:[serverInformation hostIp] ?: @"Loading..."];
                 }
                     break;
                 case 1: {
                     [[cell textLabel] setText:@"Port"];
-                    [[cell detailTextLabel] setText:[[serverInformation hostPort] stringValue]];
+                    [[cell detailTextLabel] setText:[[serverInformation hostPort] stringValue] ?: @"Loading..."];
                 }
                     break;
                 case 2: {
                     [[cell textLabel] setText:@"Version"];
-                    [[cell detailTextLabel] setText:[serverInformation version]];
+                    [[cell detailTextLabel] setText:[serverInformation version] ?: @"Loading..."];
+                    
+                    [[cell textLabel] setNeedsDisplay];
+                    [[cell detailTextLabel] setNeedsDisplay];
                 }
                     break;
                 default:
@@ -155,12 +158,7 @@
                 case 0: {
                     [[cell textLabel] setText:@"Players"];
                     
-                    if (serverInformation) {
-                        [[cell detailTextLabel] setText:[NSString stringWithFormat:@"%@ of %@ max players", [serverInformation players], [serverInformation maxPlayers]]];
-                    }
-                    else {
-                        [[cell detailTextLabel] setText:[NSString string]];
-                    }
+                    [[cell detailTextLabel] setText:serverInformation ? [NSString stringWithFormat:@"%@ of %@ max players", [serverInformation players], [serverInformation maxPlayers]] : @"Loading..."];
                 }
                     break;
                 default:
@@ -186,6 +184,8 @@
             break;
         }
     }
+    
+    [cell setNeedsDisplay];
     
     return cell;
 }
