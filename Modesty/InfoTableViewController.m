@@ -136,9 +136,6 @@
                 case 2: {
                     [[cell textLabel] setText:@"Version"];
                     [[cell detailTextLabel] setText:[serverInformation version] ?: @"Loading..."];
-                    
-                    [[cell textLabel] setNeedsDisplay];
-                    [[cell detailTextLabel] setNeedsDisplay];
                 }
                     break;
                 default:
@@ -184,9 +181,7 @@
             break;
         }
     }
-    
-    [cell setNeedsDisplay];
-    
+        
     return cell;
 }
 
