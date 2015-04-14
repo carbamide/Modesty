@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>097C4A3D-8ADB-44FF-894E-5A652CD1909F</string>
 	<key>IDESourceControlProjectName</key>
-	<string>project</string>
+	<string>Modesty</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>2E690198808290F45D82078B6C5C8C103C91978A</key>
 		<string>https://github.com/carbamide/Modesty.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>Modesty.xcodeproj/project.xcworkspace</string>
+	<string>Modesty.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>2E690198808290F45D82078B6C5C8C103C91978A</key>
