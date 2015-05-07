@@ -9,7 +9,7 @@
 import WatchKit
 import Foundation
 
-class InterfaceController: WKInterfaceController {
+class PlayerInterfaceController: WKInterfaceController {
 
     @IBOutlet weak var playerTableView: WKInterfaceTable!
     @IBOutlet weak var playerCountLabel: WKInterfaceLabel!

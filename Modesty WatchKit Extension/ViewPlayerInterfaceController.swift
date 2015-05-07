@@ -44,6 +44,8 @@ class ViewPlayerInterfaceController: WKInterfaceController {
     func loadPlayerImage() {
         let priority = DISPATCH_QUEUE_PRIORITY_DEFAULT
         
+        setTitle(self.playerNameString)
+        
         dispatch_async(dispatch_get_global_queue(priority, 0)) {
             let url = NSURL(string: String(format: "https://minotar.net/helm/%@/200.png", self.playerNameString))
             let data = NSData(contentsOfURL: url!)
@@ -80,26 +82,4 @@ class ViewPlayerInterfaceController: WKInterfaceController {
             }
         })
     }
-    /*
--(void)mapToStaff:(NSArray *)staffArray
-{
-NSMutableArray *tempStaffArray = [NSMutableArray array];
-
-for (NSArray *array in staffArray) {
-for (NSDictionary *dict in array) {
-Staff *staffMember = [[Staff alloc] init];
-
-[staffMember setStaffId:dict[@"id"]];
-[staffMember setUsername:dict[@"username"]];
-[staffMember setRank:dict[@"rank"]];
-[staffMember setUrl:dict[@"url"]];
-
-[tempStaffArray addObject:staffMember];
-}
-}
-
-[self setStaff:tempStaffArray];
-}
-*/
-    
 }

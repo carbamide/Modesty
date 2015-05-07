@@ -43,6 +43,7 @@
 		29994448186A46D20038D92F /* ModestyTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29994447186A46D20038D92F /* ModestyTableViewController.m */; };
 		2999444B186A48610038D92F /* SocialTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2999444A186A48610038D92F /* SocialTableViewController.m */; };
 		2999444F186A71CF0038D92F /* PluginsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2999444E186A71CF0038D92F /* PluginsTableViewController.m */; };
+		29A547C71AFBCC6900B47410 /* StaffInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A547C61AFBCC6900B47410 /* StaffInterfaceController.swift */; };
 		29ABB95D18720F9600463485 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29ABB95C18720F9600463485 /* GameKit.framework */; };
 		29ABB95F18720F9C00463485 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29ABB95E18720F9C00463485 /* StoreKit.framework */; };
 		29ABB96818721EA300463485 /* MWFeedParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 29ABB96318721EA300463485 /* MWFeedParser.m */; };
@@ -55,7 +56,7 @@
 		29ABB97918721EBF00463485 /* NewsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29ABB97818721EBF00463485 /* NewsTableViewController.m */; };
 		29ABB97C187222C200463485 /* NewsDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29ABB97B187222C200463485 /* NewsDetailTableViewController.m */; };
 		29BCC4841871E23F009D91A3 /* Staff.m in Sources */ = {isa = PBXBuildFile; fileRef = 29BCC4831871E23F009D91A3 /* Staff.m */; };
-		29BDEF8F1ADBFAFE0025A835 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BDEF8E1ADBFAFE0025A835 /* InterfaceController.swift */; };
+		29BDEF8F1ADBFAFE0025A835 /* PlayerInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BDEF8E1ADBFAFE0025A835 /* PlayerInterfaceController.swift */; };
 		29BDEF931ADBFAFE0025A835 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29BDEF921ADBFAFE0025A835 /* Images.xcassets */; };
 		29BDEF971ADBFAFE0025A835 /* Modesty WatchKit App.app in Resources */ = {isa = PBXBuildFile; fileRef = 29BDEF961ADBFAFE0025A835 /* Modesty WatchKit App.app */; };
 		29BDEF9F1ADBFAFE0025A835 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29BDEF9D1ADBFAFE0025A835 /* Interface.storyboard */; };
@@ -69,6 +70,8 @@
 		29D0662C1ADC1E2000DB0674 /* PlayerRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29D0662B1ADC1E2000DB0674 /* PlayerRowController.swift */; };
 		29D0662D1ADC3CF600DB0674 /* Minecraft Evenings.otf in Resources */ = {isa = PBXBuildFile; fileRef = 29CB05A6186DF75500711876 /* Minecraft Evenings.otf */; };
 		29D0662F1ADC3DF200DB0674 /* ViewPlayerInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29D0662E1ADC3DF200DB0674 /* ViewPlayerInterfaceController.swift */; };
+		29D1FFD01AFBCEC70070058F /* MainInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29D1FFCF1AFBCEC70070058F /* MainInterfaceController.swift */; };
+		29D1FFD11AFBCF310070058F /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29BDEF9D1ADBFAFE0025A835 /* Interface.storyboard */; };
 		29D9CE84186F7848006BC1B8 /* StaffTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29D9CE83186F7848006BC1B8 /* StaffTableViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -178,6 +181,7 @@
 		2999444C186A63100038D92F /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		2999444D186A71CF0038D92F /* PluginsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PluginsTableViewController.h; sourceTree = "<group>"; };
 		2999444E186A71CF0038D92F /* PluginsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PluginsTableViewController.m; sourceTree = "<group>"; };
+		29A547C61AFBCC6900B47410 /* StaffInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StaffInterfaceController.swift; sourceTree = "<group>"; };
 		29ABB95C18720F9600463485 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		29ABB95E18720F9C00463485 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		29ABB96118721EA300463485 /* MWFeedParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWFeedParser.h; sourceTree = "<group>"; };
@@ -203,7 +207,7 @@
 		29BCC4831871E23F009D91A3 /* Staff.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Staff.m; sourceTree = "<group>"; };
 		29BDEF8A1ADBFAFE0025A835 /* Modesty WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Modesty WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		29BDEF8D1ADBFAFE0025A835 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		29BDEF8E1ADBFAFE0025A835 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		29BDEF8E1ADBFAFE0025A835 /* PlayerInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerInterfaceController.swift; sourceTree = "<group>"; };
 		29BDEF921ADBFAFE0025A835 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		29BDEF961ADBFAFE0025A835 /* Modesty WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Modesty WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		29BDEF9C1ADBFAFE0025A835 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -219,6 +223,7 @@
 		29CB05B2186F67D400711876 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		29D0662B1ADC1E2000DB0674 /* PlayerRowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerRowController.swift; sourceTree = "<group>"; };
 		29D0662E1ADC3DF200DB0674 /* ViewPlayerInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewPlayerInterfaceController.swift; sourceTree = "<group>"; };
+		29D1FFCF1AFBCEC70070058F /* MainInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainInterfaceController.swift; sourceTree = "<group>"; };
 		29D9CE82186F7848006BC1B8 /* StaffTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StaffTableViewController.h; sourceTree = "<group>"; };
 		29D9CE83186F7848006BC1B8 /* StaffTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StaffTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -488,11 +493,13 @@
 		29BDEF8B1ADBFAFE0025A835 /* Modesty WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
-				29BDEF8E1ADBFAFE0025A835 /* InterfaceController.swift */,
+				29D1FFCF1AFBCEC70070058F /* MainInterfaceController.swift */,
+				29BDEF8E1ADBFAFE0025A835 /* PlayerInterfaceController.swift */,
+				29A547C61AFBCC6900B47410 /* StaffInterfaceController.swift */,
 				29D0662E1ADC3DF200DB0674 /* ViewPlayerInterfaceController.swift */,
+				29D0662B1ADC1E2000DB0674 /* PlayerRowController.swift */,
 				29BDEF921ADBFAFE0025A835 /* Images.xcassets */,
 				29BDEF8C1ADBFAFE0025A835 /* Supporting Files */,
-				29D0662B1ADC1E2000DB0674 /* PlayerRowController.swift */,
 			);
 			path = "Modesty WatchKit Extension";
 			sourceTree = "<group>";
@@ -715,6 +722,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29D1FFD11AFBCF310070058F /* Interface.storyboard in Resources */,
 				29D0662D1ADC3CF600DB0674 /* Minecraft Evenings.otf in Resources */,
 				29BDEF971ADBFAFE0025A835 /* Modesty WatchKit App.app in Resources */,
 				29BDEF931ADBFAFE0025A835 /* Images.xcassets in Resources */,
@@ -779,8 +787,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29D1FFD01AFBCEC70070058F /* MainInterfaceController.swift in Sources */,
 				29D0662C1ADC1E2000DB0674 /* PlayerRowController.swift in Sources */,
-				29BDEF8F1ADBFAFE0025A835 /* InterfaceController.swift in Sources */,
+				29BDEF8F1ADBFAFE0025A835 /* PlayerInterfaceController.swift in Sources */,
+				29A547C71AFBCC6900B47410 /* StaffInterfaceController.swift in Sources */,
 				29D0662F1ADC3DF200DB0674 /* ViewPlayerInterfaceController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
