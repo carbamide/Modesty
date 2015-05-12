@@ -12,5 +12,6 @@ import WatchKit
 class PlayerRowController: NSObject {
     @IBOutlet weak var playerImageView: WKInterfaceImage!
     @IBOutlet weak var playerNameLabel: WKInterfaceLabel!
+    @IBOutlet weak var rankLabel: WKInterfaceLabel!
 }
 

@@ -1,34 +1,112 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="7703" systemVersion="14E11f" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="fh3-PN-dn3">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="7702" systemVersion="14E11f" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="fh3-PN-dn3">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6711"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="3737"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="Minecraft Evenings.otf">
+            <string>MinecraftEvenings</string>
+            <string>MinecraftEvenings</string>
+            <string>MinecraftEvenings</string>
+            <string>MinecraftEvenings</string>
+        </mutableArray>
+    </customFonts>
     <scenes>
+        <!--Glance Interface Controller-->
+        <scene sceneID="uSD-4x-dzw">
+            <objects>
+                <glanceController id="lkL-Zi-iJv" customClass="GlanceInterfaceController" customModule="Modesty_WatchKit_Extension">
+                    <items>
+                        <group alignment="left" id="Ydw-Iv-Ty0">
+                            <items>
+                                <imageView width="50" height="50" alignment="left" image="glance_image" id="irq-mX-o4f"/>
+                            </items>
+                        </group>
+                        <group alignment="left" layout="vertical" id="cjI-81-0e5">
+                            <items>
+                                <label alignment="left" text="Checking connection" minimumScaleFactor="0.20000000000000015" id="LPU-04-daX"/>
+                                <label alignment="left" text="..." numberOfLines="3" minimumScaleFactor="0.20000000000000015" id="rFS-vj-aFj"/>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="playerCountLabel" destination="rFS-vj-aFj" id="1LQ-xf-Tjl"/>
+                        <outlet property="statusLabel" destination="LPU-04-daX" id="qUX-9U-HNn"/>
+                    </connections>
+                </glanceController>
+            </objects>
+            <point key="canvasLocation" x="-78" y="21"/>
+        </scene>
         <!--Modesty-->
         <scene sceneID="tHR-Ft-ZZa">
             <objects>
-                <controller title="Modesty" id="fh3-PN-dn3" customClass="MainInterfaceController" customModule="Modesty_WatchKit_Extension">
+                <controller title="Modesty" backgroundImage="background" id="fh3-PN-dn3" customClass="MainInterfaceController" customModule="Modesty_WatchKit_Extension">
                     <items>
                         <button width="1" alignment="left" verticalAlignment="center" title="Players" id="DIJ-Du-x2A">
+                            <fontDescription key="font" name="MinecraftEvenings" family="Minecraft Evenings" pointSize="22"/>
                             <connections>
                                 <segue destination="D38-Yv-Nd3" kind="push" id="Jo5-jQ-2Gl"/>
                             </connections>
                         </button>
                         <button width="1" alignment="left" verticalAlignment="center" title="Staff" id="wHU-Yu-8Yx">
+                            <fontDescription key="font" name="MinecraftEvenings" family="Minecraft Evenings" pointSize="22"/>
                             <connections>
                                 <segue destination="M3T-dj-krx" kind="push" id="CDl-Zb-Cwi"/>
+                            </connections>
+                        </button>
+                        <button width="1" alignment="left" verticalAlignment="center" title="News" id="KbY-25-8LY">
+                            <fontDescription key="font" name="MinecraftEvenings" family="Minecraft Evenings" pointSize="22"/>
+                            <connections>
+                                <segue destination="Sfq-CV-zHf" kind="push" identifier="News" id="fid-k2-XXD"/>
                             </connections>
                         </button>
                     </items>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="-119" y="328"/>
+            <point key="canvasLocation" x="-363" y="546"/>
+        </scene>
+        <!--News-->
+        <scene sceneID="JNF-XQ-9J5">
+            <objects>
+                <controller title="News" backgroundImage="background" id="Sfq-CV-zHf" customClass="NewsInterfaceController" customModule="Modesty_WatchKit_Extension">
+                    <items>
+                        <table alignment="left" id="YGm-3r-GNA">
+                            <items>
+                                <tableRow identifier="NewsRow" id="Jqv-tl-G9u" customClass="NewsRowController" customModule="Modesty_WatchKit_Extension">
+                                    <group key="rootItem" width="1" height="0.0" alignment="left" layout="vertical" spacing="8" id="ZFA-t3-Nfb">
+                                        <items>
+                                            <label width="1" alignment="left" text="Label" textAlignment="center" numberOfLines="15" id="ADn-DP-HtU">
+                                                <fontDescription key="font" name="MinecraftEvenings" family="Minecraft Evenings" pointSize="20"/>
+                                            </label>
+                                            <label alignment="left" text="Label" numberOfLines="2" id="Orb-MM-RG7">
+                                                <fontDescription key="font" style="UICTFontTextStyleSubhead"/>
+                                            </label>
+                                            <label alignment="left" text="Label" numberOfLines="75" minimumScaleFactor="0.50000000000000011" id="4lx-o1-H3A">
+                                                <fontDescription key="font" type="system" pointSize="12"/>
+                                            </label>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="bodyLabel" destination="4lx-o1-H3A" id="uAO-lG-DhA"/>
+                                        <outlet property="dateLabel" destination="Orb-MM-RG7" id="Cjr-87-9lQ"/>
+                                        <outlet property="headlineLabel" destination="ADn-DP-HtU" id="4Mc-5Z-pSo"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                    <connections>
+                        <outlet property="newsTableView" destination="YGm-3r-GNA" id="Nkz-IF-Vke"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="-368" y="-237"/>
         </scene>
         <!--Staff-->
         <scene sceneID="HLx-up-pLo">
             <objects>
-                <controller title="Staff" id="M3T-dj-krx" customClass="StaffInterfaceController" customModule="Modesty_WatchKit_Extension">
+                <controller title="Staff" backgroundImage="background" id="M3T-dj-krx" customClass="StaffInterfaceController" customModule="Modesty_WatchKit_Extension">
                     <items>
                         <table alignment="left" id="Rct-Gk-dMY">
                             <items>
@@ -36,12 +114,25 @@
                                     <group key="rootItem" width="1" alignment="left" id="ifn-V5-7xT">
                                         <items>
                                             <imageView width="40" alignment="left" verticalAlignment="center" contentMode="scaleAspectFit" id="QrY-Ph-TZK"/>
-                                            <label width="87" alignment="left" verticalAlignment="center" text="Label" textAlignment="center" minimumScaleFactor="0.20000000000000015" id="1Dk-1I-mUi"/>
+                                            <group width="1" alignment="left" layout="vertical" id="RmC-y6-qfz">
+                                                <items>
+                                                    <label width="87" alignment="left" verticalAlignment="center" text="Label" textAlignment="center" minimumScaleFactor="0.20000000000000015" id="1Dk-1I-mUi">
+                                                        <variation key="device=watch42mm" width="106"/>
+                                                    </label>
+                                                    <label width="85" alignment="left" verticalAlignment="bottom" text="Label" textAlignment="center" id="eEc-Bv-pnJ">
+                                                        <color key="textColor" red="0.59676218032836914" green="0.59686756134033203" blue="0.5967555046081543" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                                                        <variation key="device=watch38mm" width="85"/>
+                                                        <variation key="device=watch42mm" width="105"/>
+                                                    </label>
+                                                </items>
+                                            </group>
                                         </items>
                                     </group>
                                     <connections>
                                         <outlet property="playerImageView" destination="QrY-Ph-TZK" id="sUz-AK-F9K"/>
                                         <outlet property="playerNameLabel" destination="1Dk-1I-mUi" id="1Ei-wy-Qzr"/>
+                                        <outlet property="rankLabel" destination="eEc-Bv-pnJ" id="Bak-YG-DXZ"/>
                                         <segue destination="Bwj-qn-rhR" kind="push" id="pBz-07-ydr"/>
                                     </connections>
                                 </tableRow>
@@ -53,16 +144,18 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="281" y="648"/>
+            <point key="canvasLocation" x="280.71794871794873" y="647.30769230769238"/>
         </scene>
-        <!--View Player Interface Controller-->
+        <!--background-->
         <scene sceneID="6Kw-eu-F55">
             <objects>
-                <controller id="Bwj-qn-rhR" customClass="ViewPlayerInterfaceController" customModule="Modesty_WatchKit_Extension">
+                <controller backgroundImage="background" id="Bwj-qn-rhR" customClass="ViewPlayerInterfaceController" customModule="Modesty_WatchKit_Extension">
                     <items>
                         <imageView width="120" height="120" alignment="center" id="tFk-0g-eOz"/>
                         <label width="110" alignment="center" verticalAlignment="center" textAlignment="center" id="1Eq-l4-OiA"/>
-                        <label width="110" alignment="center" text="Name" textAlignment="center" minimumScaleFactor="0.20000000000000015" id="xwc-VQ-EAV"/>
+                        <label width="110" alignment="center" text="Name" textAlignment="center" minimumScaleFactor="0.20000000000000015" id="xwc-VQ-EAV">
+                            <fontDescription key="font" style="UICTFontTextStyleBody"/>
+                        </label>
                     </items>
                     <connections>
                         <outlet property="playerImage" destination="tFk-0g-eOz" id="Ozi-Sj-1Hj"/>
@@ -76,7 +169,7 @@
         <!--Players-->
         <scene sceneID="jVy-KX-4TP">
             <objects>
-                <controller title="Players" id="D38-Yv-Nd3" customClass="PlayerInterfaceController" customModule="Modesty_WatchKit_Extension">
+                <controller identifier="PlayerInterfaceController" title="Players" backgroundImage="background" id="D38-Yv-Nd3" customClass="PlayerInterfaceController" customModule="Modesty_WatchKit_Extension">
                     <items>
                         <group width="1" alignment="left" id="pWp-O6-gJ9">
                             <items>
@@ -89,12 +182,25 @@
                                     <group key="rootItem" width="1" height="40" alignment="left" id="nbF-Jc-bfv">
                                         <items>
                                             <imageView width="40" alignment="left" verticalAlignment="center" contentMode="scaleAspectFit" id="E1I-2Y-1eP"/>
-                                            <label width="87" alignment="left" verticalAlignment="center" text="Label" textAlignment="center" minimumScaleFactor="0.20000000000000015" id="ah5-z4-P8i"/>
+                                            <group width="1" alignment="left" layout="vertical" spacing="0.0" id="vhp-Lb-LFa">
+                                                <items>
+                                                    <label width="85" alignment="left" verticalAlignment="bottom" text="Label" textAlignment="center" id="NCD-JK-uiY">
+                                                        <color key="textColor" red="0.59676218032836914" green="0.59686756134033203" blue="0.5967555046081543" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                                                        <variation key="device=watch38mm" width="85"/>
+                                                        <variation key="device=watch42mm" width="105"/>
+                                                    </label>
+                                                    <label width="85" alignment="left" text="Player" textAlignment="center" minimumScaleFactor="0.20000000000000015" id="ah5-z4-P8i">
+                                                        <variation key="device=watch42mm" width="103"/>
+                                                    </label>
+                                                </items>
+                                            </group>
                                         </items>
                                     </group>
                                     <connections>
                                         <outlet property="playerImageView" destination="E1I-2Y-1eP" id="aqH-BB-quQ"/>
                                         <outlet property="playerNameLabel" destination="ah5-z4-P8i" id="tah-Im-pjN"/>
+                                        <outlet property="rankLabel" destination="NCD-JK-uiY" id="NwX-FG-sp6"/>
                                         <segue destination="Bwj-qn-rhR" kind="push" id="9KX-5N-qBr"/>
                                     </connections>
                                 </tableRow>
@@ -116,10 +222,11 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="228" y="162"/>
+            <point key="canvasLocation" x="226.66666666666669" y="160.84615384615387"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="pBz-07-ydr"/>
+        <segue reference="9KX-5N-qBr"/>
     </inferredMetricsTieBreakers>
+    <color key="tintColor" red="0.12884655594825745" green="0.60977780818939209" blue="0.090462855994701385" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>
