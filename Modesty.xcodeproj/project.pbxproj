@@ -7,6 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		29044DAA1B001D92001981FD /* Modesty WatchKit App.app in Resources */ = {isa = PBXBuildFile; fileRef = 29BDEF961ADBFAFE0025A835 /* Modesty WatchKit App.app */; };
+		29044DBC1B002611001981FD /* GTMNSString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = 29044DAE1B002611001981FD /* GTMNSString+HTML.m */; };
+		29044DBD1B002611001981FD /* MWFeedInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 29044DB01B002611001981FD /* MWFeedInfo.m */; };
+		29044DBE1B002611001981FD /* MWFeedItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 29044DB21B002611001981FD /* MWFeedItem.m */; };
+		29044DBF1B002611001981FD /* MWFeedParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 29044DB51B002611001981FD /* MWFeedParser.m */; };
+		29044DC01B002611001981FD /* NSDate+InternetDateTime.m in Sources */ = {isa = PBXBuildFile; fileRef = 29044DB71B002611001981FD /* NSDate+InternetDateTime.m */; };
+		29044DC11B002611001981FD /* NSString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = 29044DB91B002611001981FD /* NSString+HTML.m */; };
+		29044DC21B002611001981FD /* NSString+XMLEntities.m in Sources */ = {isa = PBXBuildFile; fileRef = 29044DBB1B002611001981FD /* NSString+XMLEntities.m */; };
+		29044DC41B00266F001981FD /* NewsInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29044DC31B00266F001981FD /* NewsInterfaceController.swift */; };
+		29044DC81B00270F001981FD /* NewsRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29044DC71B00270F001981FD /* NewsRowController.swift */; };
+		29044DCB1B00443E001981FD /* minecraftevenings_wk.otf in Resources */ = {isa = PBXBuildFile; fileRef = 29044DC91B00441A001981FD /* minecraftevenings_wk.otf */; };
+		29044DCC1B0045EB001981FD /* minecraftevenings_wk.otf in Resources */ = {isa = PBXBuildFile; fileRef = 29044DCA1B00441E001981FD /* minecraftevenings_wk.otf */; };
 		2910A79D186A9A7200677800 /* iTunesArtwork.png in Resources */ = {isa = PBXBuildFile; fileRef = 2910A79C186A9A7200677800 /* iTunesArtwork.png */; };
 		29979EFD186FDB16004ECB95 /* SVWebViewController.strings in Resources */ = {isa = PBXBuildFile; fileRef = 29979EE0186FDB16004ECB95 /* SVWebViewController.strings */; };
 		29979EFE186FDB16004ECB95 /* SVModalWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29979EE8186FDB16004ECB95 /* SVModalWebViewController.m */; };
@@ -31,11 +43,6 @@
 		29994416186A08880038D92F /* InfoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29994415186A08880038D92F /* InfoTableViewController.m */; };
 		29994419186A08880038D92F /* PlayersTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29994418186A08880038D92F /* PlayersTableViewController.m */; };
 		2999441B186A08890038D92F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2999441A186A08890038D92F /* Images.xcassets */; };
-		29994422186A08890038D92F /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29994421186A08890038D92F /* XCTest.framework */; };
-		29994423186A08890038D92F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 299943FF186A08880038D92F /* Foundation.framework */; };
-		29994424186A08890038D92F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29994403186A08880038D92F /* UIKit.framework */; };
-		2999442C186A08890038D92F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2999442A186A08890038D92F /* InfoPlist.strings */; };
-		2999442E186A08890038D92F /* ModestyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2999442D186A08890038D92F /* ModestyTests.m */; };
 		29994439186A093F0038D92F /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = 29994438186A093F0038D92F /* Player.m */; };
 		2999443C186A098A0038D92F /* Server.m in Sources */ = {isa = PBXBuildFile; fileRef = 2999443B186A098A0038D92F /* Server.m */; };
 		2999443F186A0A490038D92F /* DataMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 2999443E186A0A490038D92F /* DataMapper.m */; };
@@ -58,30 +65,29 @@
 		29BCC4841871E23F009D91A3 /* Staff.m in Sources */ = {isa = PBXBuildFile; fileRef = 29BCC4831871E23F009D91A3 /* Staff.m */; };
 		29BDEF8F1ADBFAFE0025A835 /* PlayerInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BDEF8E1ADBFAFE0025A835 /* PlayerInterfaceController.swift */; };
 		29BDEF931ADBFAFE0025A835 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29BDEF921ADBFAFE0025A835 /* Images.xcassets */; };
-		29BDEF971ADBFAFE0025A835 /* Modesty WatchKit App.app in Resources */ = {isa = PBXBuildFile; fileRef = 29BDEF961ADBFAFE0025A835 /* Modesty WatchKit App.app */; };
 		29BDEF9F1ADBFAFE0025A835 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29BDEF9D1ADBFAFE0025A835 /* Interface.storyboard */; };
 		29BDEFA11ADBFAFE0025A835 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29BDEFA01ADBFAFE0025A835 /* Images.xcassets */; };
 		29BDEFA41ADBFAFE0025A835 /* Modesty WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 29BDEF8A1ADBFAFE0025A835 /* Modesty WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		29C1D88C1B0050CC00B54C87 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C1D88B1B0050CC00B54C87 /* MainTabBarController.swift */; };
 		29CB05A7186DF75500711876 /* Minecraft Evenings.otf in Resources */ = {isa = PBXBuildFile; fileRef = 29CB05A6186DF75500711876 /* Minecraft Evenings.otf */; };
 		29CB05AF186F668000711876 /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 29CB05A9186F668000711876 /* libTestFlight.a */; };
 		29CB05B0186F668100711876 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 29CB05AA186F668000711876 /* README.md */; };
 		29CB05B1186F668100711876 /* release_notes.md in Resources */ = {isa = PBXBuildFile; fileRef = 29CB05AB186F668000711876 /* release_notes.md */; };
 		29CB05B3186F67D400711876 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 29CB05B2186F67D400711876 /* libz.dylib */; };
 		29D0662C1ADC1E2000DB0674 /* PlayerRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29D0662B1ADC1E2000DB0674 /* PlayerRowController.swift */; };
-		29D0662D1ADC3CF600DB0674 /* Minecraft Evenings.otf in Resources */ = {isa = PBXBuildFile; fileRef = 29CB05A6186DF75500711876 /* Minecraft Evenings.otf */; };
 		29D0662F1ADC3DF200DB0674 /* ViewPlayerInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29D0662E1ADC3DF200DB0674 /* ViewPlayerInterfaceController.swift */; };
 		29D1FFD01AFBCEC70070058F /* MainInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29D1FFCF1AFBCEC70070058F /* MainInterfaceController.swift */; };
-		29D1FFD11AFBCF310070058F /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29BDEF9D1ADBFAFE0025A835 /* Interface.storyboard */; };
+		29D1FFD31AFBE20D0070058F /* GlanceInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29D1FFD21AFBE20D0070058F /* GlanceInterfaceController.swift */; };
 		29D9CE84186F7848006BC1B8 /* StaffTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29D9CE83186F7848006BC1B8 /* StaffTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		29994425186A08890038D92F /* PBXContainerItemProxy */ = {
+		29820D761AFBF0D600780D4C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 299943F4186A08880038D92F /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 299943FB186A08880038D92F;
-			remoteInfo = Modesty;
+			remoteGlobalIDString = 29BDEF951ADBFAFE0025A835;
+			remoteInfo = "Modesty WatchKit App";
 		};
 		29BDEF981ADBFAFE0025A835 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -114,6 +120,26 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		29044DAC1B002610001981FD /* Modesty WatchKit Extension-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Modesty WatchKit Extension-Bridging-Header.h"; sourceTree = "<group>"; };
+		29044DAD1B002611001981FD /* GTMNSString+HTML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GTMNSString+HTML.h"; sourceTree = "<group>"; };
+		29044DAE1B002611001981FD /* GTMNSString+HTML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GTMNSString+HTML.m"; sourceTree = "<group>"; };
+		29044DAF1B002611001981FD /* MWFeedInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWFeedInfo.h; sourceTree = "<group>"; };
+		29044DB01B002611001981FD /* MWFeedInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWFeedInfo.m; sourceTree = "<group>"; };
+		29044DB11B002611001981FD /* MWFeedItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWFeedItem.h; sourceTree = "<group>"; };
+		29044DB21B002611001981FD /* MWFeedItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWFeedItem.m; sourceTree = "<group>"; };
+		29044DB31B002611001981FD /* MWFeedParser_Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWFeedParser_Private.h; sourceTree = "<group>"; };
+		29044DB41B002611001981FD /* MWFeedParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWFeedParser.h; sourceTree = "<group>"; };
+		29044DB51B002611001981FD /* MWFeedParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWFeedParser.m; sourceTree = "<group>"; };
+		29044DB61B002611001981FD /* NSDate+InternetDateTime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+InternetDateTime.h"; sourceTree = "<group>"; };
+		29044DB71B002611001981FD /* NSDate+InternetDateTime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+InternetDateTime.m"; sourceTree = "<group>"; };
+		29044DB81B002611001981FD /* NSString+HTML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+HTML.h"; sourceTree = "<group>"; };
+		29044DB91B002611001981FD /* NSString+HTML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+HTML.m"; sourceTree = "<group>"; };
+		29044DBA1B002611001981FD /* NSString+XMLEntities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+XMLEntities.h"; sourceTree = "<group>"; };
+		29044DBB1B002611001981FD /* NSString+XMLEntities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+XMLEntities.m"; sourceTree = "<group>"; };
+		29044DC31B00266F001981FD /* NewsInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsInterfaceController.swift; sourceTree = "<group>"; };
+		29044DC71B00270F001981FD /* NewsRowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsRowController.swift; sourceTree = "<group>"; };
+		29044DC91B00441A001981FD /* minecraftevenings_wk.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = minecraftevenings_wk.otf; sourceTree = "<group>"; };
+		29044DCA1B00441E001981FD /* minecraftevenings_wk.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = minecraftevenings_wk.otf; sourceTree = "<group>"; };
 		2910A79C186A9A7200677800 /* iTunesArtwork.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iTunesArtwork.png; sourceTree = "<group>"; };
 		2991D27C1944EF6400C856D4 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 		2991D2801944EF6400C856D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -161,7 +187,6 @@
 		29994417186A08880038D92F /* PlayersTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlayersTableViewController.h; sourceTree = "<group>"; };
 		29994418186A08880038D92F /* PlayersTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlayersTableViewController.m; sourceTree = "<group>"; };
 		2999441A186A08890038D92F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		29994420186A08890038D92F /* ModestyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ModestyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		29994421186A08890038D92F /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		29994429186A08890038D92F /* ModestyTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ModestyTests-Info.plist"; sourceTree = "<group>"; };
 		2999442B186A08890038D92F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -213,6 +238,8 @@
 		29BDEF9C1ADBFAFE0025A835 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		29BDEF9E1ADBFAFE0025A835 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		29BDEFA01ADBFAFE0025A835 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		29C1D88A1B0050CB00B54C87 /* Modesty-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Modesty-Bridging-Header.h"; sourceTree = "<group>"; };
+		29C1D88B1B0050CC00B54C87 /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		29CB05A6186DF75500711876 /* Minecraft Evenings.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Minecraft Evenings.otf"; sourceTree = "<group>"; };
 		29CB05A9186F668000711876 /* libTestFlight.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libTestFlight.a; sourceTree = "<group>"; };
 		29CB05AA186F668000711876 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
@@ -224,6 +251,7 @@
 		29D0662B1ADC1E2000DB0674 /* PlayerRowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerRowController.swift; sourceTree = "<group>"; };
 		29D0662E1ADC3DF200DB0674 /* ViewPlayerInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewPlayerInterfaceController.swift; sourceTree = "<group>"; };
 		29D1FFCF1AFBCEC70070058F /* MainInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainInterfaceController.swift; sourceTree = "<group>"; };
+		29D1FFD21AFBE20D0070058F /* GlanceInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlanceInterfaceController.swift; sourceTree = "<group>"; };
 		29D9CE82186F7848006BC1B8 /* StaffTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StaffTableViewController.h; sourceTree = "<group>"; };
 		29D9CE83186F7848006BC1B8 /* StaffTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StaffTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -243,16 +271,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2999441D186A08890038D92F /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				29994422186A08890038D92F /* XCTest.framework in Frameworks */,
-				29994424186A08890038D92F /* UIKit.framework in Frameworks */,
-				29994423186A08890038D92F /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		29BDEF871ADBFAFE0025A835 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -263,6 +281,51 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		29044DAB1B002604001981FD /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+				29044DAD1B002611001981FD /* GTMNSString+HTML.h */,
+				29044DAE1B002611001981FD /* GTMNSString+HTML.m */,
+				29044DAF1B002611001981FD /* MWFeedInfo.h */,
+				29044DB01B002611001981FD /* MWFeedInfo.m */,
+				29044DB11B002611001981FD /* MWFeedItem.h */,
+				29044DB21B002611001981FD /* MWFeedItem.m */,
+				29044DB31B002611001981FD /* MWFeedParser_Private.h */,
+				29044DB41B002611001981FD /* MWFeedParser.h */,
+				29044DB51B002611001981FD /* MWFeedParser.m */,
+				29044DB61B002611001981FD /* NSDate+InternetDateTime.h */,
+				29044DB71B002611001981FD /* NSDate+InternetDateTime.m */,
+				29044DB81B002611001981FD /* NSString+HTML.h */,
+				29044DB91B002611001981FD /* NSString+HTML.m */,
+				29044DBA1B002611001981FD /* NSString+XMLEntities.h */,
+				29044DBB1B002611001981FD /* NSString+XMLEntities.m */,
+				29044DAC1B002610001981FD /* Modesty WatchKit Extension-Bridging-Header.h */,
+			);
+			name = Vendor;
+			sourceTree = "<group>";
+		};
+		29044DC51B0026E3001981FD /* Interface Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				29D1FFD21AFBE20D0070058F /* GlanceInterfaceController.swift */,
+				29D1FFCF1AFBCEC70070058F /* MainInterfaceController.swift */,
+				29044DC31B00266F001981FD /* NewsInterfaceController.swift */,
+				29BDEF8E1ADBFAFE0025A835 /* PlayerInterfaceController.swift */,
+				29A547C61AFBCC6900B47410 /* StaffInterfaceController.swift */,
+				29D0662E1ADC3DF200DB0674 /* ViewPlayerInterfaceController.swift */,
+			);
+			name = "Interface Controllers";
+			sourceTree = "<group>";
+		};
+		29044DC61B0026ED001981FD /* Row Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				29D0662B1ADC1E2000DB0674 /* PlayerRowController.swift */,
+				29044DC71B00270F001981FD /* NewsRowController.swift */,
+			);
+			name = "Row Controllers";
+			sourceTree = "<group>";
+		};
 		2991D27E1944EF6400C856D4 /* Modesty Status */ = {
 			isa = PBXGroup;
 			children = (
@@ -352,7 +415,6 @@
 			isa = PBXGroup;
 			children = (
 				299943FC186A08880038D92F /* Modesty.app */,
-				29994420186A08890038D92F /* ModestyTests.xctest */,
 				29BDEF8A1ADBFAFE0025A835 /* Modesty WatchKit Extension.appex */,
 				29BDEF961ADBFAFE0025A835 /* Modesty WatchKit App.app */,
 			);
@@ -435,6 +497,7 @@
 		29994444186A0F200038D92F /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				29C1D88B1B0050CC00B54C87 /* MainTabBarController.swift */,
 				29994414186A08880038D92F /* InfoTableViewController.h */,
 				29994415186A08880038D92F /* InfoTableViewController.m */,
 				29994417186A08880038D92F /* PlayersTableViewController.h */,
@@ -452,6 +515,7 @@
 				29ABB97A187222C200463485 /* NewsDetailTableViewController.h */,
 				29ABB97B187222C200463485 /* NewsDetailTableViewController.m */,
 				2999444C186A63100038D92F /* Constants.h */,
+				29C1D88A1B0050CB00B54C87 /* Modesty-Bridging-Header.h */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -493,13 +557,12 @@
 		29BDEF8B1ADBFAFE0025A835 /* Modesty WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
-				29D1FFCF1AFBCEC70070058F /* MainInterfaceController.swift */,
-				29BDEF8E1ADBFAFE0025A835 /* PlayerInterfaceController.swift */,
-				29A547C61AFBCC6900B47410 /* StaffInterfaceController.swift */,
-				29D0662E1ADC3DF200DB0674 /* ViewPlayerInterfaceController.swift */,
-				29D0662B1ADC1E2000DB0674 /* PlayerRowController.swift */,
+				29044DC61B0026ED001981FD /* Row Controllers */,
+				29044DC51B0026E3001981FD /* Interface Controllers */,
 				29BDEF921ADBFAFE0025A835 /* Images.xcassets */,
+				29044DC91B00441A001981FD /* minecraftevenings_wk.otf */,
 				29BDEF8C1ADBFAFE0025A835 /* Supporting Files */,
+				29044DAB1B002604001981FD /* Vendor */,
 			);
 			path = "Modesty WatchKit Extension";
 			sourceTree = "<group>";
@@ -525,6 +588,7 @@
 		29BDEF9B1ADBFAFE0025A835 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				29044DCA1B00441E001981FD /* minecraftevenings_wk.otf */,
 				29BDEF9C1ADBFAFE0025A835 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -569,29 +633,12 @@
 			);
 			dependencies = (
 				29BDEFA31ADBFAFE0025A835 /* PBXTargetDependency */,
+				29820D771AFBF0D600780D4C /* PBXTargetDependency */,
 			);
 			name = Modesty;
 			productName = Modesty;
 			productReference = 299943FC186A08880038D92F /* Modesty.app */;
 			productType = "com.apple.product-type.application";
-		};
-		2999441F186A08890038D92F /* ModestyTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 29994434186A08890038D92F /* Build configuration list for PBXNativeTarget "ModestyTests" */;
-			buildPhases = (
-				2999441C186A08890038D92F /* Sources */,
-				2999441D186A08890038D92F /* Frameworks */,
-				2999441E186A08890038D92F /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				29994426186A08890038D92F /* PBXTargetDependency */,
-			);
-			name = ModestyTests;
-			productName = ModestyTests;
-			productReference = 29994420186A08890038D92F /* ModestyTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		29BDEF891ADBFAFE0025A835 /* Modesty WatchKit Extension */ = {
 			isa = PBXNativeTarget;
@@ -646,9 +693,6 @@
 							};
 						};
 					};
-					2999441F186A08890038D92F = {
-						TestTargetID = 299943FB186A08880038D92F;
-					};
 					29BDEF891ADBFAFE0025A835 = {
 						CreatedOnToolsVersion = 6.3;
 						DevelopmentTeam = RG2JJ52ENN;
@@ -680,7 +724,6 @@
 			projectRoot = "";
 			targets = (
 				299943FB186A08880038D92F /* Modesty */,
-				2999441F186A08890038D92F /* ModestyTests */,
 				29BDEF891ADBFAFE0025A835 /* Modesty WatchKit Extension */,
 				29BDEF951ADBFAFE0025A835 /* Modesty WatchKit App */,
 			);
@@ -710,21 +753,12 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2999441E186A08890038D92F /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				2999442C186A08890038D92F /* InfoPlist.strings in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		29BDEF881ADBFAFE0025A835 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				29D1FFD11AFBCF310070058F /* Interface.storyboard in Resources */,
-				29D0662D1ADC3CF600DB0674 /* Minecraft Evenings.otf in Resources */,
-				29BDEF971ADBFAFE0025A835 /* Modesty WatchKit App.app in Resources */,
+				29044DCB1B00443E001981FD /* minecraftevenings_wk.otf in Resources */,
+				29044DAA1B001D92001981FD /* Modesty WatchKit App.app in Resources */,
 				29BDEF931ADBFAFE0025A835 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -734,6 +768,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				29BDEF9F1ADBFAFE0025A835 /* Interface.storyboard in Resources */,
+				29044DCC1B0045EB001981FD /* minecraftevenings_wk.otf in Resources */,
 				29BDEFA11ADBFAFE0025A835 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -755,6 +790,7 @@
 				29ABB97318721EAD00463485 /* GTMNSString+HTML.m in Sources */,
 				29994416186A08880038D92F /* InfoTableViewController.m in Sources */,
 				29ABB97918721EBF00463485 /* NewsTableViewController.m in Sources */,
+				29C1D88C1B0050CC00B54C87 /* MainTabBarController.swift in Sources */,
 				29979F03186FDB16004ECB95 /* SVWebViewControllerActivityChrome.m in Sources */,
 				29979EFE186FDB16004ECB95 /* SVModalWebViewController.m in Sources */,
 				29979F00186FDB16004ECB95 /* SVWebViewController.m in Sources */,
@@ -775,33 +811,35 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2999441C186A08890038D92F /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				2999442E186A08890038D92F /* ModestyTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		29BDEF861ADBFAFE0025A835 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				29D1FFD01AFBCEC70070058F /* MainInterfaceController.swift in Sources */,
 				29D0662C1ADC1E2000DB0674 /* PlayerRowController.swift in Sources */,
+				29044DC81B00270F001981FD /* NewsRowController.swift in Sources */,
+				29044DBF1B002611001981FD /* MWFeedParser.m in Sources */,
 				29BDEF8F1ADBFAFE0025A835 /* PlayerInterfaceController.swift in Sources */,
+				29044DC41B00266F001981FD /* NewsInterfaceController.swift in Sources */,
+				29044DBE1B002611001981FD /* MWFeedItem.m in Sources */,
+				29044DBD1B002611001981FD /* MWFeedInfo.m in Sources */,
 				29A547C71AFBCC6900B47410 /* StaffInterfaceController.swift in Sources */,
+				29044DC01B002611001981FD /* NSDate+InternetDateTime.m in Sources */,
 				29D0662F1ADC3DF200DB0674 /* ViewPlayerInterfaceController.swift in Sources */,
+				29D1FFD31AFBE20D0070058F /* GlanceInterfaceController.swift in Sources */,
+				29044DC11B002611001981FD /* NSString+HTML.m in Sources */,
+				29044DBC1B002611001981FD /* GTMNSString+HTML.m in Sources */,
+				29044DC21B002611001981FD /* NSString+XMLEntities.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		29994426186A08890038D92F /* PBXTargetDependency */ = {
+		29820D771AFBF0D600780D4C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 299943FB186A08880038D92F /* Modesty */;
-			targetProxy = 29994425186A08890038D92F /* PBXContainerItemProxy */;
+			target = 29BDEF951ADBFAFE0025A835 /* Modesty WatchKit App */;
+			targetProxy = 29820D761AFBF0D600780D4C /* PBXContainerItemProxy */;
 		};
 		29BDEF991ADBFAFE0025A835 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -945,6 +983,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
@@ -952,12 +991,15 @@
 				GCC_PREFIX_HEADER = "Modesty/Modesty-Prefix.pch";
 				INFOPLIST_FILE = "Modesty/Modesty-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/TestFlightSDK2",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Modesty/Modesty-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -967,6 +1009,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
@@ -974,61 +1017,22 @@
 				GCC_PREFIX_HEADER = "Modesty/Modesty-Prefix.pch";
 				INFOPLIST_FILE = "Modesty/Modesty-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/TestFlightSDK2",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Modesty/Modesty-Bridging-Header.h";
 				WRAPPER_EXTENSION = app;
-			};
-			name = Release;
-		};
-		29994435186A08890038D92F /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Modesty.app/Modesty";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Modesty/Modesty-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "ModestyTests/ModestyTests-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Debug;
-		};
-		29994436186A08890038D92F /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Modesty.app/Modesty";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Modesty/Modesty-Prefix.pch";
-				INFOPLIST_FILE = "ModestyTests/ModestyTests-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
 			};
 			name = Release;
 		};
 		29BDEFA51ADBFAFE0025A835 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -1044,9 +1048,10 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = "${TARGET_NAME}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Modesty WatchKit Extension/Modesty WatchKit Extension-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -1054,6 +1059,7 @@
 		29BDEFA61ADBFAFE0025A835 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -1066,9 +1072,10 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = "${TARGET_NAME}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Modesty WatchKit Extension/Modesty WatchKit Extension-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -1141,15 +1148,6 @@
 			buildConfigurations = (
 				29994432186A08890038D92F /* Debug */,
 				29994433186A08890038D92F /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		29994434186A08890038D92F /* Build configuration list for PBXNativeTarget "ModestyTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				29994435186A08890038D92F /* Debug */,
-				29994436186A08890038D92F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
