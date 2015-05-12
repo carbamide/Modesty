@@ -15,4 +15,6 @@
  */
 @interface InfoTableViewController : ModestyTableViewController
 
+-(void)activateStaffListing;
+
 @end

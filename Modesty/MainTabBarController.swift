@@ -12,24 +12,32 @@ class MainTabBarController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    override func restoreUserActivityState(activity: NSUserActivity) {
+        if let userInfo: NSDictionary = activity.userInfo {
+            let viewing: String = userInfo["viewing"] as! String
+            
+            if (viewing == "staff") {
+                self.selectedIndex = 0
+                let infoViewController: InfoTableViewController = (self.viewControllers?.first?.topViewController as? InfoTableViewController)!
+                
+                    infoViewController.activateStaffListing()
+            }
+            else if (viewing == "players") {
+                self.selectedIndex = 1
+            }
+            else if (viewing == "news") {
+                self.selectedIndex = 3
+            }
+        }
+        
+        super.restoreUserActivityState(activity)
     }
-    */
 
 }

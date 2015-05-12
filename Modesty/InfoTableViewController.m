@@ -56,6 +56,11 @@
     [super didReceiveMemoryWarning];
 }
 
+-(void)activateStaffListing
+{
+    [self performSegueWithIdentifier:kShowStaff sender:self];
+}
+
 #pragma mark -
 #pragma mark - UITableViewDelegate and Datasource
 
