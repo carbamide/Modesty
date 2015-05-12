@@ -23,7 +23,7 @@
         
         NSMutableDictionary *titleBarAttributes = [NSMutableDictionary dictionaryWithDictionary:[[UINavigationBar appearance] titleTextAttributes]];
         [titleBarAttributes addEntriesFromDictionary:@{NSFontAttributeName: [UIFont fontWithName:kFont size:34]}];
-
+        
         [[UINavigationBar appearance] setTitleTextAttributes:titleBarAttributes];
         [[UINavigationBar appearance] setTitleVerticalPositionAdjustment:5 forBarMetrics:UIBarMetricsDefault];
     }
@@ -39,7 +39,7 @@
     token = [token stringByReplacingOccurrencesOfString:@" " withString:@""];
     
     NSDictionary *jsonDict = @{@"token": token};
-
+    
     NSLog(@"%@", token);
     
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:@"http://safe-retreat-6833.herokuapp.com/device_tokens"]];
@@ -54,7 +54,7 @@
     if (error) {
         NSLog(@"An error has occurred during the creation of the json data object for sending tokens");
     }
-                                                                             
+    
     [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
         if (data) {
             NSLog(@"The token has been created serverside");
@@ -80,6 +80,13 @@
                                           otherButtonTitles:nil];
     
     [alert show];
+}
+
+-(BOOL)application:(UIApplication *)application continueUserActivity:(NSUserActivity *)userActivity restorationHandler:(void (^)(NSArray *))restorationHandler
+{
+    restorationHandler(@[self.window.rootViewController]);
+    
+    return true;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
