@@ -10,7 +10,6 @@
 #import "DataMapper.h"
 #import "ModestyInfo.h"
 #import "Server.h"
-#import "TestFlight.h"
 
 @interface PluginsTableViewController ()
 /**
@@ -40,8 +39,6 @@
     
     [self setTitle:@"Plugins"];
     
-    [TestFlight passCheckpoint:@"Loaded Plugins Controller"];
-
     [self setDataSource:[NSMutableArray array]];
     
     for (NSString *plugin in [[[[DataMapper sharedInstance] modestyInfo] serverInformation] plugins]) {
@@ -97,23 +94,15 @@
     NSString *cellTitle = [[[tableView cellForRowAtIndexPath:indexPath] textLabel] text];
     
     if ([self contains:@"XPBanker" on:cellTitle]) {
-        [TestFlight passCheckpoint:@"Opened XPBanker"];
-        
         [self initializeBrowserWithURL:[NSURL URLWithString:kXpBanker]];
     }
     else if ([self contains:@"CaptureCraft" on:cellTitle]) {
-        [TestFlight passCheckpoint:@"Opened CaptureCraft"];
-        
         [self initializeBrowserWithURL:[NSURL URLWithString:kCaptureCraft]];
     }
     else if ([self contains:@"DisguiseCraft" on:cellTitle]) {
-        [TestFlight passCheckpoint:@"Opened DisguiseCraft"];
-        
         [self initializeBrowserWithURL:[NSURL URLWithString:kDisguiseCraft]];
     }
     else if ([self contains:@"mcMMO" on:cellTitle]) {
-        [TestFlight passCheckpoint:@"Opened Mcmmo"];
-        
         [self initializeBrowserWithURL:[NSURL URLWithString:kMcmmo]];
     }
     else {
@@ -138,8 +127,6 @@
     switch ([alertView tag]) {
         case 0:
             if ([title isEqualToString:@"OK"]) {
-                [TestFlight passCheckpoint:@"Opened Modesty"];
-
                 [self initializeBrowserWithURL:[NSURL URLWithString:kModestyHomepage]];
 
             }

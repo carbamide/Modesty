@@ -8,14 +8,11 @@
 
 #import "AppDelegate.h"
 #import "DataMapper.h"
-#import "TestFlight.h"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
-{
-    [TestFlight takeOff:kTestFlightApiURLKey];
-    
+{    
     [[UIApplication sharedApplication] registerForRemoteNotifications];
     
     if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0) {

@@ -8,7 +8,7 @@
 
 #import "ModestyTableViewController.h"
 #import "DataMapper.h"
-#import "SVWebViewController/SVModalWebViewController.h"
+#import "SVModalWebViewController.h"
 
 @interface ModestyTableViewController ()
 /**

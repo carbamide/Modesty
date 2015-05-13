@@ -7,7 +7,6 @@
 //
 
 #import "SocialTableViewController.h"
-#import "TestFlight.h"
 
 @interface SocialTableViewController ()
 
@@ -32,8 +31,6 @@
     [super viewDidLoad];
     
     [self setTitle:@"Social"];
-    
-    [TestFlight passCheckpoint:@"Loaded Social Controller"];
 }
 
 - (void)didReceiveMemoryWarning
@@ -148,20 +145,14 @@
         case 0:
             switch ([indexPath row]) {
                 case 0: {
-                    [TestFlight passCheckpoint:@"Opened Twitter"];
-                    
                     [self initializeBrowserWithURL:[NSURL URLWithString:kTwitterURL]];
                 }
                     break;
                 case 1: {
-                    [TestFlight passCheckpoint:@"Opened Instagram"];
-                    
                     [self initializeBrowserWithURL:[NSURL URLWithString:kInstagramURL]];
                 }
                     break;
                 case 2: {
-                    [TestFlight passCheckpoint:@"Opened Facebook"];
-                    
                     [self initializeBrowserWithURL:[NSURL URLWithString:kFacebookURL]];
                 }
                     break;
@@ -172,8 +163,6 @@
         case 1:
             switch ([indexPath row]) {
                 case 0: {
-                    [TestFlight passCheckpoint:@"Opened Forum"];
-                    
                     [self initializeBrowserWithURL:[NSURL URLWithString:kForumURL]];
                 }
                     break;
@@ -184,20 +173,14 @@
         case 2:
             switch ([indexPath row]) {
                 case 0: {
-                    [TestFlight passCheckpoint:@"Opened Planetminecraft"];
-                    
                     [self initializeBrowserWithURL:[NSURL URLWithString:kPlanetMinecraft]];
                 }
                     break;
                 case 1: {
-                    [TestFlight passCheckpoint:@"Opened Minecraftservers.org"];
-                    
                     [self initializeBrowserWithURL:[NSURL URLWithString:kMinecraftServersOrg]];
                 }
                     break;
-                case 2: {
-                    [TestFlight passCheckpoint:@"Opened Minecraft Servers List"];
-                    
+                case 2: {                    
                     [self initializeBrowserWithURL:[NSURL URLWithString:kMinecraftServerList]];
                 }
                     break;

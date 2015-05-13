@@ -12,7 +12,6 @@
 
 #pragma mark -
 #pragma mark - Api
-static NSString *const kTestFlightApiURLKey = @"2f1ee9be-d0ff-489b-9764-8bca95a2f364";
 static NSString *const kApiPlayers = @"players";
 static NSString *const kApiInfo = @"info";
 static NSString *const kApiPlugins = @"Plugins";

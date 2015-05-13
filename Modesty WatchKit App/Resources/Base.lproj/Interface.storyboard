@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="7702" systemVersion="14E11f" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="fh3-PN-dn3">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="7703" systemVersion="14E17e" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="fh3-PN-dn3">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6711"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="3737"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -43,13 +43,13 @@
             <objects>
                 <controller title="Modesty" backgroundImage="background" id="fh3-PN-dn3" customClass="MainInterfaceController" customModule="Modesty_WatchKit_Extension">
                     <items>
-                        <button width="1" alignment="left" verticalAlignment="center" title="Players" id="DIJ-Du-x2A">
+                        <button width="1" alignment="left" verticalAlignment="center" title="Players" enabled="NO" id="DIJ-Du-x2A">
                             <fontDescription key="font" name="MinecraftEvenings" family="Minecraft Evenings" pointSize="22"/>
                             <connections>
                                 <segue destination="D38-Yv-Nd3" kind="push" id="Jo5-jQ-2Gl"/>
                             </connections>
                         </button>
-                        <button width="1" alignment="left" verticalAlignment="center" title="Staff" id="wHU-Yu-8Yx">
+                        <button width="1" alignment="left" verticalAlignment="center" title="Staff" enabled="NO" id="wHU-Yu-8Yx">
                             <fontDescription key="font" name="MinecraftEvenings" family="Minecraft Evenings" pointSize="22"/>
                             <connections>
                                 <segue destination="M3T-dj-krx" kind="push" id="CDl-Zb-Cwi"/>
@@ -62,6 +62,20 @@
                             </connections>
                         </button>
                     </items>
+                    <menu key="menu" id="528-Zf-rdV">
+                        <items>
+                            <menuItem title="Refresh" icon="resume" id="gAl-jc-xrt">
+                                <connections>
+                                    <action selector="refreshMenuAction" destination="fh3-PN-dn3" id="OwA-Gc-IPR"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                    <connections>
+                        <outlet property="newsButton" destination="KbY-25-8LY" id="wp1-By-sCT"/>
+                        <outlet property="playerButton" destination="DIJ-Du-x2A" id="6wh-e2-K45"/>
+                        <outlet property="staffButton" destination="wHU-Yu-8Yx" id="xOJ-He-YCZ"/>
+                    </connections>
                 </controller>
             </objects>
             <point key="canvasLocation" x="-363" y="546"/>
@@ -139,6 +153,15 @@
                             </items>
                         </table>
                     </items>
+                    <menu key="menu" id="q55-tm-fje">
+                        <items>
+                            <menuItem title="Refresh" icon="resume" id="aii-qP-mCF">
+                                <connections>
+                                    <action selector="refreshMenuAction" destination="M3T-dj-krx" id="1gE-zu-F98"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
                     <connections>
                         <outlet property="playerTableView" destination="Rct-Gk-dMY" id="Urg-E0-5Jf"/>
                     </connections>
@@ -209,7 +232,7 @@
                     </items>
                     <menu key="menu" id="eJ2-Bl-qz8">
                         <items>
-                            <menuItem title="Refresh" icon="repeat" id="HNG-rK-cMi">
+                            <menuItem title="Refresh" icon="resume" id="HNG-rK-cMi">
                                 <connections>
                                     <action selector="refreshMenu" destination="D38-Yv-Nd3" id="RfN-Gm-r7P"/>
                                 </connections>
@@ -226,7 +249,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="9KX-5N-qBr"/>
+        <segue reference="pBz-07-ydr"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.12884655594825745" green="0.60977780818939209" blue="0.090462855994701385" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>
