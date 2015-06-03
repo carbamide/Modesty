@@ -7,8 +7,7 @@
 //
 
 #import "DataMapper.h"
-#import "ModestyInfo.h"
-#import "Staff.h"
+#import "Modesty-Swift.h"
 
 @interface DataMapper ()
 @property (strong, nonatomic) NSTimer *pingTimer;

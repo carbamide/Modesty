@@ -15,16 +15,23 @@ class GlanceInterfaceController: WKInterfaceController {
     @IBOutlet weak var statusLabel: WKInterfaceLabel!
     @IBOutlet weak var playerCountLabel: WKInterfaceLabel!
     
+    private var session: NSURLSession!
+    
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
         
-        loadPlayerData()
+        var sessionConfiguration:NSURLSessionConfiguration = NSURLSessionConfiguration.defaultSessionConfiguration()
+        sessionConfiguration.HTTPMaximumConnectionsPerHost = 5
         
-        updateUserActivity("com.jukaela.Modesty.watchkitapp.glance", userInfo: ["viewing": "players"], webpageURL: nil)
+        self.session = NSURLSession(configuration: sessionConfiguration)
     }
     
     override func willActivate() {
         super.willActivate()
+        
+        loadPlayerData()
+        
+        updateUserActivity("com.jukaela.Modesty.watchkitapp.glance", userInfo: ["viewing": "players"], webpageURL: nil)
     }
     
     override func didDeactivate() {
@@ -35,9 +42,8 @@ class GlanceInterfaceController: WKInterfaceController {
         let url = NSURL(string:"http://aqueous-lowlands-3303.herokuapp.com")
         let request = NSURLRequest(URL: url!)
         
-        NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue(), completionHandler: {
-            response, data, error in
-            
+        self.session.dataTaskWithURL(url!, completionHandler: {
+            (data, response, error) in
             let modestyDict = NSJSONSerialization.JSONObjectWithData(data, options: .MutableLeaves, error: nil) as? NSDictionary
             let playersArray = modestyDict?.objectForKey("players") as? NSArray
             
@@ -47,25 +53,28 @@ class GlanceInterfaceController: WKInterfaceController {
             else {
                 self.updateLabelsForError()
             }
-            
-        })
+        }).resume()
     }
     
     func updateLabels(players: NSArray) {
-        let singular = players.count == 1
-        
-        statusLabel.setText("Modesty is up!")
-        
-        if (players.count > 0) {
-            playerCountLabel.setText(String(format:"There %@ currently %d %@ online.", (singular ? "is" : "are"), players.count, (singular ? "player" : "players")))
-        }
-        else {
-            playerCountLabel.setText("No players are online.")
+        dispatch_async(dispatch_get_main_queue()) {
+            let singular = players.count == 1
+            
+            self.statusLabel.setText("Modesty is up!")
+            
+            if (players.count > 0) {
+                self.playerCountLabel.setText(String(format:"There %@ currently %d %@ online.", (singular ? "is" : "are"), players.count, (singular ? "player" : "players")))
+            }
+            else {
+                self.playerCountLabel.setText("No players are online.")
+            }
         }
     }
     
     func updateLabelsForError() {
-        statusLabel.setText("Modesty is down!")
-        playerCountLabel.setText("No players are online.")
+        dispatch_async(dispatch_get_main_queue()) {
+            self.statusLabel.setText("Modesty is down!")
+            self.playerCountLabel.setText("No players are online.")
+        }
     }
 }

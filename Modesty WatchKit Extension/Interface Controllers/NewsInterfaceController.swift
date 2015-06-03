@@ -16,10 +16,13 @@ class NewsInterfaceController: WKInterfaceController, MWFeedParserDelegate {
     var itemsToDisplay: NSArray!
     var feedParser: MWFeedParser!
     
+    @IBOutlet weak var loadingLabel: WKInterfaceLabel!
     @IBOutlet weak var newsTableView: WKInterfaceTable!
     
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
+        
+        updateUserActivity("com.jukaela.Modesty.watchkitapp.activity", userInfo: ["viewing" : "news"], webpageURL: nil)
         
         dateFormatter = NSDateFormatter()
         dateFormatter.dateStyle = .ShortStyle
@@ -31,13 +34,12 @@ class NewsInterfaceController: WKInterfaceController, MWFeedParserDelegate {
         feedParser.delegate = self
         feedParser.feedParseType = ParseTypeFull
         feedParser.connectionType = ConnectionTypeAsynchronously
-        feedParser.parse()
-        
-        updateUserActivity("com.jukaela.Modesty.watchkitapp.activity", userInfo: ["viewing" : "news"], webpageURL: nil)
     }
     
     override func willActivate() {
         super.willActivate()
+        
+        feedParser.parse()
     }
     
     override func didDeactivate() {
@@ -46,10 +48,11 @@ class NewsInterfaceController: WKInterfaceController, MWFeedParserDelegate {
     
     func updateTableWithParsedItems() {
         self.itemsToDisplay = parsedItems
-        newsTableView.setNumberOfRows(self.itemsToDisplay.count, withRowType: "NewsRow")
-
+        
+        self.newsTableView.setNumberOfRows(self.itemsToDisplay.count, withRowType: "NewsRow")
+        
         for (index, item) in enumerate(self.itemsToDisplay) {
-            if let row = newsTableView.rowControllerAtIndex(index) as? NewsRowController {
+            if let row = self.newsTableView.rowControllerAtIndex(index) as? NewsRowController {
                 let itemTitle:NSString = NSString(string: item.title!!)
                 let itemSummary:NSString = NSString(string: item.summary!!)
                 
@@ -58,18 +61,44 @@ class NewsInterfaceController: WKInterfaceController, MWFeedParserDelegate {
                 
                 row.headlineLabel.setText(title)
                 row.dateLabel.setText(self.dateFormatter!.stringFromDate(item.date!!))
+//                row.bodyLabel.setHyphenatedText(summary)
                 row.bodyLabel.setText(summary)
             }
         }
     }
     
     func feedParser(parser: MWFeedParser!, didParseFeedItem item: MWFeedItem!) {
-        if (item != nil) {
-            self.parsedItems.addObject(item)
+        dispatch_async(dispatch_get_main_queue()) {
+            if (item != nil) {
+                self.parsedItems.addObject(item)
+            }
+        }
+    }
+    
+    func feedParserDidStart(parser: MWFeedParser!) {
+        dispatch_async(dispatch_get_main_queue()) {
+            self.newsTableView.setHidden(true)
+            self.loadingLabel.setHidden(false)
         }
     }
     
     func feedParserDidFinish(parser: MWFeedParser!) {
-        updateTableWithParsedItems()
+        dispatch_async(dispatch_get_main_queue()) {
+            self.newsTableView.setHidden(false)
+            self.loadingLabel.setHidden(true)
+            
+            self.updateTableWithParsedItems()
+        }
+    }
+}
+
+extension WKInterfaceLabel
+{
+    func setHyphenatedText(text: String) {
+        let style = NSMutableParagraphStyle()
+        style.hyphenationFactor = 1
+        
+        let attributes = [NSParagraphStyleAttributeName: style]
+        setAttributedText(NSAttributedString(string: text, attributes: attributes))
     }
 }

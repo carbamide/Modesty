@@ -12,6 +12,8 @@ import Foundation
 struct UserVisibleStrings {
     static let LOADING_STRING = "Loading…"
     static let STAFF_STRING = "Staff"
+    static let PLAYERS_SINGULAR = "Player"
+    static let PLAYERS_PLURAL = "Players"
 }
 
 struct InternalStrings {
@@ -21,11 +23,12 @@ struct InternalStrings {
 }
 
 class MainInterfaceController: WKInterfaceController {
-
+    
     @IBOutlet weak var playerButton: WKInterfaceButton!
     @IBOutlet weak var staffButton: WKInterfaceButton!
     @IBOutlet weak var newsButton: WKInterfaceButton!
-    @IBOutlet weak var loadingIndicatorImage: WKInterfaceImage!
+    @IBOutlet weak var playerLabel: WKInterfaceLabel!
+    @IBOutlet weak var staffLabel: WKInterfaceLabel!
     
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
@@ -34,14 +37,12 @@ class MainInterfaceController: WKInterfaceController {
         self.staffButton.setTitle(UserVisibleStrings.LOADING_STRING)
         
         DataManager.sharedInstance.refreshData({
-            self.playerButton.setTitle(String(format:"%d Players", DataManager.sharedInstance.playerDataSource.count))
-            self.playerButton.setEnabled(true)
-            
-            self.staffButton.setTitle(UserVisibleStrings.STAFF_STRING)
-            self.staffButton.setEnabled(true)
+            dispatch_async(dispatch_get_main_queue()) {
+                self.refreshData()
+            }
         })
     }
-
+    
     override func handleUserActivity(userInfo: [NSObject : AnyObject]!) {
         let viewing: String = userInfo[InternalStrings.VIEWING] as! String
         
@@ -55,20 +56,29 @@ class MainInterfaceController: WKInterfaceController {
         self.staffButton.setTitle(UserVisibleStrings.LOADING_STRING)
         
         DataManager.sharedInstance.refreshData({
-            self.playerButton.setTitle(String(format:"%d Players", DataManager.sharedInstance.playerDataSource.count))
-            self.playerButton.setEnabled(true)
-            
-            self.staffButton.setTitle(UserVisibleStrings.STAFF_STRING)
-            self.staffButton.setEnabled(true)
+            self.refreshData()
         })
+    }
+    
+    private func refreshData() {
+        let playerCount = DataManager.sharedInstance.playerDataSource.count
+        
+        self.playerLabel.setText(String(format:"%d %@", playerCount, playerCount == 1 ? UserVisibleStrings.PLAYERS_SINGULAR : UserVisibleStrings.PLAYERS_PLURAL))
+        
+        if playerCount > 0 {
+            self.playerButton.setEnabled(true)
+        }
+        
+        self.staffLabel.setText(UserVisibleStrings.STAFF_STRING)
+        self.staffButton.setEnabled(true)
     }
     
     override func willActivate() {
         super.willActivate()
     }
-
+    
     override func didDeactivate() {
         super.didDeactivate()
     }
-
+    
 }

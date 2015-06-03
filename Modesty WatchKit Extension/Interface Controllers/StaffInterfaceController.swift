@@ -35,61 +35,43 @@ class StaffInterfaceController: WKInterfaceController {
     
     override func contextForSegueWithIdentifier(segueIdentifier: String, inTable table: WKInterfaceTable, rowIndex: Int) -> AnyObject? {
         if let dataSource = DataManager.sharedInstance.staffDataSource {
-            var tempDataSource: Array<String> = []
+            let staffMember = dataSource[rowIndex]
             
-            if let staffListing = DataManager.sharedInstance.staffDataSource {
-                for array: NSArray in staffListing as! [NSArray] {
-                    for dict: NSDictionary in array as! [NSDictionary] {
-                        tempDataSource.append(dict["username"]! as! String)
-                    }
-                }
-            }
-            
-            let username = tempDataSource[rowIndex]
-            
-            return username
+            return staffMember.username
         }
         
         return nil;
     }
     
-    @IBAction func refreshMenuAction() {        
+    @IBAction func refreshMenuAction() {
         DataManager.sharedInstance.refreshData({ () in
-            self.loadTableData()
+            dispatch_async(dispatch_get_main_queue()) {
+                self.loadTableData()
+            }
         })
     }
     
     func loadTableData() {
-        var dataSource: Array<String> = []
+        playerTableView.setNumberOfRows(DataManager.sharedInstance.staffDataSource.count, withRowType: "PlayerRow")
         
-        if let staffListing = DataManager.sharedInstance.staffDataSource {
-            for array: NSArray in staffListing as! [NSArray] {
-                for dict: NSDictionary in array as! [NSDictionary] {
-                    dataSource.append(dict["username"]! as! String)
-                }
-            }
-        }
-        
-        playerTableView.setNumberOfRows(dataSource.count, withRowType: "PlayerRow")
-        
-        for (index, username) in enumerate(dataSource) {
+        for (index, staffMember) in enumerate(DataManager.sharedInstance.staffDataSource) {
             if let row = playerTableView.rowControllerAtIndex(index) as? PlayerRowController {
-                row.playerNameLabel.setText(username)
-                row.rankLabel.setText(DataManager.sharedInstance.rankForUsername(username))
+                row.playerNameLabel.setText(staffMember.username)
+                row.rankLabel.setText(DataManager.sharedInstance.rankForUsername(staffMember.username))
                 
                 var usingCachedImage = false
                 
-                for imageDict in WKInterfaceDevice.currentDevice().cachedImages {
-                    if imageDict.0 == username {
-                        row.playerImageView.setImageNamed(username)
-                        
-                        usingCachedImage = true
-                    }
+                if WKInterfaceDevice.currentDevice().cachedImages[staffMember.username] != nil {
+                    row.playerImageView.setImageNamed(staffMember.username)
+                    
+                    usingCachedImage = true
                 }
                 
                 if !usingCachedImage {
-                    DataManager.sharedInstance.loadImageFromRemoteForPlayer(username, rowController: row)
+                    DataManager.sharedInstance.loadImageFromRemoteForPlayer(staffMember.username, rowController: row)
                 }
+                
+                row.playerImageView.setAccessibilityLabel(String(format:"Avatar for %s", staffMember.username))
             }
         }
     }

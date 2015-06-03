@@ -12,7 +12,6 @@ import Foundation
 class PlayerInterfaceController: WKInterfaceController {
     
     @IBOutlet weak var playerTableView: WKInterfaceTable!
-    @IBOutlet weak var playerCountLabel: WKInterfaceLabel!
     
     override init() {
         super.init()
@@ -26,7 +25,7 @@ class PlayerInterfaceController: WKInterfaceController {
         super.willActivate()
         
         updateUserActivity("com.jukaela.Modesty.watchkitapp.activity", userInfo: ["viewing" : "players"], webpageURL: nil)
-
+        
         loadTableData()
     }
     
@@ -35,47 +34,57 @@ class PlayerInterfaceController: WKInterfaceController {
     }
     
     override func contextForSegueWithIdentifier(segueIdentifier: String, inTable table: WKInterfaceTable, rowIndex: Int) -> AnyObject? {
-        let player: AnyObject = DataManager.sharedInstance.playerDataSource[rowIndex]
+        let player = DataManager.sharedInstance.playerDataSource[rowIndex]
         
-        return player
+        return player.username
     }
     
     @IBAction func refreshMenu() {
-        playerCountLabel.setText("Refreshing")
-        
         DataManager.sharedInstance.refreshData({ () in
-            self.loadTableData()
+            dispatch_async(dispatch_get_main_queue()) {
+                self.loadTableData()
+            }
         })
+    }
+    
+    private func setRankLabel(username: String, inRow row: PlayerRowController) {
+        let rank = DataManager.sharedInstance.rankForUsername(username)
+        
+        if rank == "" {
+            row.rankLabel.setHidden(true)
+        }
+        else {
+            row.rankLabel.setHidden(false)
+            row.rankLabel.setText(rank)
+        }
     }
     
     func loadTableData() {
         if let dataSource = DataManager.sharedInstance.playerDataSource {
             playerTableView.setNumberOfRows(dataSource.count, withRowType: "PlayerRow")
             
-            for (index, playerName) in enumerate(dataSource) {
-                if let row = playerTableView.rowControllerAtIndex(index) as? PlayerRowController {
-                    if let username: String = playerName as? String {
-                        row.playerNameLabel.setText(username)
-                        row.rankLabel.setText(DataManager.sharedInstance.rankForUsername(username))
+            for (index, player) in enumerate(dataSource) {
+                if let
+                    row = playerTableView.rowControllerAtIndex(index) as? PlayerRowController {
+                        row.playerNameLabel.setText(player.username)
+                        
+                        self.setRankLabel(player.username, inRow: row)
                         
                         var usingCachedImage = false
                         
-                        for imageDict in WKInterfaceDevice.currentDevice().cachedImages {
-                            if imageDict.0 == username {
-                                row.playerImageView.setImageNamed(username)
-                                
-                                usingCachedImage = true
-                            }
+                        if WKInterfaceDevice.currentDevice().cachedImages[player.username] != nil {
+                            row.playerImageView.setImageNamed(player.username)
+                            
+                            usingCachedImage = true
                         }
                         
                         if !usingCachedImage {
-                            DataManager.sharedInstance.loadImageFromRemoteForPlayer(username, rowController: row)
+                            DataManager.sharedInstance.loadImageFromRemoteForPlayer(player.username, rowController: row)
                         }
-                    }
+                        
+                        row.playerImageView.setAccessibilityLabel(String(format:"Avatar for %s", player.username))
                 }
             }
-            
-            playerCountLabel.setText(String(format: "%d %@", dataSource.count, dataSource.count == 1 ? "player" : "players"))
         }
         else {
             refreshMenu()

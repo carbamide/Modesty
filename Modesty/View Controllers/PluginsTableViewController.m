@@ -8,8 +8,7 @@
 
 #import "PluginsTableViewController.h"
 #import "DataMapper.h"
-#import "ModestyInfo.h"
-#import "Server.h"
+#import "Modesty-Swift.h"
 
 @interface PluginsTableViewController ()
 /**

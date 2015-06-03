@@ -8,9 +8,8 @@
 
 #import "PlayersTableViewController.h"
 #import "DataMapper.h"
-#import "ModestyInfo.h"
-#import "Player.h"
-#import "Staff.h"
+#import "Modesty-Swift.h"
+
 
 @interface PlayersTableViewController ()
 /**
@@ -125,7 +124,7 @@
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{    
+{
     [[[self tableView] cellForRowAtIndexPath:indexPath] setSelected:NO animated:YES];
 }
 
@@ -145,10 +144,12 @@
             dispatch_async(dispatch_get_main_queue(), ^{
                 [[self imageCache] setObject:image forKey:username];
                 
-                [[cell imageView] setNeedsLayout];
-                [[cell imageView] setImage:image];
-                
-                [cell setNeedsLayout];
+                if ([[self tableView] indexPathForCell:cell]) {
+                    [[cell imageView] setNeedsLayout];
+                    [[cell imageView] setImage:image];
+                    
+                    [cell setNeedsLayout];
+                }
             });
         }
     }];

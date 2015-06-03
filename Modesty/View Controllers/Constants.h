@@ -76,7 +76,7 @@ static NSString *const kMinecraftServerList = @"http://minecraft-server-list.com
 static NSString *const kFacebookURL = @"https://www.facebook.com/minecraftmodesty";
 static NSString *const kRssFeed = @"http://www.minecraftmodesty.enjin.com/home/m/7353456/rss/true";
 
-#define kMinotarHelper @"https://minotar.net/helm/%@/30.png"
+#define kMinotarHelper @"https://minotar.net/helm/%@/90.png"
 
 #pragma mark -
 #pragma mark - Special Usernames
