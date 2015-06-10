@@ -6,8 +6,15 @@
 	<dict>
 		<key>Glance - Modesty WatchKit App.xcscheme</key>
 		<dict>
+			<key>isShown</key>
+			<false/>
 			<key>orderHint</key>
-			<integer>4</integer>
+			<integer>2</integer>
+		</dict>
+		<key>Glance - Modesty for watchOS.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>5</integer>
 		</dict>
 		<key>Modesty Status.xcscheme</key>
 		<dict>
@@ -16,17 +23,36 @@
 		</dict>
 		<key>Modesty WatchKit App.xcscheme</key>
 		<dict>
+			<key>isShown</key>
+			<false/>
 			<key>orderHint</key>
 			<integer>1</integer>
+		</dict>
+		<key>Modesty for watchOS.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>3</integer>
 		</dict>
 		<key>Modesty.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>Notification - Modesty for watchOS.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>4</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>290F6CCE1B27635B00C40410</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>2991D27A1944EF6400C856D4</key>
 		<dict>
 			<key>primary</key>

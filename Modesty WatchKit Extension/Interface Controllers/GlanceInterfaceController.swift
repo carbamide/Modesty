@@ -20,7 +20,7 @@ class GlanceInterfaceController: WKInterfaceController {
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
         
-        var sessionConfiguration:NSURLSessionConfiguration = NSURLSessionConfiguration.defaultSessionConfiguration()
+        let sessionConfiguration:NSURLSessionConfiguration = NSURLSessionConfiguration.defaultSessionConfiguration()
         sessionConfiguration.HTTPMaximumConnectionsPerHost = 5
         
         self.session = NSURLSession(configuration: sessionConfiguration)
@@ -40,20 +40,24 @@ class GlanceInterfaceController: WKInterfaceController {
     
     func loadPlayerData() {
         let url = NSURL(string:"http://aqueous-lowlands-3303.herokuapp.com")
-        let request = NSURLRequest(URL: url!)
         
         self.session.dataTaskWithURL(url!, completionHandler: {
             (data, response, error) in
-            let modestyDict = NSJSONSerialization.JSONObjectWithData(data, options: .MutableLeaves, error: nil) as? NSDictionary
-            let playersArray = modestyDict?.objectForKey("players") as? NSArray
-            
-            if let players = playersArray {
-                self.updateLabels(players)
+            do {
+                let modestyDict = try NSJSONSerialization.JSONObjectWithData(data!, options: .MutableLeaves) as? NSDictionary
+                let playersArray = modestyDict?.objectForKey("players") as? NSArray
+                
+                if let players = playersArray {
+                    self.updateLabels(players)
+                }
+                else {
+                    self.updateLabelsForError()
+                }
             }
-            else {
-                self.updateLabelsForError()
+            catch {
+                print(error)
             }
-        }).resume()
+        })!.resume()
     }
     
     func updateLabels(players: NSArray) {

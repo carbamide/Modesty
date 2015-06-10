@@ -6,7 +6,6 @@
 //  Copyright (c) 2013 Jukaela Enterprises. All rights reserved.
 
 #import "NewsDetailTableViewController.h"
-#import "NSString+HTML.h"
 
 @interface NewsDetailTableViewController ()
 
@@ -39,16 +38,23 @@ typedef enum { SectionDetailSummary } DetailRows;
 {
     [super viewDidLoad];
         
-	if ([[self item] date]) {
+	if ([[self item] pubDate]) {
 		NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
 		[formatter setDateStyle:NSDateFormatterMediumStyle];
 		[formatter setTimeStyle:NSDateFormatterMediumStyle];
         
-        [self setDateString:[formatter stringFromDate:[[self item] date]]];
+        [self setDateString:[formatter stringFromDate:[[self item] pubDate]]];
 	}
 	
-	if ([[self item] summary]) {
-        [self setSummaryString:[[[self item] summary] stringByConvertingHTMLToPlainText]];
+	if ([[self item] content]) {
+        NSAttributedString *attr = [[NSAttributedString alloc] initWithData:[[[self item] content] dataUsingEncoding:NSUTF8StringEncoding]
+                                                                    options:@{NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType,
+                                                                              NSCharacterEncodingDocumentAttribute:@(NSUTF8StringEncoding)}
+                                                         documentAttributes:nil
+                                                                      error:nil];
+        NSString *finalString = [attr string];
+        
+        [self setSummaryString:finalString];
 	}
     else {
         [self setSummaryString:@"[No Summary]"];
@@ -93,7 +99,7 @@ typedef enum { SectionDetailSummary } DetailRows;
     [[cell textLabel] setFont:[UIFont systemFontOfSize:15]];
     
 	if ([self item]) {
-		NSString *itemTitle = [[self item] title] ? [[[self item] title] stringByConvertingHTMLToPlainText] : @"[No Title]";
+		NSString *itemTitle = [[self item] title] ? [[self item] title] : @"[No Title]";
 		
 		switch ([indexPath section]) {
 			case SectionHeader: {
@@ -109,7 +115,7 @@ typedef enum { SectionDetailSummary } DetailRows;
                         
 						break;
 					case SectionHeaderURL:
-                        [[cell textLabel] setText:[[self item] link] ? [[self item] link] : @"[No Link]"];
+                        [[cell textLabel] setText:[[[self item] link] description] ? [[[self item] link] description] : @"[No Link]"];
                         [[cell textLabel] setTextColor:[UIColor blueColor]];
                         
                         [cell setSelectionStyle:UITableViewCellSelectionStyleBlue];
@@ -155,7 +161,7 @@ typedef enum { SectionDetailSummary } DetailRows;
 {
     if ([indexPath section] == SectionHeader && [indexPath row] == SectionHeaderURL) {
 		if ([[self item] link]) {
-            [self initializeBrowserWithURL:[NSURL URLWithString:[[self item] link]]];
+            [self initializeBrowserWithURL:[[self item] link]];
 		}
 	}
 	

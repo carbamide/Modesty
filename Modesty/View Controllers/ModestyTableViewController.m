@@ -8,7 +8,6 @@
 
 #import "ModestyTableViewController.h"
 #import "DataMapper.h"
-#import "SVModalWebViewController.h"
 
 @interface ModestyTableViewController ()
 /**
@@ -134,21 +133,24 @@
 
 -(void)modestyUpAlert
 {
-    [[[UIAlertView alloc] initWithTitle:@"Modesty is Up!"
-                                message:@"Modesty appears to be up!  Yay!"
-                               delegate:nil
-                      cancelButtonTitle:@"OK"
-                      otherButtonTitles:nil, nil] show];
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Modesty is Up!"
+                                                                   message:@"Modesty appears to be up!  Yay!"
+                                                            preferredStyle:UIAlertControllerStyleAlert];
+    
+    [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil]];
+    
+    [self presentViewController:alert animated:YES completion:nil];
 }
 
 -(void)modestyDownAlert
 {
-    [[[UIAlertView alloc] initWithTitle:@"Modesty is Down!"
-                                message:@"Modesty appears to be down!  :-(\nThe information displayed may not be current or correct."
-                               delegate:nil
-                      cancelButtonTitle:@"OK"
-                      otherButtonTitles:nil, nil] show];
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Modesty is Down!"
+                                                                   message:@"Modesty appears to be down!  :-(\nThe information displayed may not be current or correct."
+                                                            preferredStyle:UIAlertControllerStyleAlert];
     
+    [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil]];
+    
+    [self presentViewController:alert animated:YES completion:nil];
 }
 
 -(void)updatingHandler
@@ -175,24 +177,20 @@
     return [searchText rangeOfString:searchTerm options:NSCaseInsensitiveSearch].location == NSNotFound ? NO : YES;
 }
 
--(UIAlertView *)leavingModestyAlertWithTag:(NSInteger)tag
-{
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Leaving Modesty"
-                                                    message:@"Clicking OK will leave the Modesty app and continue to Safari."
-                                                   delegate:self
-                                          cancelButtonTitle:@"Cancel"
-                                          otherButtonTitles:@"OK", nil];
-    
-    [alert setTag:tag];
-    
-    return alert;
-}
-
 -(void)initializeBrowserWithURL:(NSURL *)url
 {
-    SVModalWebViewController *webViewController = [[SVModalWebViewController alloc] initWithAddress:[url absoluteString]];
-    
+    SFSafariViewController *webViewController = [[SFSafariViewController alloc] initWithURL:url entersReaderIfAvailable:NO];
+    [webViewController setDelegate:self];
     [self presentViewController:webViewController animated:YES completion:nil];
+    
+}
+
+#pragma mark -
+#pragma mark SFSafariViewControllerDelegate
+
+- (void)safariViewControllerDidFinish:(SFSafariViewController *)controller
+{
+    [controller dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end

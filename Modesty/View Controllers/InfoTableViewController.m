@@ -193,13 +193,13 @@
         
         [pasteboard setString:@"108.174.48.200:25665"];
         
-        UIAlertView *copiedAlert = [[UIAlertView alloc] initWithTitle:@"Copied"
-                                                              message:@"The server address and port have been copied to your clipboard.  You can now paste the address anywhere you like."
-                                                             delegate:nil
-                                                    cancelButtonTitle:@"OK"
-                                                    otherButtonTitles:nil, nil];
+        UIAlertController *controller = [UIAlertController alertControllerWithTitle:@"Copied"
+                                                                            message:@"The server address and port have been copied to your clipboard.  You can now paste the address anywhere you like."
+                                                                     preferredStyle:UIAlertControllerStyleAlert];
         
-        [copiedAlert show];
+        [controller addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil]];
+        
+        [self presentViewController:controller animated:YES completion:nil];
     }
     else if ([indexPath section] == 1) {
         if ([indexPath row] == 0) {
@@ -217,13 +217,13 @@
                 [self performSegueWithIdentifier:kShowPlugins sender:self];
             }
             else {
-                UIAlertView *noInfoAlert = [[UIAlertView alloc] initWithTitle:@"Oh No!"
-                                                                      message:@"Something must have gone wrong; there's no plugin information.  Please try again later."
-                                                                     delegate:nil
-                                                            cancelButtonTitle:@"OK"
-                                                            otherButtonTitles:nil, nil];
+                UIAlertController *controller = [UIAlertController alertControllerWithTitle:@"Oh No!"
+                                                                                    message:@"Something must have gone wrong; there's no plugin information.  Please try again later."
+                                                                             preferredStyle:UIAlertControllerStyleAlert];
                 
-                [noInfoAlert show];
+                [controller addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleCancel handler:nil]];
+                
+                [self presentViewController:controller animated:YES completion:nil];
             }
         }
     }

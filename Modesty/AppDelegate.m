@@ -52,14 +52,16 @@
         NSLog(@"An error has occurred during the creation of the json data object for sending tokens");
     }
     
-    [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
+    NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
+    
+    [[session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
         if (data) {
             NSLog(@"The token has been created serverside");
         }
         else {
             NSLog(@"An error has occurred while creating the token serverside.");
         }
-    }];
+    }] resume];
 }
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo
@@ -70,13 +72,13 @@
         alertMsg = [[userInfo objectForKey:@"aps"] objectForKey:@"alert"];
     }
     
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Modesty"
-                                                    message:alertMsg
-                                                   delegate:nil
-                                          cancelButtonTitle:@"OK"
-                                          otherButtonTitles:nil];
+    UIAlertController *controller = [UIAlertController alertControllerWithTitle:@"Modesty"
+                                                                        message:alertMsg
+                                                                 preferredStyle:UIAlertControllerStyleAlert];
     
-    [alert show];
+    [controller addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleCancel handler:nil]];
+
+    [[[self window] rootViewController] presentViewController:controller animated:YES completion:nil];
 }
 
 -(BOOL)application:(UIApplication *)application continueUserActivity:(NSUserActivity *)userActivity restorationHandler:(void (^)(NSArray *))restorationHandler

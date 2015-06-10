@@ -137,7 +137,9 @@
     
     [request setHTTPMethod:@"GET"];
     
-    [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
+    NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
+    
+    [[session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
         UIImage *image = [UIImage imageWithData:data];
         
         if (image) {
@@ -152,7 +154,7 @@
                 }
             });
         }
-    }];
+    }] resume];
 }
 
 -(NSString *)rankForUsername:(NSString *)username

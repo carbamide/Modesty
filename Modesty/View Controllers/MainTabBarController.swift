@@ -25,9 +25,9 @@ class MainTabBarController: UITabBarController {
             
             if (viewing == "staff") {
                 self.selectedIndex = 0
-                let infoViewController: InfoTableViewController = (self.viewControllers?.first?.topViewController as? InfoTableViewController)!
-                
-                    infoViewController.activateStaffListing()
+//                let infoViewController: InfoTableViewController = (self.viewControllers?.first?.topViewController as? InfoTableViewController)!
+//                
+//                    infoViewController.activateStaffListing()
             }
             else if (viewing == "players") {
                 self.selectedIndex = 1

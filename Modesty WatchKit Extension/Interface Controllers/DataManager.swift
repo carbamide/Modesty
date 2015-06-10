@@ -25,7 +25,7 @@ class DataManager: NSObject {
         self.playerDataSource = Array()
         self.staffDataSource = Array()
         
-        var sessionConfiguration:NSURLSessionConfiguration = NSURLSessionConfiguration.defaultSessionConfiguration()
+        let sessionConfiguration:NSURLSessionConfiguration = NSURLSessionConfiguration.defaultSessionConfiguration()
         sessionConfiguration.HTTPMaximumConnectionsPerHost = 5
         
         self.session = NSURLSession(configuration: sessionConfiguration)
@@ -34,58 +34,67 @@ class DataManager: NSObject {
     }
     
     func refreshData(completion: () -> Void) {
-        loadPlayerData(completion: completion);
+        loadPlayerData(completion);
     }
     
     private func loadPlayerData(completion: (() -> ())? = nil) {
         let url = NSURL(string:"http://aqueous-lowlands-3303.herokuapp.com")
-        let request = NSURLRequest(URL: url!)
         
         self.session.dataTaskWithURL(url!, completionHandler: {
             (data, response, error) in
-            let modestyDict = NSJSONSerialization.JSONObjectWithData(data, options: .MutableLeaves, error: nil) as? NSDictionary
-            let playersArray = modestyDict?.objectForKey("players") as? NSArray
             
-            if let players = playersArray {
-                self.playerDataSource.removeAll(keepCapacity: false)
+            do {
+                let modestyDict = try NSJSONSerialization.JSONObjectWithData(data!, options: .MutableLeaves) as? NSDictionary
+                let playersArray = modestyDict?.objectForKey("players") as? NSArray
                 
-                for username in players {
-                    var player = Player()
-                    player.username = username as! String
+                if let players = playersArray {
+                    self.playerDataSource.removeAll(keepCapacity: false)
                     
-                    self.playerDataSource.append(player)
+                    for username in players {
+                        var player = Player()
+                        player.username = username as! String
+                        
+                        self.playerDataSource.append(player)
+                    }
                 }
-                
-                self.loadStaffData(completion: completion)
             }
-        }).resume()
+            catch {
+                print(error)
+            }
+            
+            self.loadStaffData(completion)
+        })!.resume()
     }
     
     private func loadStaffData(completion: (() -> ())? = nil) {
         let url = NSURL(string:"http://safe-retreat-6833.herokuapp.com/users.json")
-        let request = NSURLRequest(URL: url!)
         
         self.session.dataTaskWithURL(url!, completionHandler: {
             (data, response, error) in
             
-            let staffArray = NSJSONSerialization.JSONObjectWithData(data, options: .MutableLeaves, error: nil) as? NSArray
-            
-            if let staffListing = staffArray {
-                self.staffDataSource.removeAll(keepCapacity: false)
-
-                for array: NSArray in staffListing as! [NSArray] {
-                    for dict: NSDictionary in array as! [NSDictionary] {
-                        var staffMember = Staff()
-                        staffMember.username = dict["username"] as! String
-                        staffMember.rank = dict["rank"] as! String
-                        
-                        self.staffDataSource.append(staffMember)
-                    }
-                }
+            do {
+                let staffArray = try NSJSONSerialization.JSONObjectWithData(data!, options: .MutableLeaves) as? NSArray
                 
-                completion?()
+                if let staffListing = staffArray {
+                    self.staffDataSource.removeAll(keepCapacity: false)
+                    
+                    for array: NSArray in staffListing as! [NSArray] {
+                        for dict: NSDictionary in array as! [NSDictionary] {
+                            var staffMember = Staff()
+                            staffMember.username = dict["username"] as! String
+                            staffMember.rank = dict["rank"] as! String
+                            
+                            self.staffDataSource.append(staffMember)
+                        }
+                    }
+                    
+                    completion?()
+                }
             }
-        }).resume()
+            catch {
+                print(error)
+            }
+        })!.resume()
     }
     
     func loadImageFromRemoteForPlayer(username: String, rowController: PlayerRowController) {
@@ -96,21 +105,21 @@ class DataManager: NSObject {
             let data = NSData(contentsOfURL: url!)
             
             if let playerAvatarImageData = data {
-                let addedImageToCache = WKInterfaceDevice.currentDevice().addCachedImageWithData(playerAvatarImageData, name: username)
-                
-                if !addedImageToCache {
-                    WKInterfaceDevice.currentDevice().removeAllCachedImages()
-                    
-                    WKInterfaceDevice.currentDevice().addCachedImageWithData(playerAvatarImageData, name: username)
-                }
+//                let addedImageToCache = WKInterfaceDevice.currentDevice().addCachedImageWithData(playerAvatarImageData, name: username)
+//                
+//                if !addedImageToCache {
+//                    WKInterfaceDevice.currentDevice().removeAllCachedImages()
+//                    
+//                    WKInterfaceDevice.currentDevice().addCachedImageWithData(playerAvatarImageData, name: username)
+//                }
                 
                 dispatch_async(dispatch_get_main_queue()) {
                     if let imageView = rowController.playerImageView {
-                        rowController.playerImageView.setImageData(playerAvatarImageData)
+                        imageView.setImageData(playerAvatarImageData)
                     }
                 }
             }
-        }).resume()
+        })!.resume()
     }
     
     func loadFullSizeImageForPlayer(username: String, completion: ((image: NSData) -> ())? = nil) {
@@ -122,17 +131,17 @@ class DataManager: NSObject {
             
             if let userAvatar = data {
                 dispatch_async(dispatch_get_main_queue()) {
-                        completion?(image: userAvatar)
+                    completion?(image: userAvatar)
                 }
             }
-        }).resume()
+        })!.resume()
     }
     
     func rankForUsername(username: String) -> String {
-        let staff = filter(self.staffDataSource) { (staffMember: Staff) in
+        let staff = self.staffDataSource.filter { (staffMember: Staff) in
             staffMember.username == username
         }
-
+        
         return staff.first?.rank ?? ""
     }
 }

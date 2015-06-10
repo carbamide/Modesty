@@ -46,7 +46,9 @@
     
     [urlRequest setHTTPMethod:@"GET"];
     
-    [NSURLConnection sendAsynchronousRequest:urlRequest queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
+    NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
+    
+    [[session dataTaskWithRequest:urlRequest completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
         if (error) {
             NSLog(@"There was an error downloading the ping data.");
         }
@@ -74,7 +76,8 @@
             [[NSNotificationCenter defaultCenter] postNotificationName:kModestyDown object:nil];
             [[NSNotificationCenter defaultCenter] postNotificationName:kModestyUpdateFinished object:nil];
         }
-    }];
+
+    }] resume];
 }
 
 -(void)staffListing
@@ -83,7 +86,9 @@
     
     [urlRequest setHTTPMethod:@"GET"];
     
-    [NSURLConnection sendAsynchronousRequest:urlRequest queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
+    NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
+    
+    [[session dataTaskWithRequest:urlRequest completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
         if (error) {
             NSLog(@"There was an error downloading the staff data.");
         }
@@ -103,7 +108,7 @@
             [[NSNotificationCenter defaultCenter] postNotificationName:kModestyDown object:nil];
             [[NSNotificationCenter defaultCenter] postNotificationName:kModestyUpdateFinished object:nil];
         }
-    }];
+    }] resume];
 }
 
 -(void)refreshInformation
@@ -118,7 +123,9 @@
     
     [urlRequest setHTTPMethod:@"GET"];
     
-    [NSURLConnection sendAsynchronousRequest:urlRequest queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
+    NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
+    
+    [[session dataTaskWithRequest:urlRequest completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
         if (error) {
             NSLog(@"An error has occurred downloading the json.");
             
@@ -142,7 +149,7 @@
             [[NSNotificationCenter defaultCenter] postNotificationName:kModestyDown object:nil];
             [[NSNotificationCenter defaultCenter] postNotificationName:kModestyUpdateFinished object:nil];
         }
-    }];
+    }] resume];
 }
 
 -(void)mapToModestyInfo:(NSDictionary *)dict

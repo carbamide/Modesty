@@ -9,12 +9,11 @@
 import WatchKit
 import Foundation
 
-class NewsInterfaceController: WKInterfaceController, MWFeedParserDelegate {
+class NewsInterfaceController: WKInterfaceController {
     
     var dateFormatter: NSDateFormatter!
     var parsedItems: NSMutableArray!
     var itemsToDisplay: NSArray!
-    var feedParser: MWFeedParser!
     
     @IBOutlet weak var loadingLabel: WKInterfaceLabel!
     @IBOutlet weak var newsTableView: WKInterfaceTable!
@@ -30,16 +29,27 @@ class NewsInterfaceController: WKInterfaceController, MWFeedParserDelegate {
         parsedItems = NSMutableArray()
         itemsToDisplay = NSArray()
         
-        feedParser = MWFeedParser(feedURL: NSURL(string: "http://www.minecraftmodesty.enjin.com/home/m/7353456/rss/true"))
-        feedParser.delegate = self
-        feedParser.feedParseType = ParseTypeFull
-        feedParser.connectionType = ConnectionTypeAsynchronously
+        let request = NSURLRequest(URL: NSURL(string: "http://www.minecraftmodesty.enjin.com/home/m/7353456/rss/true")!)
+        
+        RSSParser.parseFeedForRequest(request, callback: {
+            (feed, error) -> Void in
+            dispatch_async(dispatch_get_main_queue()) {
+                if let _ = feed {
+                    for item in feed!.items {
+                        self.parsedItems.addObject(item)
+                    }
+                    
+                    self.newsTableView.setHidden(false)
+                    self.loadingLabel.setHidden(true)
+                    
+                    self.updateTableWithParsedItems()
+                }
+            }
+        })
     }
     
     override func willActivate() {
         super.willActivate()
-        
-        feedParser.parse()
     }
     
     override func didDeactivate() {
@@ -51,43 +61,15 @@ class NewsInterfaceController: WKInterfaceController, MWFeedParserDelegate {
         
         self.newsTableView.setNumberOfRows(self.itemsToDisplay.count, withRowType: "NewsRow")
         
-        for (index, item) in enumerate(self.itemsToDisplay) {
-            if let row = self.newsTableView.rowControllerAtIndex(index) as? NewsRowController {
-                let itemTitle:NSString = NSString(string: item.title!!)
-                let itemSummary:NSString = NSString(string: item.summary!!)
-                
-                let title = itemTitle.stringByConvertingHTMLToPlainText()
-                let summary = itemSummary.stringByConvertingHTMLToPlainText()
-                
-                row.headlineLabel.setText(title)
-                row.dateLabel.setText(self.dateFormatter!.stringFromDate(item.date!!))
-//                row.bodyLabel.setHyphenatedText(summary)
-                row.bodyLabel.setText(summary)
-            }
-        }
-    }
-    
-    func feedParser(parser: MWFeedParser!, didParseFeedItem item: MWFeedItem!) {
-        dispatch_async(dispatch_get_main_queue()) {
-            if (item != nil) {
-                self.parsedItems.addObject(item)
-            }
-        }
-    }
-    
-    func feedParserDidStart(parser: MWFeedParser!) {
-        dispatch_async(dispatch_get_main_queue()) {
-            self.newsTableView.setHidden(true)
-            self.loadingLabel.setHidden(false)
-        }
-    }
-    
-    func feedParserDidFinish(parser: MWFeedParser!) {
-        dispatch_async(dispatch_get_main_queue()) {
-            self.newsTableView.setHidden(false)
-            self.loadingLabel.setHidden(true)
+        for (index, item) in self.itemsToDisplay.enumerate() {
+            let feedItem: RSSItem = item as! RSSItem
             
-            self.updateTableWithParsedItems()
+            if let row = self.newsTableView.rowControllerAtIndex(index) as? NewsRowController {
+                row.headlineLabel.setText(feedItem.title!)
+                row.dateLabel.setText(self.dateFormatter!.stringFromDate(feedItem.pubDate!))
+                
+                row.bodyLabel.setHyphenatedText((feedItem.content?.removeHTML())!)
+            }
         }
     }
 }

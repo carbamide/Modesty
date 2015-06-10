@@ -49,35 +49,35 @@ class ViewPlayerInterfaceController: WKInterfaceController {
     func loadPlayerImage() {
         self.playerImage.setAccessibilityHint(String(format:"Avatar for %@", self.playerNameString))
         
-        let playerAvatar = self.playerNameString + "fullsize"
-        var usingCachedImage = false
+//        let playerAvatar = self.playerNameString + "fullsize"
+//        var usingCachedImage = false
+//        
+//        if WKInterfaceDevice.currentDevice().cachedImages[playerAvatar] != nil {
+//            self.finishedLoading()
+//            self.playerImage.setImageNamed(playerAvatar)
+//            
+//            usingCachedImage = true
+//        }
         
-        if WKInterfaceDevice.currentDevice().cachedImages[playerAvatar] != nil {
-            self.finishedLoading()
-            self.playerImage.setImageNamed(playerAvatar)
-            
-            usingCachedImage = true
-        }
-        
-        if !usingCachedImage {
+//        if !usingCachedImage {
             DataManager.sharedInstance.loadFullSizeImageForPlayer(self.playerNameString, completion: {
                 imageData in
                 dispatch_async(dispatch_get_main_queue()) {
                     self.finishedLoading()
                     self.playerImage.setImageData(imageData)
                     
-                    dispatch_async(dispatch_get_global_queue(QOS_CLASS_BACKGROUND, 0)) {
-                        let addedImageToCache = WKInterfaceDevice.currentDevice().addCachedImageWithData(imageData, name: playerAvatar)
-                        
-                        if !addedImageToCache {
-                            WKInterfaceDevice.currentDevice().removeAllCachedImages()
-                            
-                            WKInterfaceDevice.currentDevice().addCachedImageWithData(imageData, name: playerAvatar)
-                        }
-                    }
+//                    dispatch_async(dispatch_get_global_queue(QOS_CLASS_BACKGROUND, 0)) {
+//                        let addedImageToCache = WKInterfaceDevice.currentDevice().addCachedImageWithData(imageData, name: playerAvatar)
+//                        
+//                        if !addedImageToCache {
+//                            WKInterfaceDevice.currentDevice().removeAllCachedImages()
+//                            
+//                            WKInterfaceDevice.currentDevice().addCachedImageWithData(imageData, name: playerAvatar)
+//                        }
+//                    }
                 }
             })
-        }
+//        }
     }
     
     private func finishedLoading() {

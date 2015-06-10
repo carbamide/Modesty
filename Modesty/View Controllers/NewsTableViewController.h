@@ -7,10 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "MWFeedParser.h"
 #import "ModestyTableViewController.h"
 
-@interface NewsTableViewController : ModestyTableViewController <MWFeedParserDelegate>
+@interface NewsTableViewController : ModestyTableViewController
 {
 	
 	// Parsing

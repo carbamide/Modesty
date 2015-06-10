@@ -54,22 +54,22 @@ class StaffInterfaceController: WKInterfaceController {
     func loadTableData() {
         playerTableView.setNumberOfRows(DataManager.sharedInstance.staffDataSource.count, withRowType: "PlayerRow")
         
-        for (index, staffMember) in enumerate(DataManager.sharedInstance.staffDataSource) {
+        for (index, staffMember) in DataManager.sharedInstance.staffDataSource.enumerate() {
             if let row = playerTableView.rowControllerAtIndex(index) as? PlayerRowController {
                 row.playerNameLabel.setText(staffMember.username)
                 row.rankLabel.setText(DataManager.sharedInstance.rankForUsername(staffMember.username))
                 
-                var usingCachedImage = false
-                
-                if WKInterfaceDevice.currentDevice().cachedImages[staffMember.username] != nil {
-                    row.playerImageView.setImageNamed(staffMember.username)
-                    
-                    usingCachedImage = true
-                }
-                
-                if !usingCachedImage {
+//                var usingCachedImage = false
+//                
+//                if WKInterfaceDevice.currentDevice().cachedImages[staffMember.username] != nil {
+//                    row.playerImageView.setImageNamed(staffMember.username)
+//                    
+//                    usingCachedImage = true
+//                }
+//                
+//                if !usingCachedImage {
                     DataManager.sharedInstance.loadImageFromRemoteForPlayer(staffMember.username, rowController: row)
-                }
+//                }
                 
                 row.playerImageView.setAccessibilityLabel(String(format:"Avatar for %s", staffMember.username))
             }

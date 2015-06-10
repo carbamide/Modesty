@@ -7,12 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "MWFeedItem.h"
 #import "ModestyTableViewController.h"
-#import "NSString+HTML.h"
+#import "Modesty-Swift.h"
 
 @interface NewsDetailTableViewController : ModestyTableViewController
 
-@property (nonatomic, strong) MWFeedItem *item;
+@property (nonatomic, strong) RSSItem *item;
 
 @end

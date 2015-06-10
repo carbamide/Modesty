@@ -63,24 +63,24 @@ class PlayerInterfaceController: WKInterfaceController {
         if let dataSource = DataManager.sharedInstance.playerDataSource {
             playerTableView.setNumberOfRows(dataSource.count, withRowType: "PlayerRow")
             
-            for (index, player) in enumerate(dataSource) {
+            for (index, player) in dataSource.enumerate() {
                 if let
                     row = playerTableView.rowControllerAtIndex(index) as? PlayerRowController {
                         row.playerNameLabel.setText(player.username)
                         
                         self.setRankLabel(player.username, inRow: row)
                         
-                        var usingCachedImage = false
-                        
-                        if WKInterfaceDevice.currentDevice().cachedImages[player.username] != nil {
-                            row.playerImageView.setImageNamed(player.username)
-                            
-                            usingCachedImage = true
-                        }
-                        
-                        if !usingCachedImage {
+//                        var usingCachedImage = false
+//                        
+//                        if WKInterfaceDevice.currentDevice().cachedImages[player.username] != nil {
+//                            row.playerImageView.setImageNamed(player.username)
+//                            
+//                            usingCachedImage = true
+//                        }
+//                        
+//                        if !usingCachedImage {
                             DataManager.sharedInstance.loadImageFromRemoteForPlayer(player.username, rowController: row)
-                        }
+//                        }
                         
                         row.playerImageView.setAccessibilityLabel(String(format:"Avatar for %s", player.username))
                 }

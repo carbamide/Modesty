@@ -109,13 +109,15 @@
     
     [request setHTTPMethod:@"GET"];
     
-    [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
+    NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
+    
+    [[session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
         UIImage *image = [UIImage imageWithData:data];
         
         if (image) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 [[self imageCache] setObject:image forKey:username];
-
+                
                 if ([[self tableView] indexPathForCell:cell]) {
                     [[cell imageView] setNeedsLayout];
                     [[cell imageView] setImage:image];
@@ -124,7 +126,7 @@
                 }
             });
         }
-    }];
+    }] resume];
 }
 
 @end

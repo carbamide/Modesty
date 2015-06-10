@@ -105,33 +105,16 @@
         [self initializeBrowserWithURL:[NSURL URLWithString:kMcmmo]];
     }
     else {
-        UIAlertView *secretSauce = [[UIAlertView alloc] initWithTitle:@"Secret Sauce!"
-                                                              message:@"Part of what makes Modesty so great is the secret sauce of plugins that have created such a great environment for us to enjoy!  Come check it out!"
-                                                             delegate:self
-                                                    cancelButtonTitle:@"Cancel"
-                                                    otherButtonTitles:@"OK", nil];
+        UIAlertController *controller = [UIAlertController alertControllerWithTitle:@"Secret Sauce!"
+                                                                            message:@"Part of what makes Modesty so great is the secret sauce of plugins that have created such a great environment for us to enjoy!  Come check it out!"
+                                                                     preferredStyle:UIAlertControllerStyleAlert];
         
-        [secretSauce setTag:0];
-        [secretSauce show];
-    }
-}
-
-#pragma mark -
-#pragma mark - UIAlertViewDelegate
-
--(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
-{
-    NSString *title = [alertView buttonTitleAtIndex:buttonIndex];
-
-    switch ([alertView tag]) {
-        case 0:
-            if ([title isEqualToString:@"OK"]) {
-                [self initializeBrowserWithURL:[NSURL URLWithString:kModestyHomepage]];
-
-            }
-            break;
-        default:
-            break;
+        [controller addAction:[UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:nil]];
+        [controller addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+            [self initializeBrowserWithURL:[NSURL URLWithString:kModestyHomepage]];
+        }]];
+        
+        [self presentViewController:controller animated:YES completion:nil];
     }
 }
 
