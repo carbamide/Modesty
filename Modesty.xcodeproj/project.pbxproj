@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		290187EC1B2CE90D000EFCA2 /* minecraftevenings_wk.otf in Resources */ = {isa = PBXBuildFile; fileRef = 29044DC91B00441A001981FD /* minecraftevenings_wk.otf */; };
 		290CF6A01B27745200B2761F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29BDEF921ADBFAFE0025A835 /* Images.xcassets */; };
-		290CF6B41B2774AA00B2761F /* minecraftevenings_wk.otf in Resources */ = {isa = PBXBuildFile; fileRef = 290CF6A41B2774AA00B2761F /* minecraftevenings_wk.otf */; };
 		290CF6BC1B2797C600B2761F /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 290CF6BB1B2797C600B2761F /* SafariServices.framework */; };
 		290F6CD31B27635B00C40410 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 290F6CD11B27635B00C40410 /* Interface.storyboard */; };
 		290F6CD51B27635B00C40410 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 290F6CD41B27635B00C40410 /* Assets.xcassets */; };
@@ -43,6 +43,17 @@
 		2972C6081B068DC600BF758A /* Server.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2972C6071B068DC600BF758A /* Server.swift */; };
 		2972C60A1B068DDB00BF758A /* Staff.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2972C6091B068DDB00BF758A /* Staff.swift */; };
 		2972C60C1B068EF300BF758A /* ModestyInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2972C60B1B068EF300BF758A /* ModestyInfo.swift */; };
+		297D1C2F1B2896240085609C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297D1C2E1B2896240085609C /* AppDelegate.swift */; };
+		297D1C311B2896240085609C /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297D1C301B2896240085609C /* InfoViewController.swift */; };
+		297D1C331B2896240085609C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 297D1C321B2896240085609C /* Assets.xcassets */; };
+		297D1C361B2896240085609C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 297D1C341B2896240085609C /* Main.storyboard */; };
+		297D1C3B1B2899000085609C /* DataMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 2999443E186A0A490038D92F /* DataMapper.m */; };
+		297D1C3C1B2899040085609C /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2972C6051B068DBA00BF758A /* Player.swift */; };
+		297D1C3D1B2899040085609C /* Server.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2972C6071B068DC600BF758A /* Server.swift */; };
+		297D1C3E1B2899040085609C /* Staff.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2972C6091B068DDB00BF758A /* Staff.swift */; };
+		297D1C3F1B2899040085609C /* ModestyInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2972C60B1B068EF300BF758A /* ModestyInfo.swift */; };
+		297D1C411B289B850085609C /* PlayersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297D1C401B289B850085609C /* PlayersViewController.swift */; };
+		297D1C441B289B920085609C /* SocialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297D1C421B289B920085609C /* SocialViewController.swift */; };
 		29994400186A08880038D92F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 299943FF186A08880038D92F /* Foundation.framework */; };
 		29994402186A08880038D92F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29994401186A08880038D92F /* CoreGraphics.framework */; };
 		29994404186A08880038D92F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29994403186A08880038D92F /* UIKit.framework */; };
@@ -138,6 +149,14 @@
 		2972C60D1B0695C400BF758A /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		2972C60F1B0695CD00BF758A /* Staff.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Staff.swift; sourceTree = "<group>"; };
 		297440171B029A1E00308DE4 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		297D1C2C1B2896240085609C /* Modesty for OS X.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Modesty for OS X.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		297D1C2E1B2896240085609C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		297D1C301B2896240085609C /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
+		297D1C321B2896240085609C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		297D1C351B2896240085609C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		297D1C371B2896240085609C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		297D1C401B289B850085609C /* PlayersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayersViewController.swift; sourceTree = "<group>"; };
+		297D1C421B289B920085609C /* SocialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialViewController.swift; sourceTree = "<group>"; };
 		2991D27C1944EF6400C856D4 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 		2991D2801944EF6400C856D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2991D2811944EF6400C856D4 /* TodayViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TodayViewController.h; sourceTree = "<group>"; };
@@ -192,6 +211,13 @@
 
 /* Begin PBXFrameworksBuildPhase section */
 		290F6CD81B27635B00C40410 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		297D1C291B2896240085609C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -303,6 +329,20 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		297D1C2D1B2896240085609C /* Modesty for OS X */ = {
+			isa = PBXGroup;
+			children = (
+				297D1C2E1B2896240085609C /* AppDelegate.swift */,
+				297D1C301B2896240085609C /* InfoViewController.swift */,
+				297D1C401B289B850085609C /* PlayersViewController.swift */,
+				297D1C421B289B920085609C /* SocialViewController.swift */,
+				297D1C321B2896240085609C /* Assets.xcassets */,
+				297D1C341B2896240085609C /* Main.storyboard */,
+				297D1C371B2896240085609C /* Info.plist */,
+			);
+			path = "Modesty for OS X";
+			sourceTree = "<group>";
+		};
 		2991D27E1944EF6400C856D4 /* Modesty Status */ = {
 			isa = PBXGroup;
 			children = (
@@ -329,6 +369,7 @@
 				2991D27E1944EF6400C856D4 /* Modesty Status */,
 				290F6CD01B27635B00C40410 /* Modesty for watchOS */,
 				290F6CDF1B27635B00C40410 /* Modesty for watchOS Extension */,
+				297D1C2D1B2896240085609C /* Modesty for OS X */,
 				299943FE186A08880038D92F /* Frameworks */,
 				299943FD186A08880038D92F /* Products */,
 			);
@@ -340,6 +381,7 @@
 				299943FC186A08880038D92F /* Modesty.app */,
 				290F6CCF1B27635B00C40410 /* Modesty for watchOS.app */,
 				290F6CDB1B27635B00C40410 /* Modesty for watchOS Extension.appex */,
+				297D1C2C1B2896240085609C /* Modesty for OS X.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -487,6 +529,23 @@
 			productReference = 290F6CDB1B27635B00C40410 /* Modesty for watchOS Extension.appex */;
 			productType = "com.apple.product-type.watchkit2-extension";
 		};
+		297D1C2B1B2896240085609C /* Modesty for OS X */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 297D1C3A1B2896240085609C /* Build configuration list for PBXNativeTarget "Modesty for OS X" */;
+			buildPhases = (
+				297D1C281B2896240085609C /* Sources */,
+				297D1C291B2896240085609C /* Frameworks */,
+				297D1C2A1B2896240085609C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Modesty for OS X";
+			productName = "Modesty for OS X";
+			productReference = 297D1C2C1B2896240085609C /* Modesty for OS X.app */;
+			productType = "com.apple.product-type.application";
+		};
 		299943FB186A08880038D92F /* Modesty */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 29994431186A08890038D92F /* Build configuration list for PBXNativeTarget "Modesty" */;
@@ -524,6 +583,9 @@
 						CreatedOnToolsVersion = 7.0;
 						DevelopmentTeam = RG2JJ52ENN;
 					};
+					297D1C2B1B2896240085609C = {
+						CreatedOnToolsVersion = 7.0;
+					};
 					299943FB186A08880038D92F = {
 						DevelopmentTeam = RG2JJ52ENN;
 						SystemCapabilities = {
@@ -560,6 +622,7 @@
 				299943FB186A08880038D92F /* Modesty */,
 				290F6CCE1B27635B00C40410 /* Modesty for watchOS */,
 				290F6CDA1B27635B00C40410 /* Modesty for watchOS Extension */,
+				297D1C2B1B2896240085609C /* Modesty for OS X */,
 			);
 		};
 /* End PBXProject section */
@@ -579,8 +642,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				290CF6B41B2774AA00B2761F /* minecraftevenings_wk.otf in Resources */,
+				290187EC1B2CE90D000EFCA2 /* minecraftevenings_wk.otf in Resources */,
 				290CF6A01B27745200B2761F /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		297D1C2A1B2896240085609C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				297D1C331B2896240085609C /* Assets.xcassets in Resources */,
+				297D1C361B2896240085609C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -621,6 +693,22 @@
 				290F6CFA1B27647200C40410 /* NewsRowController.swift in Sources */,
 				290F6D011B27647C00C40410 /* DataManager.swift in Sources */,
 				290F6D001B27647700C40410 /* ViewPlayerInterfaceController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		297D1C281B2896240085609C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				297D1C3E1B2899040085609C /* Staff.swift in Sources */,
+				297D1C3D1B2899040085609C /* Server.swift in Sources */,
+				297D1C3C1B2899040085609C /* Player.swift in Sources */,
+				297D1C311B2896240085609C /* InfoViewController.swift in Sources */,
+				297D1C3F1B2899040085609C /* ModestyInfo.swift in Sources */,
+				297D1C411B289B850085609C /* PlayersViewController.swift in Sources */,
+				297D1C441B289B920085609C /* SocialViewController.swift in Sources */,
+				297D1C2F1B2896240085609C /* AppDelegate.swift in Sources */,
+				297D1C3B1B2899000085609C /* DataMapper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -676,6 +764,14 @@
 			);
 			name = Interface.storyboard;
 			path = .;
+			sourceTree = "<group>";
+		};
+		297D1C341B2896240085609C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				297D1C351B2896240085609C /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 		29994408186A08880038D92F /* InfoPlist.strings */ = {
@@ -798,6 +894,52 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "Modesty for watchOS Extension/Modesty WatchKit Extension-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Release;
+		};
+		297D1C381B2896240085609C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Modesty for OS X/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jukaela.Modesty-for-OS-X";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SDKROOT = macosx;
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "Modesty-Swift.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		297D1C391B2896240085609C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Modesty for OS X/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jukaela.Modesty-for-OS-X";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SDKROOT = macosx;
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "Modesty-Swift.h";
 			};
 			name = Release;
 		};
@@ -940,6 +1082,15 @@
 			buildConfigurations = (
 				290F6CF01B27635B00C40410 /* Debug */,
 				290F6CF11B27635B00C40410 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		297D1C3A1B2896240085609C /* Build configuration list for PBXNativeTarget "Modesty for OS X" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				297D1C381B2896240085609C /* Debug */,
+				297D1C391B2896240085609C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

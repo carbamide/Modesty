@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="8121.17" systemVersion="14E26a" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="cKF-8f-Vdb" defaultGlanceController="PBC-kK-mMl">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="8121.17" systemVersion="15A178w" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="cKF-8f-Vdb" defaultGlanceController="PBC-kK-mMl">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8101.14"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="8066.14"/>
     </dependencies>
     <customFonts key="customFonts">
-        <mutableArray key="minecraftevenings_wk.otf">
+        <mutableArray key="Minecraft Evenings.otf">
             <string>MinecraftEvenings</string>
             <string>MinecraftEvenings</string>
             <string>MinecraftEvenings</string>
@@ -110,7 +110,7 @@
                         <label alignment="center" verticalAlignment="center" text="Loading Modesty News..." textAlignment="center" numberOfLines="3" id="nBM-Ct-Quf"/>
                         <table alignment="center" verticalAlignment="center" id="4LY-XB-WkJ">
                             <items>
-                                <tableRow identifier="NewsRow" selectable="NO" id="RSq-zX-F1z" customClass="NewsRowController" customModule="Modesty_WatchKit_Extension">
+                                <tableRow identifier="NewsRow" selectable="NO" id="RSq-zX-F1z" customClass="NewsRowController" customModule="Modesty_for_watchOS_Extension">
                                     <group key="rootItem" width="1" height="0.0" alignment="left" isAccessibilityElement="YES" accessibilityLabel="Row containing news article." backgroundImage="row_background_tall" layout="vertical" spacing="8" id="kCY-K0-tad">
                                         <items>
                                             <label width="1" alignment="left" text="Label" textAlignment="center" numberOfLines="15" id="N8J-7g-NyS">
@@ -195,10 +195,10 @@
             </objects>
             <point key="canvasLocation" x="503" y="546"/>
         </scene>
-        <!--background-->
+        <!--Player-->
         <scene sceneID="0fl-Ae-ZMH">
             <objects>
-                <controller backgroundImage="background" contentMode="scaleAspectFill" id="sQt-au-40q" customClass="ViewPlayerInterfaceController" customModule="Modesty_for_watchOS_Extension">
+                <controller title="Player" backgroundImage="background" contentMode="scaleAspectFill" id="sQt-au-40q" customClass="ViewPlayerInterfaceController" customModule="Modesty_for_watchOS_Extension">
                     <items>
                         <group width="1" alignment="left" hidden="YES" layout="vertical" radius="8" id="xxZ-Sc-sFy">
                             <items>
@@ -213,7 +213,7 @@
                     </items>
                     <connections>
                         <outlet property="containerGroup" destination="xxZ-Sc-sFy" id="nfc-kn-MSa"/>
-                        <outlet property="loadingFullSizeLabel" destination="bu2-ef-XjE" id="TMe-nC-xfk"/>
+                        <outlet property="loadingFullSizeLabel" destination="bu2-ef-XjE" id="1jH-0c-Tdi"/>
                         <outlet property="playerImage" destination="Aoc-pD-aaC" id="D7s-f8-Bph"/>
                         <outlet property="playerNameLabel" destination="Zho-2R-QOk" id="hfN-8t-g99"/>
                         <outlet property="rankLabel" destination="Kx0-XT-p9F" id="V2B-uO-l2o"/>
@@ -279,4 +279,5 @@
     <inferredMetricsTieBreakers>
         <segue reference="0U0-Dn-dby"/>
     </inferredMetricsTieBreakers>
+    <color key="tintColor" red="0.1786944851692191" green="0.83880537974683544" blue="0.13499004127959158" alpha="1" colorSpace="calibratedRGB"/>
 </document>

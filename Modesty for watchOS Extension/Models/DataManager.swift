@@ -38,7 +38,7 @@ class DataManager: NSObject {
     }
     
     private func loadPlayerData(completion: (() -> ())? = nil) {
-        let url = NSURL(string:"http://aqueous-lowlands-3303.herokuapp.com")
+        let url = NSURL(string:"https://aqueous-lowlands-3303.herokuapp.com")
         
         self.session.dataTaskWithURL(url!, completionHandler: {
             (data, response, error) in
@@ -47,15 +47,15 @@ class DataManager: NSObject {
                 let modestyDict = try NSJSONSerialization.JSONObjectWithData(data!, options: .MutableLeaves) as? NSDictionary
                 let playersArray = modestyDict?.objectForKey("players") as? NSArray
                 
-                if let players = playersArray {
-                    self.playerDataSource.removeAll(keepCapacity: false)
+                guard let players = playersArray else { return }
+                
+                self.playerDataSource.removeAll(keepCapacity: false)
+                
+                for username in players {
+                    var player = Player()
+                    player.username = username as! String
                     
-                    for username in players {
-                        var player = Player()
-                        player.username = username as! String
-                        
-                        self.playerDataSource.append(player)
-                    }
+                    self.playerDataSource.append(player)
                 }
             }
             catch {
@@ -71,25 +71,25 @@ class DataManager: NSObject {
         
         self.session.dataTaskWithURL(url!, completionHandler: {
             (data, response, error) in
+            guard let data = data else { return }
             
             do {
-                let staffArray = try NSJSONSerialization.JSONObjectWithData(data!, options: .MutableLeaves) as? NSArray
+                let staffArray = try NSJSONSerialization.JSONObjectWithData(data, options: .MutableLeaves) as? NSArray
+                guard let staff = staffArray else { return }
                 
-                if let staffListing = staffArray {
-                    self.staffDataSource.removeAll(keepCapacity: false)
-                    
-                    for array: NSArray in staffListing as! [NSArray] {
-                        for dict: NSDictionary in array as! [NSDictionary] {
-                            var staffMember = Staff()
-                            staffMember.username = dict["username"] as! String
-                            staffMember.rank = dict["rank"] as! String
-                            
-                            self.staffDataSource.append(staffMember)
-                        }
+                self.staffDataSource.removeAll(keepCapacity: false)
+                
+                for array: NSArray in staff as! [NSArray] {
+                    for dict: NSDictionary in array as! [NSDictionary] {
+                        var staffMember = Staff()
+                        staffMember.username = dict["username"] as! String
+                        staffMember.rank = dict["rank"] as! String
+                        
+                        self.staffDataSource.append(staffMember)
                     }
-                    
-                    completion?()
                 }
+                
+                completion?()
             }
             catch {
                 print(error)
@@ -98,41 +98,57 @@ class DataManager: NSObject {
     }
     
     func loadImageFromRemoteForPlayer(username: String, rowController: PlayerRowController) {
+        let documentsPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as NSString
+        
+        if NSFileManager.defaultManager().fileExistsAtPath(documentsPath.stringByAppendingPathComponent(username)) {
+            let imageData = NSData(contentsOfFile: documentsPath.stringByAppendingPathComponent(username))
+            
+            dispatch_async(dispatch_get_main_queue()) {
+                if let imageView = rowController.playerImageView {
+                    imageView.setImageData(imageData)
+                }
+            }
+        }
+        
         let url = NSURL(string: String(format: "https://minotar.net/helm/%@/120.png", username))
         
         self.session.dataTaskWithURL(url!, completionHandler: {
             (data, response, error) in
-            let data = NSData(contentsOfURL: url!)
+            guard let data = data else { return }
             
-            if let playerAvatarImageData = data {
-//                let addedImageToCache = WKInterfaceDevice.currentDevice().addCachedImageWithData(playerAvatarImageData, name: username)
-//                
-//                if !addedImageToCache {
-//                    WKInterfaceDevice.currentDevice().removeAllCachedImages()
-//                    
-//                    WKInterfaceDevice.currentDevice().addCachedImageWithData(playerAvatarImageData, name: username)
-//                }
-                
-                dispatch_async(dispatch_get_main_queue()) {
-                    if let imageView = rowController.playerImageView {
-                        imageView.setImageData(playerAvatarImageData)
-                    }
+            self.saveImageData(data, username: username, fullSize: false)
+            
+            dispatch_async(dispatch_get_main_queue()) {
+                if let imageView = rowController.playerImageView {
+                    imageView.setImageData(data)
                 }
             }
         })!.resume()
     }
     
     func loadFullSizeImageForPlayer(username: String, completion: ((image: NSData) -> ())? = nil) {
+        let documentsPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as NSString
+        
+        if NSFileManager.defaultManager().fileExistsAtPath(documentsPath.stringByAppendingPathComponent(username)) {
+            let imageData = NSData(contentsOfFile: documentsPath.stringByAppendingPathComponent(username))
+            
+            if let imageData = imageData {
+                dispatch_async(dispatch_get_main_queue()) {
+                    completion?(image: imageData)
+                }
+            }
+        }
+        
         let url = NSURL(string: String(format: "https://minotar.net/helm/%@/360.png", username))
         
         self.session.dataTaskWithURL(url!, completionHandler: {
             (data, response, error) in
-            let data = NSData(contentsOfURL: url!)
+            guard let data = data else { return }
             
-            if let userAvatar = data {
-                dispatch_async(dispatch_get_main_queue()) {
-                    completion?(image: userAvatar)
-                }
+            self.saveImageData(data, username: username, fullSize: true)
+            
+            dispatch_async(dispatch_get_main_queue()) {
+                completion?(image: data)
             }
         })!.resume()
     }
@@ -143,6 +159,12 @@ class DataManager: NSObject {
         }
         
         return staff.first?.rank ?? ""
+    }
+    
+    private func saveImageData(data: NSData, username: String, fullSize: Bool) {
+        let documentsPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as NSString
+        
+        data.writeToFile(documentsPath.stringByAppendingPathComponent(username + (fullSize ? "fullSize" : "")), atomically: true)
     }
 }
 

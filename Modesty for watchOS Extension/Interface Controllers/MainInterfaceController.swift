@@ -36,6 +36,9 @@ class MainInterfaceController: WKInterfaceController {
         self.playerButton.setTitle(UserVisibleStrings.LOADING_STRING)
         self.staffButton.setTitle(UserVisibleStrings.LOADING_STRING)
         
+        self.playerLabel.setText(UserVisibleStrings.LOADING_STRING)
+        self.staffLabel.setText(UserVisibleStrings.LOADING_STRING)
+        
         DataManager.sharedInstance.refreshData({
             dispatch_async(dispatch_get_main_queue()) {
                 self.refreshData()
@@ -55,8 +58,13 @@ class MainInterfaceController: WKInterfaceController {
         self.playerButton.setTitle(UserVisibleStrings.LOADING_STRING)
         self.staffButton.setTitle(UserVisibleStrings.LOADING_STRING)
         
+        self.playerLabel.setText(UserVisibleStrings.LOADING_STRING)
+        self.staffLabel.setText(UserVisibleStrings.LOADING_STRING)
+        
         DataManager.sharedInstance.refreshData({
-            self.refreshData()
+            dispatch_async(dispatch_get_main_queue()) {
+                self.refreshData()
+            }
         })
     }
     

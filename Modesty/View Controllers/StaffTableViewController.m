@@ -10,7 +10,6 @@
 #import "DataMapper.h"
 #import "Modesty-Swift.h"
 
-
 @interface StaffTableViewController ()
 
 /**

@@ -74,7 +74,7 @@ static NSString *const kPlanetMinecraft = @"http://www.planetminecraft.com/serve
 static NSString *const kMinecraftServersOrg = @"http://minecraftservers.org/server/6465";
 static NSString *const kMinecraftServerList = @"http://minecraft-server-list.com/server/128633/vote/";
 static NSString *const kFacebookURL = @"https://www.facebook.com/minecraftmodesty";
-static NSString *const kRssFeed = @"http://www.minecraftmodesty.enjin.com/home/m/7353456/rss/true";
+static NSString *const kRssFeed = @"https://www.minecraftmodesty.enjin.com/home/m/7353456/rss/true";
 
 #define kMinotarHelper @"https://minotar.net/helm/%@/90.png"
 
