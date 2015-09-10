@@ -57,7 +57,7 @@ class GlanceInterfaceController: WKInterfaceController {
             catch {
                 print(error)
             }
-        })!.resume()
+        }).resume()
     }
     
     func updateLabels(players: NSArray) {

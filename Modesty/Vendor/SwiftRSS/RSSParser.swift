@@ -61,7 +61,7 @@ public class RSSParser: NSObject, NSXMLParserDelegate {
                 parser.shouldResolveExternalEntities = false
                 parser.parse()
             }
-        })?.resume()
+        }).resume()
     }
     
 // MARK: NSXMLParserDelegate

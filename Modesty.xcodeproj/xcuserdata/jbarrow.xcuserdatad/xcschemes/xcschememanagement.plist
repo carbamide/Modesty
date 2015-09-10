@@ -33,6 +33,11 @@
 			<key>orderHint</key>
 			<integer>6</integer>
 		</dict>
+		<key>Modesty for tvOS.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>6</integer>
+		</dict>
 		<key>Modesty for watchOS.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -84,6 +89,11 @@
 			<true/>
 		</dict>
 		<key>29D1FFE61AFBE75B0070058F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>29EE90C61BA1DC0B00B9280C</key>
 		<dict>
 			<key>primary</key>
 			<true/>

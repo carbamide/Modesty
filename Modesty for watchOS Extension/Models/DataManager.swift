@@ -7,7 +7,9 @@
 //
 
 import Foundation
+#if os(watchOS)
 import WatchKit
+#endif
 
 private let _DataManagerSharedInstance = DataManager()
 
@@ -63,7 +65,7 @@ class DataManager: NSObject {
             }
             
             self.loadStaffData(completion)
-        })!.resume()
+        }).resume()
     }
     
     private func loadStaffData(completion: (() -> ())? = nil) {
@@ -94,9 +96,9 @@ class DataManager: NSObject {
             catch {
                 print(error)
             }
-        })!.resume()
+        }).resume()
     }
-    
+#if os(watchOS)
     func loadImageFromRemoteForPlayer(username: String, rowController: PlayerRowController) {
         let documentsPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as NSString
         
@@ -123,9 +125,9 @@ class DataManager: NSObject {
                     imageView.setImageData(data)
                 }
             }
-        })!.resume()
+        }).resume()
     }
-    
+#endif
     func loadFullSizeImageForPlayer(username: String, completion: ((image: NSData) -> ())? = nil) {
         let documentsPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as NSString
         
@@ -150,7 +152,7 @@ class DataManager: NSObject {
             dispatch_async(dispatch_get_main_queue()) {
                 completion?(image: data)
             }
-        })!.resume()
+        }).resume()
     }
     
     func rankForUsername(username: String) -> String {
